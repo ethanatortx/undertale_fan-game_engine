@@ -26,17 +26,30 @@
           <argument>
             <kind>1</kind>
             <string>/// detect where it is on the bar, and if the player presses enter
-if (x &lt; (display_get_gui_width()/2 -32)) {
-spacetraveled = x - 32;
-} else {
-spacetraveled = spacetraveled - (x-(display_get_gui_width()/2 -32))
-}
-
-if (keyboard_check(vk_enter)) {
-    distancefrom = (display_get_gui_width()/2 -32) - spacetraveled;
-    dmg_modifier = distancefrom/(display_get_gui_width()/2 -32)/room_speed
-    dmg = obj_player_main.damage - (obj_player_main.damage*dmg_modifier);
-}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="75">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// redraw self on GUI
+draw_self()
 </string>
           </argument>
         </arguments>

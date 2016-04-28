@@ -588,7 +588,7 @@
         </scripts>
         <script>scripts\mob_check.gml</script>
       </scripts>
-      <script>scripts\scr_moveindialog.gml</script>
+      <script>scripts\scr_moveinfightbox.gml</script>
       <script>scripts\scr_attack.gml</script>
     </scripts>
     <scripts name="dialog">
@@ -602,7 +602,6 @@
       <script>scripts\scr_encounterstart.gml</script>
       <script>scripts\scr_encountertransition.gml</script>
       <script>scripts\scr_encounterfull.gml</script>
-      <script>scripts\script23.gml</script>
     </scripts>
     <script>scripts\scr_interactobj.gml</script>
     <script>scripts\scr_interactbattle.gml</script>

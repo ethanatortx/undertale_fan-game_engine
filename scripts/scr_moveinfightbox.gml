@@ -1,5 +1,5 @@
 
-/// scr_moveindialog    
+/// scr_moveinfightbox    
 
 selectnum = argument0
 selectpos = argument1

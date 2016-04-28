@@ -180,13 +180,16 @@ image_alpha = 1;
           <argument>
             <kind>1</kind>
             <string>/// Heart movement
-scr_encounterstart();
-scr_encountertransition();
-scr_encounterfull();
-if (global.buttonpos == 4) {
-    script_execute(state)
+
+// check each frame that this is created for what phase the fight is in
+scr_encounterstart(); // draws the heart ticking anim
+scr_encountertransition(); // draws the fight buttons
+scr_encounterfull(); // handles the setting of the state to the apropriate one
+
+if (global.buttonpos == 4) { // if buttonpos is at initialized val ...
+    script_execute(state) // ... execute the state (nomove or move)
 } else {
-    scr_fight_state()
+    scr_fight_state() // run the state for moving between buttons and selecting actions
 }
 </string>
           </argument>
@@ -210,11 +213,11 @@ if (global.buttonpos == 4) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.drawnames == true) {
+            <string>/*if (global.drawnames == true) {
 
 } else if (global.drawattack == true) {
     draw_sprite(spr_attackbackground,0,display_get_gui_width(),514);
-}
+}*/
 </string>
           </argument>
         </arguments>
