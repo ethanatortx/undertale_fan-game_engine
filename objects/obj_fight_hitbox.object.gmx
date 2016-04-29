@@ -26,7 +26,10 @@
           <argument>
             <kind>1</kind>
             <string>/// if the attack bar hits the end of the hitbox, destroy both and mark as miss
-
+with (obj_fight_hitbox) {
+    instance_destroy();
+}
+instance_destroy();
 </string>
           </argument>
         </arguments>
@@ -60,7 +63,7 @@ draw_self()
   <PhysicsObject>-1</PhysicsObject>
   <PhysicsObjectSensor>0</PhysicsObjectSensor>
   <PhysicsObjectShape>2</PhysicsObjectShape>
-  <PhysicsObjectDensity>0.5</PhysicsObjectDensity>
+  <PhysicsObjectDensity>0</PhysicsObjectDensity>
   <PhysicsObjectRestitution>0.100000001490116</PhysicsObjectRestitution>
   <PhysicsObjectGroup>0</PhysicsObjectGroup>
   <PhysicsObjectLinearDamping>0.100000001490116</PhysicsObjectLinearDamping>
