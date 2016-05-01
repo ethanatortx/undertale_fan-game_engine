@@ -3,6 +3,7 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
+<<<<<<< HEAD
   <datafiles number="3" name="datafiles">
     <datafile>
       <name>Monsters.txt</name>
@@ -22,6 +23,9 @@
       <filename>Monsters.txt</filename>
     </datafile>
   </datafiles>
+=======
+  <datafiles number="2" name="datafiles"/>
+>>>>>>> master
   <NewExtensions/>
   <sounds name="sound">
     <sounds name="interact_sounds">
