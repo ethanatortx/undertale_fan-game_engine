@@ -276,8 +276,6 @@ if (encounter_transition == true) {
 
 if (encounter_transition == true) {
     // draw fight buttons (fight/act/item/mercy)
-    // draws enemey
-    draw_sprite(spr_main_down, 0 , 30 , 110);
     // lights up if heart is on the button
     if (global.buttonpos == 0) { // fight
         draw_sprite(spr_fight_fight,1,buttonx[0],428);
