@@ -2,21 +2,23 @@
 scr_getinput();
 
 // move between the four buttons
-if (rightKey and global.buttonpos != 3 and obj_player_redheart.alarm[3] <= 0 && inbox == 0) { // if the player selector is not on the far right button, then move it right one button
+if ((rightKey) and global.buttonpos != 3 and obj_player_redheart.alarm[3] <= 0 && inbox == 0) { // if the player selector is not on the far right button, then move it right one button
     audio_play_sound(snd_menu_move,10,false); // play the menu move sound
     global.buttonpos += 1; // change the buttonpos to reflect the selector (redheart) button position
-    obj_player_redheart.phy_position_x = buttonx[global.buttonpos] + 8; // move the heart to the next button to the right
+    obj_player_redheart.phy_position_x = buttonx[global.buttonpos] + 10; // move the heart to the next button to the right
+    obj_player_redheart.phy_position_y = 444;
     obj_player_redheart.alarm[3] = 5; // set the cooldown for interacting with a button
 }
 
 if (leftKey and global.buttonpos != 0 and obj_player_redheart.alarm[3] <= 0 && inbox == 0) {
     audio_play_sound(snd_menu_move,10,false);
     global.buttonpos -= 1;
-    obj_player_redheart.phy_position_x = buttonx[global.buttonpos] + 8;
+    obj_player_redheart.phy_position_x = buttonx[global.buttonpos] + 10;
+    obj_player_redheart.phy_position_y = 444;
     obj_player_redheart.alarm[3] = 5; // set the cooldown for interacting with a button
 }
 
-if (keyboard_check_pressed(vk_enter) == true) { // if they choose a button
+if (keyboard_check_pressed(vk_enter) || keyboard_check_pressed(ord("Z"))) { // if they choose a button
     if (inbox == 0) {
         if (obj_player_redheart.alarm[3] <= 0) { // select fight button
             obj_player_redheart.alarm[3] = 5; // set the cooldown for interacting with a button
@@ -37,7 +39,7 @@ if (keyboard_check_pressed(vk_enter) == true) { // if they choose a button
         if (obj_player_redheart.alarm[3] <= 0) { // select fight button
         
             obj_player_redheart.alarm[3] = 5; // set the cooldown for interacting with a button
-            obj_player_redheart.phy_position_x = buttonx[global.buttonpos]+8
+            obj_player_redheart.phy_position_x = buttonx[global.buttonpos] + 10;
             obj_player_redheart.phy_position_y = 444;
             inbox = 0;
             
