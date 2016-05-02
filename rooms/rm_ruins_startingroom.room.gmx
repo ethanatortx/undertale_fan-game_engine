@@ -15,22 +15,22 @@ global.ruinsencounternum = 16; // how many encounters are in the ruins
 
     // initialize a global array to hold all the encounters for the ruins
     // since an array doesn't memory leak, i decided to use that and not a FIFO ds
-global.ruinsencounters[0] = mob_testmonster;
-global.ruinsencounters[1] = mob_testmonster;
-global.ruinsencounters[2] = mob_testmonster;
-global.ruinsencounters[3] = mob_testmonster;
-global.ruinsencounters[4] = mob_testmonster;
-global.ruinsencounters[5] = mob_testmonster;
-global.ruinsencounters[6] = mob_testmonster;
-global.ruinsencounters[7] = mob_testmonster;
-global.ruinsencounters[8] = mob_testmonster;
-global.ruinsencounters[9] = mob_testmonster;
-global.ruinsencounters[10] = mob_testmonster;
-global.ruinsencounters[11] = mob_testmonster;
-global.ruinsencounters[12] = mob_testmonster;
-global.ruinsencounters[13] = mob_testmonster;
-global.ruinsencounters[14] = mob_testmonster;
-global.ruinsencounters[15] = mob_testmonster;
+global.ruinsencounters[0] = mob_testmonster_refonly;
+global.ruinsencounters[1] = mob_testmonster_refonly;
+global.ruinsencounters[2] = mob_testmonster_refonly;
+global.ruinsencounters[3] = mob_testmonster_refonly;
+global.ruinsencounters[4] = mob_testmonster_refonly;
+global.ruinsencounters[5] = mob_testmonster_refonly;
+global.ruinsencounters[6] = mob_testmonster_refonly;
+global.ruinsencounters[7] = mob_testmonster_refonly;
+global.ruinsencounters[8] = mob_testmonster_refonly;
+global.ruinsencounters[9] = mob_testmonster_refonly;
+global.ruinsencounters[10] = mob_testmonster_refonly;
+global.ruinsencounters[11] = mob_testmonster_refonly;
+global.ruinsencounters[12] = mob_testmonster_refonly;
+global.ruinsencounters[13] = mob_testmonster_refonly;
+global.ruinsencounters[14] = mob_testmonster_refonly;
+global.ruinsencounters[15] = mob_testmonster_refonly;
 
 global.region = "ruins";</code>
   <enableViews>-1</enableViews>

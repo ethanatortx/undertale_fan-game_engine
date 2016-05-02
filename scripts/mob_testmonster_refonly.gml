@@ -1,4 +1,4 @@
-/// mob_testmonster
+/// mob_testmonster (legacy code, ref only for constuction in monsters.txt)
 
 // create the dictionary so things can be stored in it (don't forget to do a destroy command for the dictionary later)
 global.monster = ds_map_create();

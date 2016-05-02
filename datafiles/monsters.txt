@@ -1,0 +1,60 @@
+format goes like this:
+name (string)
+hp (int)
+atk (int)
+def (int)
+exp (int)
+txtr (texture storage starts)
+how many txtrs (int)
+textures start...
+...
+...
+...textures end (all the textures to be displayed, string, store in 1d array)
+texture pos x...
+...
+...
+...texture pos x end (all the x coords to display the sprites at in respective order, int, store in 1d array)
+texture pos y...
+...
+...
+...texture pos y end (all the y coords to display the sprites at in respective order, int, store in 1d array)
+act (start of act section, never includes check as that is done seperately for all mobs using their above data)
+how many act options (int)
+monster act options...
+...
+...
+... monster act options end (the act options for the monster, string, store in 2d array height)
+monster act dialog...
+...
+...
+...monster act dialog end (monster act dialog, string, store in 2d array above's width)
+end (string, marker that it can stop reading the file and close it because all data has been pulled)
+
+testmonster
+1
+1
+1
+10
+txtr
+3
+spr_testmonster_battle_topleft
+spr_testmonster_battle_topright
+spr_testmonster_battle_bottomleft
+spr_testmonster_battle_bottomright
+110
+130
+110
+130
+100
+100
+120
+120
+act
+3
+Say Hello
+Compliment
+Insult
+Hello there human.
+Thanks, you too.
+How rude!
+end

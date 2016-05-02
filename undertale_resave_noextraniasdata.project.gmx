@@ -3,7 +3,25 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="2" name="datafiles"/>
+  <datafiles number="4" name="datafiles">
+    <datafile>
+      <name>monsters.txt</name>
+      <exists>-1</exists>
+      <size>521</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>monsters.txt</filename>
+    </datafile>
+  </datafiles>
   <NewExtensions/>
   <sounds name="sound">
     <sounds name="interact_sounds">
@@ -581,7 +599,7 @@
       <script>scripts\scr_fight_state.gml</script>
       <script>scripts\scr_movetobuttons.gml</script>
       <scripts name="mobs">
-        <script>scripts\mob_testmonster.gml</script>
+        <script>scripts\mob_testmonster_refonly.gml</script>
         <scripts name="testmonster">
           <script>scripts\mob_testmonster_attack1.gml</script>
           <script>scripts\mob_testmonster_attack2.gml</script>
