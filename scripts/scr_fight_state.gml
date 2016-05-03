@@ -46,12 +46,13 @@ if (keyboard_check_pressed(vk_enter) || keyboard_check_pressed(ord("Z"))) { // i
                 obj_player_redheart.phy_position_x = buttonx[global.buttonpos] + 10;
                 obj_player_redheart.phy_position_y = 444;
                 inbox = 0;
+                global.drawnames = false;
                 
             }
         } else if (inbox == 2) { // if the player is in the second stage of the fight box
         
             inbox = 1; // set var to tell the function that the player is now in the first stage of the fight box
-        
+            
         }
     }
 }

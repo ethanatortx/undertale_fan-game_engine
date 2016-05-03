@@ -156,6 +156,9 @@ phy_position_x += spd;
 
 if (shutter = true) {
     image_speed = .4;
+    for (i = 0; i &lt;=0; i+=1) {
+        
+    }
 }
 
 draw_self()

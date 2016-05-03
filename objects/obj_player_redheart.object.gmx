@@ -217,20 +217,26 @@ if (global.buttonpos == 4) { // if buttonpos is at initialized val ...
             <kind>1</kind>
             <string>/// draw the names in the fight box
 if (global.drawnames == true) {
-    for (v = 0; v &lt; global.monstercount; v++) {
+    for (v = 0; v &lt;= global.monstercount; v++) {
         indexofmonstertodraw = global.ruinsencounternum+global.monstercount-v-1;
         scr_readmonster(global.ruinsencounters[indexofmonstertodraw]);
-        if (v &lt;= 1) {
+        draw_set_font(fnt_main);
+        textscale = 1
+        if (v &lt; 2) {
             if (v % 2 == 0) {
-                draw_text_ext_colour(0,0,global.ruinsencounters[indexofmonstertodraw],0,1000,c_white,c_white,c_white,c_white,255);
+                draw_text_ext_transformed_colour(103,276,"*",0,1000,textscale,textscale,0,c_white,c_white,c_white,c_white,255);
+                draw_text_ext_transformed_colour(135,276,global.ruinsencounters[indexofmonstertodraw],0,1000,textscale,textscale,0,c_white,c_white,c_white,c_white,255);
             } else {
-                draw_text_ext_colour(0,0,global.ruinsencounters[indexofmonstertodraw],0,1000,c_white,c_white,c_white,c_white,255);
+                draw_text_ext_transformed_colour(364,276,"*",0,1000,textscale,textscale,0,c_white,c_white,c_white,c_white,255);
+                draw_text_ext_transformed_colour(396,276,global.ruinsencounters[indexofmonstertodraw],0,1000,textscale,textscale,0,c_white,c_white,c_white,c_white,255);
             }
         } else if (v &gt; 1) {
             if (v % 2 == 0) {
-                draw_text_ext_colour(0,0,global.ruinsencounters[indexofmonstertodraw],0,1000,c_white,c_white,c_white,c_white,255);
+                draw_text_ext_transformed_colour(103,306,"*",0,1000,textscale,textscale,0,c_white,c_white,c_white,c_white,255);
+                draw_text_ext_transformed_colour(135,306,global.ruinsencounters[indexofmonstertodraw],0,1000,textscale,textscale,0,c_white,c_white,c_white,c_white,255);
             } else {
-                draw_text_ext_colour(0,0,global.ruinsencounters[indexofmonstertodraw],0,1000,c_white,c_white,c_white,c_white,255);
+                draw_text_ext_transformed_colour(364,306,"*",0,1000,textscale,textscale,0,c_white,c_white,c_white,c_white,255);
+                draw_text_ext_transformed_colour(396,306,global.ruinsencounters[indexofmonstertodraw],0,1000,textscale,textscale,0,c_white,c_white,c_white,c_white,255);
             }
         }
     }
