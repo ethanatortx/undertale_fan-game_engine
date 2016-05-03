@@ -1,0 +1,58 @@
+
+testweapon
+weapon
+This looks like it doesn't belong here.
+1
+1
+knife
+noeffect
+10
+10
+end
+
+testarmor
+armor
+It feels like this shouldn't exist.
+1
+noeffect
+10
+10
+end
+
+testfood
+5
+noeffect
+default
+10
+10
+end
+
+endfile
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+format for item stuff:
+name of item (string)
+type of item (string)
+item description (string)
+
+if weapon:
+	attack (int)
+	number of bars(int; reffering to the attack bars seen when FIGHT is pressed)
+	bar type (string; type of bar, there is a different one for each weapon)
+	bonus effect name (string; name of the extra effect it gives, "noeffect" if it has no effect)
+	buy cost (int; num of gold it needs to be bought from a vendor, but most are not sold by a vendor items)
+	sell cost (int; num of gold obtained from selling this item)
+
+if armor:
+	defense (int)
+	bonus effect name (string; name of the extra effect it gives, "noeffect" if it has no effect)
+	buy cost (int; num of gold it needs to be bought from a vendor, but most are not sold by a vendor items)
+	sell cost (int; num of gold obtained from selling this item)
+
+if healing item:
+	heal count (int)
+	bonus effect name (string; name of the extra effect it gives, "noeffect" if it has no effect)
+	special use sound (string; name of the special sound file played when used, "default" if no special sound)
+	buy cost (int; num of gold it needs to be bought from a vendor, but most are not sold by a vendor items)
+	sell cost (int; num of gold obtained from selling this item)
