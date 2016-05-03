@@ -1,23 +1,32 @@
 /// scr_readmonster
+
 monstername = argument0;
-monstertxt = file_text_open_read(program_directory + "\monsters.txt");
+monstertxt = file_text_open_read(working_directory + "\monsters.txt");//open the monsters.txt file (this holds stats for all the in-game monsters, check file for stats formatting)
+startrecording = false;
 currentline = "";
-while (startline != "fileend") {
-    startline = file_text_readln(monstertxt);
-    currentline = startline;
-    if (string(startline) == monstername) {
+mobhp = 0;
+modatk = 0;
+mobdef = 0;
+expreward = 0;
+
+while (currentline != "fileend") {
+    currentline = string(file_text_readln(monstertxt));//iterate the overall read line
+    if (currentline == monstername) {
+        startrecording = true;
+    }
+    if (startrecording) {
         for (i = 0; i < 4; i ++) {
             if (i == 0) {
-                global.mobhp = file_text_read_real(monstertxt);
+                mobhp = file_text_read_real(monstertxt);
             } else if (i == 1) {
-                global.mobatk = file_text_read_real(monstertxt);
+                mobatk = file_text_read_real(monstertxt);
             } else if (i == 2) {
-                global.mobdef = file_text_read_real(monstertxt);
+                mobdef = file_text_read_real(monstertxt);
             } else {
-                global.expreward = file_text_read_real(monstertxt);
+                expreward = file_text_read_real(monstertxt);
             }
         }
-        if (string(currentline) == "txtr") {//begins reading the textures/sprites section
+        if (currentline == "txtr") {//begins reading the textures/sprites section
             numtextr = file_text_read_real(monstertxt);//how many different textures make up the mob to be displayed
             for (j = 0; j < numtextr;j++) {
                 //1D array holding sprite names
@@ -31,7 +40,7 @@ while (startline != "fileend") {
                     textr_2D_xpos_ypos[a,b] = file_text_read_real(monstertxt);//grab the positions for the sprites to be drawn at
                 }
             }
-        } else if (string(currentline) == "act") {//bgein reading the act section
+        } else if (currentline == "act") {//bgein reading the act section
             numact = file_text_read_real(monstertxt);
             for (c = 0; c < numact; c++) {
                 for (d = 0; d < 2; d++) {
@@ -41,10 +50,12 @@ while (startline != "fileend") {
                     act_2D_options_dialog[c,d] = file_text_read_string(monstertxt);
                 }
             }
-        } else if (string(currentline) == "end") {//end the code at the end of this monster's stats section
+        } else if (currentline == "end") {//end the code at the end of this monster's stats section
             file_text_close(monstertxt);
             exit;
         }
-        currentline = file_text_readln(monstertxt);//iterate the overall read line
+        
     } 
 }
+file_text_close(monstertxt);
+exit;

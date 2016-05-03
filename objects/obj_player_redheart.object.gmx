@@ -29,9 +29,10 @@
 image_alpha = 1;
 draw_set_alpha(1);
 global.buttonpos = 4;
-inbox = 0;
 global.drawnames = false;
+nointeract = false;
 onceonly = 1;
+inbox = 0;
 
 scr_getinput();
 spd = 3;
@@ -214,11 +215,26 @@ if (global.buttonpos == 4) { // if buttonpos is at initialized val ...
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/*if (global.drawnames == true) {
-
-} else if (global.drawattack == true) {
-    draw_sprite(spr_attackbackground,0,display_get_gui_width(),514);
-}*/
+            <string>/// draw the names in the fight box
+if (global.drawnames == true) {
+    for (v = 0; v &lt; global.monstercount; v++) {
+        indexofmonstertodraw = global.ruinsencounternum+global.monstercount-v-1;
+        scr_readmonster(global.ruinsencounters[indexofmonstertodraw]);
+        if (v &lt;= 1) {
+            if (v % 2 == 0) {
+                draw_text_ext_colour(0,0,global.ruinsencounters[indexofmonstertodraw],0,1000,c_white,c_white,c_white,c_white,255);
+            } else {
+                draw_text_ext_colour(0,0,global.ruinsencounters[indexofmonstertodraw],0,1000,c_white,c_white,c_white,c_white,255);
+            }
+        } else if (v &gt; 1) {
+            if (v % 2 == 0) {
+                draw_text_ext_colour(0,0,global.ruinsencounters[indexofmonstertodraw],0,1000,c_white,c_white,c_white,c_white,255);
+            } else {
+                draw_text_ext_colour(0,0,global.ruinsencounters[indexofmonstertodraw],0,1000,c_white,c_white,c_white,c_white,255);
+            }
+        }
+    }
+}
 </string>
           </argument>
         </arguments>

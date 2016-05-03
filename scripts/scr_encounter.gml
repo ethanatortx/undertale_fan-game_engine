@@ -1,9 +1,10 @@
 /// scr_encounter
 
 global.monstercount = argument0;
+global.totalmobhp = 0;
+
 selectnum = 0;
 selectpos = 0;
-
 i = 0;
 
 state = scr_nomove_state;
@@ -13,7 +14,9 @@ room_goto(rm_fight);
 
 if (global.region == "ruins") {
     for (r = 0; r < global.monstercount; r += 1) {
-        global.monster[r] = global.ruinsencounters[global.ruinsencounternum - r - 1];
+        scr_readmonster(global.ruinsencounters[r]);
+        global.totalmobhp += mobhp;
+        global.ruinsencounternum -= 1;
     }
 }
 
