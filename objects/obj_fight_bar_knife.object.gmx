@@ -192,11 +192,19 @@ if (countdown_to_destruction != 0) {
             <kind>1</kind>
             <string>/// redraw self on GUI
 
+<<<<<<< HEAD
 if (shutter == true) {
     image_speed = .3;
     increase_attackanim += (0.3);
     draw_sprite_ext(spr_attack_anim,increase_attackanim,200,200,scale_for_attack_anim,scale_for_attack_anim,0,c_white,255)
     
+=======
+if (shutter = true) {
+    image_speed = .4;
+    for (i = 0; i &lt;=0; i+=1) {
+        
+    }
+>>>>>>> origin/master
 }
 draw_self()
 
