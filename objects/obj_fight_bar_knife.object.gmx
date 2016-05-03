@@ -32,6 +32,13 @@ spdmod = random_range(-1,1);
 
 shutter = false;
 
+countdown_to_destruction = 4;
+scale_for_attack_anim = 1;
+scale_addition = .5;
+
+a = 0;
+increase_attackanim = 0;
+
 spd = 10 + spdmod;
 alarm[1] = 5;
 image_speed = 0;
@@ -123,13 +130,44 @@ if (keyboard_check_pressed(vk_enter) == true and alarm[10] &lt;= 0) {
     shutter = true;
     alarm[11] = 17;
     spd = 0;
-}
-
-if (phy_position_x &gt;= 640) {
-    alarm[10] = 1;
+    
+    if (phy_position_x &gt; display_get_gui_width()) {
+        scale_addition = (0.5 * ((display_get_gui_width() - 32 - display_get_gui_width()/2)/(phy_position_x - display_get_gui_width()/2)))
+    } else if (phy_position_x &lt; display_get_gui_width()) {
+        scale_addition = (0.5 * ((display_get_gui_width()/2 - 32)/(display_get_gui_width()/2 - phy_position_x)))
+    }
+    scale_for_attack_anim = .5 + scale_addition;
 }
 
 phy_position_x += spd;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_fight_hitbox">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// destroy both if the bar hits the end of the fight box
+if (countdown_to_destruction != 0) {
+    countdown_to_destruction -= 1
+} else {
+    alarm[10] = 1
+}
 </string>
           </argument>
         </arguments>
@@ -154,11 +192,14 @@ phy_position_x += spd;
             <kind>1</kind>
             <string>/// redraw self on GUI
 
-if (shutter = true) {
-    image_speed = .4;
+if (shutter == true) {
+    image_speed = .3;
+    increase_attackanim += (0.3);
+    draw_sprite_ext(spr_attack_anim,increase_attackanim,200,200,scale_for_attack_anim,scale_for_attack_anim,0,c_white,255)
+    
 }
-
 draw_self()
+
 </string>
           </argument>
         </arguments>
