@@ -48,6 +48,14 @@ hearty = 0;
 
 playerpos[0] = x;
 playerpos[1] = y;
+
+// player stats initialization
+global.attack = 0;
+global.defense = 0;
+global.item_count = 0;
+global.love = 1;
+global.ex_points = 0;
+health = 20;
 </string>
           </argument>
         </arguments>
