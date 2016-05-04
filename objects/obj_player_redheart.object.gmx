@@ -29,10 +29,13 @@
 image_alpha = 1;
 draw_set_alpha(1);
 global.buttonpos = 4;
-global.drawnames = false;
+global.draw = -1;
 nointeract = false;
 onceonly = 1;
 inbox = 0;
+
+startrecording = false;
+act_2D_options_dialog[0,0] = "";
 
 scr_getinput();
 spd = 3;
@@ -216,30 +219,73 @@ if (global.buttonpos == 4) { // if buttonpos is at initialized val ...
           <argument>
             <kind>1</kind>
             <string>/// draw the names in the fight box
-if (global.drawnames == true) {
-    for (v = 0; v &lt;= global.monstercount; v++) {
+
+/* global.draw index:
+    -1 = draw no options
+    0 = draw mob names
+    1 = draw selected mob's actions
+    2 = draw player's items
+    3 = draw mercy options */
+
+//write the names of the monster's in the select box
+if (global.draw == 0) {
+    for (v = 0; v &lt;= global.monstercount; v++) { // loops through the monsters
         indexofmonstertodraw = global.ruinsencounternum+global.monstercount-v-1;
         scr_readmonster(global.ruinsencounters[indexofmonstertodraw]);
-        draw_set_font(fnt_main);
-        textscale = 1
+        draw_set_font(fnt_main); // sets the font to the one used in the fight box/menu
+        textscale = 1 // scale text (doesn't need to be here, but I used it earlier)
         if (v &lt; 2) {
-            if (v % 2 == 0) {
-                draw_text_ext_transformed_colour(103,276,"*",0,1000,textscale,textscale,0,c_white,c_white,c_white,c_white,255);
-                draw_text_ext_transformed_colour(135,276,global.ruinsencounters[indexofmonstertodraw],0,1000,textscale,textscale,0,c_white,c_white,c_white,c_white,255);
-            } else {
+            if (v % 2 == 0) { // top left
+                draw_text_ext_transformed_colour(103,276,"*",0,1000,textscale,textscale,0,c_white,c_white,c_white,c_white,255); // draw the asterisk
+                draw_text_ext_transformed_colour(135,276,global.ruinsencounters[indexofmonstertodraw],0,1000,textscale,textscale,0,c_white,c_white,c_white,c_white,255); // draw the actual name
+            } else { // bottom left
                 draw_text_ext_transformed_colour(364,276,"*",0,1000,textscale,textscale,0,c_white,c_white,c_white,c_white,255);
                 draw_text_ext_transformed_colour(396,276,global.ruinsencounters[indexofmonstertodraw],0,1000,textscale,textscale,0,c_white,c_white,c_white,c_white,255);
             }
         } else if (v &gt; 1) {
-            if (v % 2 == 0) {
+            if (v % 2 == 0) { // top right
                 draw_text_ext_transformed_colour(103,306,"*",0,1000,textscale,textscale,0,c_white,c_white,c_white,c_white,255);
                 draw_text_ext_transformed_colour(135,306,global.ruinsencounters[indexofmonstertodraw],0,1000,textscale,textscale,0,c_white,c_white,c_white,c_white,255);
-            } else {
+            } else { // bottom right
                 draw_text_ext_transformed_colour(364,306,"*",0,1000,textscale,textscale,0,c_white,c_white,c_white,c_white,255);
                 draw_text_ext_transformed_colour(396,306,global.ruinsencounters[indexofmonstertodraw],0,1000,textscale,textscale,0,c_white,c_white,c_white,c_white,255);
             }
         }
     }
+}
+// draw the actions displayed in the act box for the selected monster
+if (global.draw == 1) {
+    
+    indexofselectedmonster = global.ruinsencounters[global.ruinsencounternum + global.monstercount - selectedmonster - 1];
+    scr_readmonster(indexofselectedmonster);
+    for (u = 0; u &lt; array_height_2d(act_2D_options_dialog); u += 1) {
+        if (u &lt; 2) {
+            if (u % 2 == 0) { // top left
+                draw_text_ext_transformed_colour(103,276,"*",0,1000,textscale,textscale,0,c_white,c_white,c_white,c_white,255); // draw the asterisk
+                draw_text_ext_transformed_colour(135,276,act_2D_options_dialog[0,0],0,1000,textscale,textscale,0,c_white,c_white,c_white,c_white,255); // draw the actual name
+            } else { // bottom left
+                draw_text_ext_transformed_colour(364,276,"*",0,1000,textscale,textscale,0,c_white,c_white,c_white,c_white,255);
+                draw_text_ext_transformed_colour(396,276,act_2D_options_dialog[1,0],0,1000,textscale,textscale,0,c_white,c_white,c_white,c_white,255);
+            }
+        } else if (u &gt; 1) {
+            if (u % 2 == 0) { // top right
+                draw_text_ext_transformed_colour(103,306,"*",0,1000,textscale,textscale,0,c_white,c_white,c_white,c_white,255);
+                draw_text_ext_transformed_colour(135,306,act_2D_options_dialog[2,0],0,1000,textscale,textscale,0,c_white,c_white,c_white,c_white,255);
+            } else { // bottom right
+                draw_text_ext_transformed_colour(364,306,"*",0,1000,textscale,textscale,0,c_white,c_white,c_white,c_white,255);
+                draw_text_ext_transformed_colour(396,306,act_2D_options_dialog[3,0],0,1000,textscale,textscale,0,c_white,c_white,c_white,c_white,255);
+            }
+        }
+    }
+    
+}
+// draw the player's items in the box
+if (global.draw == 2) {
+    
+}
+// draw the mercy options
+if (global.draw == 3) {
+
 }
 </string>
           </argument>

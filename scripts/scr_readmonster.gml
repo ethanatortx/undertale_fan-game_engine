@@ -2,7 +2,6 @@
 
 monstername = argument0;
 monstertxt = file_text_open_read(working_directory + "\monsters.txt");//open the monsters.txt file (this holds stats for all the in-game monsters, check file for stats formatting)
-startrecording = false;
 currentline = "";
 mobhp = 0;
 modatk = 0;
@@ -10,22 +9,12 @@ mobdef = 0;
 expreward = 0;
 
 while (currentline != "fileend") {
-    currentline = string(file_text_readln(monstertxt));//iterate the overall read line
+    currentline = file_text_readln(monstertxt);//iterate the overall read line
     if (currentline == monstername) {
         startrecording = true;
     }
     if (startrecording) {
-        for (i = 0; i < 4; i ++) {
-            if (i == 0) {
-                mobhp = file_text_read_real(monstertxt);
-            } else if (i == 1) {
-                mobatk = file_text_read_real(monstertxt);
-            } else if (i == 2) {
-                mobdef = file_text_read_real(monstertxt);
-            } else {
-                expreward = file_text_read_real(monstertxt);
-            }
-        }
+        
         if (currentline == "txtr") {//begins reading the textures/sprites section
             numtextr = file_text_read_real(monstertxt);//how many different textures make up the mob to be displayed
             for (j = 0; j < numtextr;j++) {
@@ -53,6 +42,18 @@ while (currentline != "fileend") {
         } else if (currentline == "end") {//end the code at the end of this monster's stats section
             file_text_close(monstertxt);
             exit;
+        } else {
+            for (i = 0; i < 4; i ++) {
+                if (i == 0) {
+                    mobhp = file_text_read_real(monstertxt);
+                } else if (i == 1) {
+                    mobatk = file_text_read_real(monstertxt);
+                } else if (i == 2) {
+                    mobdef = file_text_read_real(monstertxt);
+                } else {
+                    expreward = file_text_read_real(monstertxt);
+                }
+            }
         }
         
     } 
