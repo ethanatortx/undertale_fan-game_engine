@@ -20,6 +20,8 @@ noeffect
 end
 
 testfood
+heal
+Tastes foreign, like it's from another world.
 5
 noeffect
 default
@@ -50,7 +52,7 @@ if armor:
 	buy cost (int; num of gold it needs to be bought from a vendor, but most are not sold by a vendor items)
 	sell cost (int; num of gold obtained from selling this item)
 
-if healing item:
+if heal:
 	heal count (int)
 	bonus effect name (string; name of the extra effect it gives, "noeffect" if it has no effect)
 	special use sound (string; name of the special sound file played when used, "default" if no special sound)
