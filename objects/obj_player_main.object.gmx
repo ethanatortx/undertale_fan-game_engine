@@ -45,7 +45,6 @@ encounter_transition = false;
 drawheart = false
 heartx = 0;
 hearty = 0;
-startrecording = false;
 
 playerpos[0] = x;
 playerpos[1] = y;

@@ -40,12 +40,13 @@ if (keyboard_check_pressed(vk_enter) || keyboard_check_pressed(ord("Z"))) { // i
 } else if (keyboard_check_pressed(ord("X"))) {
     if (nointeract != true) {
         if (inbox == 1) {
-            if (obj_player_redheart.alarm[3] <= 0) {
+            if (obj_player_redheart.alarm[3] <= 0) { // select fight button
+            
                 obj_player_redheart.alarm[3] = 5; // set the cooldown for interacting with a button
                 obj_player_redheart.phy_position_x = buttonx[global.buttonpos] + 10;
                 obj_player_redheart.phy_position_y = 444;
                 inbox = 0;
-                global.draw = -1;
+                global.drawnames = false;
                 
             }
         } else if (inbox == 2) { // if the player is in the second stage of the fight box
@@ -57,29 +58,31 @@ if (keyboard_check_pressed(vk_enter) || keyboard_check_pressed(ord("Z"))) { // i
 }
 if (inbox == 1) { // selecting monster to fight from the available displayed options
 
+    obj_player_redheart.drawnames = true; // draw the names in the text box (todo: get this working after monster dictionary stuff)
     options = global.monstercount; // set the options based on how many mobs were encountered
     scr_moveinfightbox(options,selectpos); // move between the monsters to select one to further interact with
-    global.draw = 0;
+    global.drawnames = true;
     
 } else if (inbox == 2) {
 
     if (global.buttonpos == 0 && obj_player_redheart.alarm[3] <= 0) { // FIGHT button
         
         scr_attack(); // do the attack anim and deal damage to the selected monster
-        global.draw = -1; // stop drawing the names
+        global.drawnames = false; // stop drawing the names
         nointeract = true // don't allow player interaction (X, Z, Enter, etc.)
         
     } else if (global.buttonpos == 1 && obj_player_redheart.alarm[3] <= 0) { // ACT button
-        
-        
-        global.draw = 1;
+    
+        selectnum = array_height_2d(global.monster[selectedmonster]); // set the number of options based on the dictionary for the selected monster
+        scr_moveinfightbox(selectnum,selectpos); // move in act box between the amount of options for the selected monster (stuff is in dictionary in scr_*monstername*)
+        global.drawnames = false;
         
     } else if (global.buttonpos == 2 && obj_player_redheart.alarm[3] <= 0) { // ITEMS button
-        global.draw = 2;
+        global.drawnames = false;
         // todo: set his up later when you have the item stuff configured in the file system
         
     } else if (global.buttonpos == 3 && obj_player_redheart.alarm[3] <= 0) {// MERCY button
-        global.draw = 3;
+        global.drawnames = false;
         scr_moveinfightbox(1,1); // allow moving around in the mercy selected fight box
         
     }
@@ -88,7 +91,7 @@ if (inbox == 1) { // selecting monster to fight from the available displayed opt
     inbox = 0;
 }
 /*if (inbox == 2) { // FIGHTing
-    obj_player_redheart.draw = 0;
+    obj_player_redheart.drawnames = true;
     
 } else if (inbox == 3) { // Selecting option to act
     for (s = 0; s < 

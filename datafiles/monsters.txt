@@ -1,37 +1,3 @@
-
-testmonster
-1
-1
-1
-10
-txtr
-3
-spr_testmonster_battle_topleft
-spr_testmonster_battle_topright
-spr_testmonster_battle_bottomleft
-spr_testmonster_battle_bottomright
-110
-130
-110
-130
-100
-100
-120
-120
-act
-3
-Say Hello
-Hello there human.
-Compliment
-Thanks, you too.
-Insult
-How rude!
-end
-
-fileend
-
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
 format goes like this:
 name (string)
 hp (int)
@@ -63,3 +29,34 @@ monster act dialog...
 ...
 ...monster act dialog end (monster act dialog, string, store in 2d array above's width)
 end (string, marker that it can stop reading the file and close it because all data has been pulled)
+
+testmonster
+1
+1
+1
+10
+txtr
+3
+spr_testmonster_battle_topleft
+spr_testmonster_battle_topright
+spr_testmonster_battle_bottomleft
+spr_testmonster_battle_bottomright
+110
+130
+110
+130
+100
+100
+120
+120
+act
+3
+Say Hello
+Compliment
+Insult
+Hello there human.
+Thanks, you too.
+How rude!
+end
+
+fileend
