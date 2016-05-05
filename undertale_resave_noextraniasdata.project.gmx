@@ -691,6 +691,9 @@
     <object>objects\obj_fight_hitbox</object>
     <object>objects\obj_fight_bar</object>
     <object>objects\obj_fight_bar_knife</object>
+    <objects name="bullets">
+      <object>objects\obj_test_boobers</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <rooms name="ruins">
