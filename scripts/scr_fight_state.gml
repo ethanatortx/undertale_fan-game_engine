@@ -1,6 +1,6 @@
 /// scr_fight_state
 scr_getinput();
-playeritems = scr_read_player_items(); // grab the player's items
+scr_read_player_items(); // grab the player's items
 
 // move between the four buttons
 if ((rightKey) and global.buttonpos != 3 and obj_player_redheart.alarm[3] <= 0 && inbox == 0) { // if the player selector is not on the far right button, then move it right one button
@@ -23,7 +23,7 @@ if (keyboard_check_pressed(vk_enter) || keyboard_check_pressed(ord("Z"))) { // i
     if (nointeract != true) {
         if (inbox == 0) {
             
-            if (global.playeritems != -1 && obj_player_redheart.alarm[3] <= 0 && global.buttonpos == 2) { // if the player has no items and tries to select the items option in a fight
+            if (global.player_item_count == -1 && obj_player_redheart.alarm[3] <= 0 && global.buttonpos == 2) { // if the player has no items and tries to select the items option in a fight
                 
                 obj_player_redheart.alarm[3] = 5; // set the cooldown for interacting with any button
                 audio_play_sound(snd_menu_select,10,false); // play the menu select sound
