@@ -49,6 +49,11 @@ hearty = 0;
 playerpos[0] = x;
 playerpos[1] = y;
 
+global.player_item_count = 0;
+for (k = 0; k &lt; 8;k += 1) {
+    global.player_items[k] = undefined;
+}
+
 // player stats initialization
 global.attack = 1;
 global.defense = 1;

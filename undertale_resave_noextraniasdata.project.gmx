@@ -612,7 +612,6 @@
       <script>scripts\scr_getinput.gml</script>
       <script>scripts\scr_move_state.gml</script>
       <script>scripts\scr_nomove_state.gml</script>
-      <script>scripts\scr_fight_state.gml</script>
       <script>scripts\scr_movetobuttons.gml</script>
       <scripts name="mobs">
         <script>scripts\mob_testmonster_refonly.gml</script>
@@ -636,6 +635,7 @@
       <script>scripts\scr_encounterstart.gml</script>
       <script>scripts\scr_encountertransition.gml</script>
       <script>scripts\scr_encounterfull.gml</script>
+      <script>scripts\scr_fight_state.gml</script>
     </scripts>
     <script>scripts\scr_interactobj.gml</script>
     <script>scripts\scr_interactbattle.gml</script>
@@ -643,8 +643,11 @@
     <script>scripts\scr_sansmap.gml</script>
     <script>scripts\scr_roomtransition.gml</script>
     <script>scripts\scr_noemotions.gml</script>
-    <script>scripts\scr_readmonster.gml</script>
-    <script>scripts\scr_readitem.gml</script>
+    <scripts name="data retrieval">
+      <script>scripts\scr_readmonster.gml</script>
+      <script>scripts\scr_readitem.gml</script>
+      <script>scripts\scr_read_player_items.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_papyrus</font>

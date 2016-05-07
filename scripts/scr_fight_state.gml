@@ -50,7 +50,10 @@ if (keyboard_check_pressed(vk_enter) || keyboard_check_pressed(ord("Z"))) { // i
                 
             }
         } else if (inbox == 2) { // if the player is in the second stage of the fight box
-        
+            
+            if (global.buttonpos != 3 && global.buttonpos != 2) {
+                global.drawnames = true;
+            }
             inbox = 1; // set var to tell the function that the player is now in the first stage of the fight box
             
         }
@@ -61,7 +64,9 @@ if (inbox == 1) { // selecting monster to fight from the available displayed opt
     obj_player_redheart.drawnames = true; // draw the names in the text box (todo: get this working after monster dictionary stuff)
     options = global.monstercount; // set the options based on how many mobs were encountered
     scr_moveinfightbox(options,selectpos); // move between the monsters to select one to further interact with
-    global.drawnames = true;
+    if (global.buttonpos != 3 && global.buttonpos != 2) {
+        global.drawnames = true;
+    }
     
 } else if (inbox == 2) {
 
@@ -73,8 +78,11 @@ if (inbox == 1) { // selecting monster to fight from the available displayed opt
         
     } else if (global.buttonpos == 1 && obj_player_redheart.alarm[3] <= 0) { // ACT button
     
-        selectnum = array_height_2d(global.monster[selectedmonster]); // set the number of options based on the dictionary for the selected monster
-        scr_moveinfightbox(selectnum,selectpos); // move in act box between the amount of options for the selected monster (stuff is in dictionary in scr_*monstername*)
+        /*selectnum = array_height_2d(global.ruinsencounters[global.ruinsencounternum + global.monstercount - selectedmonster - 1]); // set the number of options based on the dictionary for the selected monster
+        scr_moveinfightbox(selectnum,selectpos); // move in act box between the amount of options for the selected monster (stuff is in dictionary in scr_*monstername*)*/
+        
+        
+        
         global.drawnames = false;
         
     } else if (global.buttonpos == 2 && obj_player_redheart.alarm[3] <= 0) { // ITEMS button
