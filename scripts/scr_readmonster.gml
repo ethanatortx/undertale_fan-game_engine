@@ -8,8 +8,46 @@ mobhp = 0;
 modatk = 0;
 mobdef = 0;
 expreward = 0;
+startline = file_text_read_string(monstertxt); // first line of the file ( aka "filestart" )
 
-while (currentline != "fileend") {
+while (currentline != "fileend") { // until the file is no longer recording data
+    currentline = file_text_readln(monstertxt); // iterate throught the file until the monster's section is found
+    if (currentline == monstername) { // if the monster's selection is found
+        insideline = file_text_readln(monstertxt); // iterate through the file in the monster's section
+        if (insideline == "txtr") { // start txtr section recording
+            txtr_num_total = file_text_read_real(monstertxt); // how many total textures are to be recorded in the upcoming code
+            for ( i = 0; i < txtr_num_total; i += 1 ) {
+                txtr_array_txtrindex[i] = file_text_readln(monstertxt); // record the name of each individual texture in an array
+            }
+            for ( g = 0; g < txtr_num_total; g += 1) {
+                for (h = 0; h < 2; h += 1) {
+                    txtr_array_txtrpos_x_y[g,h] = file_text_read_real(monstertxt); // record the texture positions in an array corresponding to the txtr names array
+                }
+            }
+        } else if (insideline == "act") {
+            act_num_total = file_text_read_real(monstertxt); // how many act options are there ( check is provided by default )
+            for ( j = 0; j < act_num_total; j += 1 ) {
+                act_array_options[j] = file_text_read_string(monstertxt); // store the options to be displayed before one is selected
+            }
+            for ( k = 0; k < act_num_total; k += 1 ) {
+                act_array_responses[k] = file_text_read_string(monstertxt); // what is said back by the monster when the option is selected
+            }
+        } else if (insideline == "end") {
+            file_text_close(monstertxt);
+            exit;
+        } else {
+            mobhp = file_text_read_real(monstertxt); // read the monster's hp
+            mob_attack = file_text_read_real(monstertxt); // read the monster's attack value
+            mob_defense = file_text_read_real(monstertxt); // read the monster's defense value
+            mob_ex_points = file_text_read_real(monstertxt); // read the exp awarded by this monster upon a kill
+        }
+    }
+}
+
+file_text_close(monstertxt);
+exit;
+
+/*while (currentline != "fileend") {
     currentline = string(file_text_readln(monstertxt));//iterate the overall read line
     if (currentline == monstername) {
         startrecording = true;
@@ -58,4 +96,4 @@ while (currentline != "fileend") {
     } 
 }
 file_text_close(monstertxt);
-exit;
+exit;*/
