@@ -218,24 +218,24 @@ if (global.buttonpos == 4) { // if buttonpos is at initialized val ...
             <string>/// draw the names in the fight box
 if (global.drawnames == true) {
     for (v = 0; v &lt;= global.monstercount; v++) {
-        indexofmonstertodraw = global.ruinsencounternum+global.monstercount-v-1;
-        scr_readmonster(global.ruinsencounters[indexofmonstertodraw]);
-        draw_set_font(fnt_main);
-        textscale = 1
+        indexofmonstertodraw = global.ruinsencounternum+global.monstercount-v-1; // get the name of the monster who's name is going to be drawn from the encounter's profile
+        scr_readmonster(global.ruinsencounters[indexofmonstertodraw]); // initialize the stuff of the monster drawn
+        draw_set_font(fnt_main); // set the font to the correct one to write stuff in the fight menu
+        textscale = 1 // if you want to scale all the text up or down
         if (v &lt; 2) {
-            if (v % 2 == 0) {
-                draw_text_ext_transformed_colour(103,276,"*",0,1000,textscale,textscale,0,c_white,c_white,c_white,c_white,255);
+            if (v % 2 == 0) { // draw monster 1 (top-left)
+                draw_text_ext_transformed_colour(103,276,"*",0,1000,textscale,textscale,0,c_white,c_white,c_white,c_white,255); // draw an asterisk before the name
                 draw_text_ext_transformed_colour(135,276,global.ruinsencounters[indexofmonstertodraw],0,1000,textscale,textscale,0,c_white,c_white,c_white,c_white,255);
-            } else {
-                draw_text_ext_transformed_colour(364,276,"*",0,1000,textscale,textscale,0,c_white,c_white,c_white,c_white,255);
-                draw_text_ext_transformed_colour(396,276,global.ruinsencounters[indexofmonstertodraw],0,1000,textscale,textscale,0,c_white,c_white,c_white,c_white,255);
+            } else { // draw monster 2 (top-right)
+                draw_text_ext_transformed_colour(364,276,"*",0,1000,textscale,textscale,0,c_white,c_white,c_white,c_white,255); // draw an asterisk before the name
+                draw_text_ext_transformed_colour(396,276,global.ruinsencounters[indexofmonstertodraw],0,1000,textscale,textscale,0,c_white,c_white,c_white,c_white,255); 
             }
         } else if (v &gt; 1) {
-            if (v % 2 == 0) {
-                draw_text_ext_transformed_colour(103,306,"*",0,1000,textscale,textscale,0,c_white,c_white,c_white,c_white,255);
+            if (v % 2 == 0) { // draw monster 3 (bottom-left)
+                draw_text_ext_transformed_colour(103,306,"*",0,1000,textscale,textscale,0,c_white,c_white,c_white,c_white,255); // draw an asterisk before the name
                 draw_text_ext_transformed_colour(135,306,global.ruinsencounters[indexofmonstertodraw],0,1000,textscale,textscale,0,c_white,c_white,c_white,c_white,255);
-            } else {
-                draw_text_ext_transformed_colour(364,306,"*",0,1000,textscale,textscale,0,c_white,c_white,c_white,c_white,255);
+            } else { // draw monster 4 (bottom-right)
+                draw_text_ext_transformed_colour(364,306,"*",0,1000,textscale,textscale,0,c_white,c_white,c_white,c_white,255); // draw an asterisk before the name
                 draw_text_ext_transformed_colour(396,306,global.ruinsencounters[indexofmonstertodraw],0,1000,textscale,textscale,0,c_white,c_white,c_white,c_white,255);
             }
         }
@@ -298,6 +298,7 @@ if (encounter_transition == true) {
 
 if (encounter_transition == true) {
     // draw fight buttons (fight/act/item/mercy)
+    
     // lights up if heart is on the button
     if (global.buttonpos == 0) { // fight
         draw_sprite(spr_fight_fight,1,buttonx[0],428);

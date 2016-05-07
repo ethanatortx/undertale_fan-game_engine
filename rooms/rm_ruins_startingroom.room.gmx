@@ -10,7 +10,7 @@
   <persistent>-1</persistent>
   <colour>0</colour>
   <showcolour>-1</showcolour>
-  <code>instance_create(160,110,obj_player_main)
+  <code>instance_create(160,110,obj_player_main);
 
 
     // initialize a global array to hold all the encounters for the ruins

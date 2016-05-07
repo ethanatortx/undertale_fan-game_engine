@@ -5,7 +5,7 @@
   </Configs>
   <datafiles number="5" name="datafiles">
     <datafile>
-      <name>monsters.txt</name>
+      <name>testmonster.txt</name>
       <exists>-1</exists>
       <size>521</size>
       <exportAction>2</exportAction>
@@ -19,7 +19,7 @@
           <CopyToMask>9223372036854775807</CopyToMask>
         </Config>
       </ConfigOptions>
-      <filename>monsters.txt</filename>
+      <filename>testmonster.txt</filename>
     </datafile>
     <datafile>
       <name>items.txt</name>

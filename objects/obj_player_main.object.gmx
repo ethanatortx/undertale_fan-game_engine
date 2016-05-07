@@ -104,6 +104,7 @@ if (room != lastroom) {
     lastroom = room;
 }
 
+// enter encounter when F is pressed ( for testing fight mech stuff )
 if (keyboard_check(ord("F")) == true and canencounter == true) {
     scr_encounter(1);
 }

@@ -1,0 +1,27 @@
+testmonster
+1
+1
+1
+10
+txtr
+4
+spr_testmonster_battle_topleft
+spr_testmonster_battle_topright
+spr_testmonster_battle_bottomleft
+spr_testmonster_battle_bottomright
+110
+130
+110
+130
+100
+100
+120
+120
+act
+3
+Say Hello
+Compliment
+Insult
+Hello there human.
+Thanks, you too.
+How rude!
