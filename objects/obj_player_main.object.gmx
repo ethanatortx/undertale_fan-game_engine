@@ -45,7 +45,7 @@ encounter_transition = false;
 drawheart = false
 heartx = 0;
 hearty = 0;
-
+global.dialog_marker = undefined;
 playerpos[0] = x;
 playerpos[1] = y;
 

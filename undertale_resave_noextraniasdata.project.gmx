@@ -3,7 +3,7 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="5" name="datafiles">
+  <datafiles number="6" name="datafiles">
     <datafile>
       <name>testmonster.txt</name>
       <exists>-1</exists>
@@ -37,6 +37,23 @@
         </Config>
       </ConfigOptions>
       <filename>items.txt</filename>
+    </datafile>
+    <datafile>
+      <name>dialog.txt</name>
+      <exists>-1</exists>
+      <size>0</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>dialog.txt</filename>
     </datafile>
   </datafiles>
   <NewExtensions/>
@@ -595,6 +612,7 @@
     <sprite>sprites\spr_comicsans_readytofont</sprite>
     <sprite>sprites\spr_font_comicsans</sprite>
     <sprite>sprites\spr_comicsans_strip</sprite>
+    <sprite>sprites\spr_flowey_appear_anim</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_black</background>
@@ -647,6 +665,7 @@
       <script>scripts\scr_readmonster.gml</script>
       <script>scripts\scr_readitem.gml</script>
       <script>scripts\scr_read_player_items.gml</script>
+      <script>scripts\scr_read_dialog.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
