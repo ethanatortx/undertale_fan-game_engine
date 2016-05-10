@@ -697,6 +697,7 @@
     <objects name="bullets">
       <object>objects\obj_test_boobers</object>
     </objects>
+    <object>objects\obj_floweytalking</object>
   </objects>
   <rooms name="rooms">
     <rooms name="ruins">
@@ -711,6 +712,7 @@
       <room>rooms\rm_ruins_theonethaticantcomeupwithanamefor</room>
     </rooms>
     <room>rooms\rm_fight</room>
+    <room>rooms\rm_floweytalk1</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
