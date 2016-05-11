@@ -612,7 +612,26 @@
     <sprite>sprites\spr_comicsans_readytofont</sprite>
     <sprite>sprites\spr_font_comicsans</sprite>
     <sprite>sprites\spr_comicsans_strip</sprite>
-    <sprite>sprites\spr_flowey_appear_anim</sprite>
+    <sprites name="flowey">
+      <sprites name="talk faces">
+        <sprite>sprites\spr_flowey_stem</sprite>
+        <sprite>sprites\spr_flowey_normal</sprite>
+        <sprite>sprites\spr_flowey_smiling</sprite>
+        <sprite>sprites\spr_flowey_knowing_smile</sprite>
+        <sprite>sprites\spr_flowey_sad</sprite>
+        <sprite>sprites\spr_flowey_sad_smile</sprite>
+        <sprite>sprites\spr_flowey_sad_looking_down</sprite>
+        <sprite>sprites\spr_flowey_distraught</sprite>
+        <sprite>sprites\spr_flowey_distraught_looking_right</sprite>
+        <sprite>sprites\spr_flowey_distraught_looking_left</sprite>
+        <sprite>sprites\spr_flowey_frustrated</sprite>
+        <sprite>sprites\spr_flowey_relieved1</sprite>
+        <sprite>sprites\spr_flowey_relieved2</sprite>
+        <sprite>sprites\spr_flowey_relieved_looking_right</sprite>
+        <sprite>sprites\spr_flowey_bored</sprite>
+      </sprites>
+      <sprite>sprites\spr_flowey_appear_anim</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_black</background>
@@ -720,6 +739,7 @@
     <object>objects\obj_floweytalking</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_floweytalk1</room>
     <rooms name="ruins">
       <room>rooms\rm_ruins_startingroom</room>
       <room>rooms\rm_ruins_floweyroom1</room>
@@ -732,7 +752,6 @@
       <room>rooms\rm_ruins_theonethaticantcomeupwithanamefor</room>
     </rooms>
     <room>rooms\rm_fight</room>
-    <room>rooms\rm_floweytalk1</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
