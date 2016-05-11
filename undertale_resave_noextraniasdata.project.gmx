@@ -628,6 +628,7 @@
   <scripts name="scripts">
     <scripts name="character states">
       <script>scripts\scr_getinput.gml</script>
+      <script>scripts\scr_move_arr.gml</script>
       <script>scripts\scr_move_state.gml</script>
       <script>scripts\scr_nomove_state.gml</script>
       <script>scripts\scr_movetobuttons.gml</script>
