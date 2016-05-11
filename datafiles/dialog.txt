@@ -1,52 +1,103 @@
+filestart
 flowey_talk_intro
 Hey.
+normal
 It's been a while.
+normal
 I wasn't sure when you would be back.
+normal
 I started to think that you weren't coming back.
+normal
 I thought maybe you had finally...
+normal
 ...
+normal
 I waited here for you after everyone left,
+normal
 hoping you wouldn't reappear. 
+normal
 Not because I didn't want to talk to you,
+normal
 I would have given anything for someone to talk to.
+normal
 I just didn't want everything to be reset.
+normal
 I thought, what other reason would you appear if not to...
+normal
 ...
+normal
 Why are you here?
+normal
 There's nothing here for you.
+normal
 There's nothing here for anyone.
+normal
 After all this time,
+normal
 are you just here to reset?
+normal
 To resurrect all the people dead and gone,
+normal
 and pull them back here, to the beginning?
+normal
 What are you looking for?
+normal
 What do you hope to accomplish?
+normal
 Why undo all the good you've done,
+normal
 just to do it all again?
+normal
 ...
+normal
 Chara...
+normal
 There is no perfect ending.
+normal
 You can't save everyone,
+normal
 and even if you could,
+normal
 sometimes they aren't worth saving.
+normal
 You should move on.
+normal
 Just let it be.
+normal
 ...
+normal
 ...
+normal
 ...If you're determined to reset,
+normal
 I can't stop you.
+normal
 I can only warn you that trying to fix the unfix-able...
+normal
 ...It only leads to despair.
+normal
 One last thing.
+normal
 If you do reset,
+normal
 you need to erase my memories, too.
+normal
 Knowing what I know...
+normal
 ...I don't know if I could do it all again.
+normal
 I'm sorry.
+normal
 ...
+normal
 Heh, you've probably heard all this a hundred times, haven't you?
+normal
 ...
+normal
 One way or another,
+normal
 I'll see you later,
+normal
 Chara.
+normal
 end

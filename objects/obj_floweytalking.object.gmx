@@ -26,13 +26,21 @@
           <argument>
             <kind>1</kind>
             <string>/// initialize stuff and start appear animation
+i = 0;
+start_drawing_text = false;
+characters = 0; // amount of characters currently drawn
+dialog_line_length = 0;
 draw_dialog_box = false;
 draw_dialog_current = "";
-draw_dialog_speed = 0;
-draw_dialog_lines = scr_read_dialog("flowey_talk_intro");
-appearance_anim_start = true;
-sprite_index = spr_flowey_appear_anim;
+talking_speed = 0.75; // speed for the text to be displayed on screen
+draw_dialog_lines = scr_read_dialog("flowey_talk_intro"); // retrieve the dialog
+
+appear_anim = true;
+anim_frame = 5;
+disappear_anim = false;
+current_face = spr_flowey_appear_anim;
 image_index = 5;
+current_drawn_text = ""
 </string>
           </argument>
         </arguments>
@@ -58,32 +66,49 @@ image_index = 5;
             <string>/// Do talking and show up animation
 
 if (appear_anim) {
-    anim_frame -= 0.5;
-    sprite_index = spr_flowey_appear_anim;
-    image_index = anim_frame;
+    anim_frame -= 0.2;
     animating = true;
+    current_face = spr_flowey_appear_anim;
+    if (anim_frame &lt;= 0) {
+        animating = false;
+        appear_anim = false;
+        anim_frame = 0;
+    }
 } else if (disappear_anim) {
     anim_frame += 0.5;
-    sprite_index = spr_flowey_appear_anim;
-    image_index = anim_frame;
     animating = true;
+    current_face = spr_flowey_appear_anim;
+    if (anim_frame &gt;= 5) {
+        anim_frame = 5;
+        disappear_anim = false;
+        animating = false;
+    }
 } else if (anim_frame &lt;= 0) {
-    image_alpha = 0;
-    sprite_index = current_face;
+    animating = false;
+    anim_frame = 0;
 } else if (anim_frame &gt;= 5) {
     anim_frame = 5;
-    image_alpha = 1;
-    sprite_index = current_face;
+    animating = false;
 }
 
-if (true and !animating) {
+if (!animating) {
+    if (keyboard_check_pressed(vk_enter) &amp;&amp; characters == dialog_line_length) {
+        start_drawing_text = true;
+        dialog_line_length = string_length(draw_dialog_lines[i]);
+        characters = 0;
+        i += 1;
+        current_drawn_text = ""
+    } else if (start_drawing_text &amp;&amp; characters &lt; dialog_line_length) {
+        characters += talking_speed;
+        current_drawn_text = string_copy(draw_dialog_lines[i,0],1,characters);
+    }
 }
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="8" enumb="73">
+    <event eventtype="8" enumb="75">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -101,13 +126,15 @@ if (true and !animating) {
           <argument>
             <kind>1</kind>
             <string>/// draw dialog
-
+image_alpha = 1;
+draw_set_font(fnt_main);
+draw_text(64,64,current_drawn_text);
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="8" enumb="72">
+    <event eventtype="8" enumb="74">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -125,7 +152,8 @@ if (true and !animating) {
           <argument>
             <kind>1</kind>
             <string>/// draw self
-draw_self();
+image_alpha = 1;
+draw_sprite_ext(current_face,anim_frame,300,240,2,2,0,c_white,255);
 </string>
           </argument>
         </arguments>

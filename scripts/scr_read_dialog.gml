@@ -1,22 +1,24 @@
 /// scr_read_dialog
 
 dialog_qeue = argument0; // what is the name of the dialog instance to search for
-dialg_file = file_text_open_read(program_directory + "\dialog"); // open dialog.txt
-local.dialog_lines_temp[0] = undefined;
-local.D = 0;
+dialog_file = file_text_open_read(working_directory + "\dialog.txt"); // open dialog.txt
+dialog_lines_temp[0,0] = "";
+D = 0; // var to iterate thtough the lines of dialog
 
 while (!file_text_eof(dialog_file)) {
-    currentline = file_text_readln(dialog_file);
+    currentline = file_text_read_string(dialog_file);
+    file_text_readln(dialog_file);
     if (currentline == dialog_qeue) {
-        while (local.dialog_lines_temp[local.D] != "end") {
-            local.dialog_lines_temp[local.D] = file_text_readln(dialog_file);
-            local.D += 1;
-        }
-        file_text_close(dialog_file);
-        return local.dialog_lines_temp;
-        exit;
+        do {
+            for (L = 0; L < 2; L += 1) {
+                dialog_lines_temp[D,L] = file_text_read_string(dialog_file);
+                file_text_readln(dialog_file);
+            }
+            currentline = dialog_lines_temp[D,0];
+            D += 1;
+        } until (currentline == "end");
     }
 }
 file_text_close(dialog_file);
-return local.dialog_lines_temp;
+return dialog_lines_temp;
 exit;
