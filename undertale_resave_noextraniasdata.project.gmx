@@ -686,6 +686,7 @@
       <script>scripts\scr_readitem.gml</script>
       <script>scripts\scr_read_player_items.gml</script>
       <script>scripts\scr_read_dialog.gml</script>
+      <script>scripts\scr_interpret_faces.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">

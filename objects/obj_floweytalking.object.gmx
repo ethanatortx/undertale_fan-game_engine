@@ -94,7 +94,8 @@ if (appear_anim) {
 if (!animating) {
     if (keyboard_check_pressed(vk_enter) &amp;&amp; characters == dialog_line_length) {
         start_drawing_text = true;
-        dialog_line_length = string_length(draw_dialog_lines[i]);
+        dialog_line_length = string_length(draw_dialog_lines[i,0]);
+        current_face = scr_interpret_faces(draw_dialog_lines[i,1],"flowey");
         characters = 0;
         i += 1;
         current_drawn_text = ""
