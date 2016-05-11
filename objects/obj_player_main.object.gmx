@@ -32,6 +32,7 @@ image_spd = .2; // default animation speed for overworld movement
 image_speed = 0; // start in the world unmoving
 state = scr_move_state; // default state allows movement
 scr_getinput(); // allow reading the input of the arrow keys
+oldArrow = undefined; //keeps track of input before current
 startY = y; // starting position (y)
 startX = x; // starting position (x)
 lastroom = room; // setup for easier room transitions
@@ -84,9 +85,6 @@ health = 20;
           <argument>
             <kind>1</kind>
             <string>/// movement and room transition
-//gets input for movement
-scr_getinput();
-
 //sets phixed rotation in physics room
 phy_fixed_rotation = true;
 
@@ -114,10 +112,6 @@ if (encounter_transition == true) {
 } else {
     image_alpha = 1;
 }
-
-//updates current player position every frame
-playerpos[0] = phy_position_x;
-playerpos[1] = phy_position_y;
 
 //moves or whatever based on the state of the player (set above &amp; in create)
 script_execute(state);
@@ -164,9 +158,9 @@ lastroom = room;
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
   <PhysicsShapePoints>
-    <point>1,17</point>
-    <point>19,17</point>
-    <point>19,32</point>
-    <point>1,32</point>
+    <point>2.5,17.5</point>
+    <point>18.75,17.5</point>
+    <point>18.75,31.25</point>
+    <point>2.5,31.25</point>
   </PhysicsShapePoints>
 </object>

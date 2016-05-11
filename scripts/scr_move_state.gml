@@ -3,45 +3,12 @@
 //todo : fix weird movement glitch when pushing right or left against a horizontal wall
 
 // sets up input for movement
-scr_getinput();
+keys_pressed = scr_getinput();
 
-hspd = 0;
-vspd = 0;
+//sets speed for movement in each direction
+spd_arr = scr_move_arr(keys_pressed, spd);
 
-xaxis = 0;
-yaxis = 0;
-
-//get player directional movement:
-// right
-if (rightKey) {
-    xright = 1;
-} else {
-    xright = 0;
-}
-// left
-if (leftKey) {
-    xleft= -1;
-} else {
-    xleft = 0;
-}
-// down
-if (downKey) {
-    ydown = 1;
-} else {
-    ydown = 0;
-}
-// up
-if (upKey) {
-    yup = -1;
-} else {
-    yup = 0;
-}
-
-//asign directional movement to an axis
-xaxis = xright + xleft;
-yaxis = ydown + yup;
-
-if (xaxis == 0 && yaxis == 0) {
+if (spd_arr[0] == 0 && spd_arr[1] == 0) {
     image_speed = 0;
     image_index = 0;
 } else {
@@ -49,22 +16,22 @@ if (xaxis == 0 && yaxis == 0) {
 }
 
 //actually move the player
-phy_position_x += xaxis*spd;
-phy_position_y += yaxis*spd;
+phy_speed_x = spd_arr[0];
+phy_speed_y = spd_arr[1];
 
 // detect wich direction to animate (right/left/down/up)
 if (phy_position_y != phy_position_yprevious) {
-    if (yaxis == 1) {
+    if (phy_speed_y > 0) {
         sprite_index = spr_main_down;
-    } else if (yaxis == -1) {
+    } else if (phy_speed_y < 0) {
         sprite_index = spr_main_up;
     }
 }
 
 if (phy_position_x != phy_position_xprevious) {
-    if (xaxis == 1) {
+    if (phy_speed_x > 0) {
         sprite_index = spr_main_right;
-    } else if (xaxis == -1) {
+    } else if (phy_speed_x < 0) {
         sprite_index = spr_main_left;
     }
 }
