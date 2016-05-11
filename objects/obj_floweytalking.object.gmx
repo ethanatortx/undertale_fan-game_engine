@@ -57,9 +57,11 @@ draw_dialog_lines = scr_read_dialog("flowey_talk_intro");
 if (appear_anim) {
     anim_frame += 0.5;
     image_index = anim_frame;
+    animating = true;
 } else if (disappear_anim) {
     anim_frame -= 0.5;
     image_index = anim_frame;
+    animating = true;
 } else if (anim_frame &lt;= 0) {
     image_alpha = 0;
 } else if (anim_frame &gt;= 5) {
@@ -67,8 +69,7 @@ if (appear_anim) {
     sprite_index = current_face;
 }
 
-if (true and not_animating) {
-
+if (true and !animating) {
 }
 </string>
           </argument>
@@ -117,9 +118,7 @@ if (true and not_animating) {
           <argument>
             <kind>1</kind>
             <string>/// draw self
-draw_self()
-
-
+draw_self();
 </string>
           </argument>
         </arguments>
