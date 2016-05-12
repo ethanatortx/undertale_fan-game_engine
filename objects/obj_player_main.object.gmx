@@ -88,13 +88,6 @@ health = 20;
 //sets phixed rotation in physics room
 phy_fixed_rotation = true;
 
-//checks if player is in dialog (cannot move while dialog plays)
-if (global.dialog == true) {
-    state = scr_nomove_state;
-} else if (encounter_full = true || encounter_transition = true || encounter_start == true){
-    state = scr_nomove_state;
-}
-
 //teleports player to the entryway from the door they took
 if (room != lastroom) {
     phy_position_x = newx;
