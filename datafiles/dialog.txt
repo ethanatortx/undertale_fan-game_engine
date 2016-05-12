@@ -66,11 +66,13 @@ If you're determined to reset,
 relieved2
 I can't stop you.
 normal
-I can only warn you that trying to fix the unfix-able...
+I can only warn you that trying to fix the unfix-able,
 normal
-It only leads to despair.
+only leads to despair.
 relieved_looking_right_frown
 One last thing.
+normal
+If you ignore my advice,
 normal
 If you do reset,
 normal
