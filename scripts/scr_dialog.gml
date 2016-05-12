@@ -16,7 +16,7 @@ if (argument5) {
 // if dialog is happening; do this whole thing
 if (is_talking) {
     // if it hasn't displayed this whole line of dialog yet
-    if (characters < dialog_line_length) {
+    if (characters < current_line_length) {
         // allows the player to skip all this and just diplay it by pressing X
         if (keyboard_check_pressed(ord("X"))) {
             current_drawn_text = dialog_lines[current_dialog_line,0];
@@ -28,16 +28,16 @@ if (is_talking) {
             
             } else { // add dialog to the drawn text var
                 
-                charaters += talking_speed // increase the character count based on the specified display speed
+                characters += talking_speed // increase the character count based on the specified display speed
                 pause_talking = false // no longer paused
-                alarm_set(6,5); // set a buffer for the no_speech_sound switch
             }
             
             // check if the current character is a period
             if (string_char_at(dialog_lines[current_dialog_line,0], characters) == "." && !pause_talking) {
-                count_of_pause = 10; // pause for ten frames
+                count_of_pause = 15; // pause for ten frames
                 pause_talking = true; // boolean indicating pause
                 no_speech_sound = true; // pause the dialog speech sound
+                alarm_set(6,5); // set a buffer for the no_speech_sound switch
             }
             
             // take a pause at a comma for 5
@@ -45,6 +45,7 @@ if (is_talking) {
                 count_of_pause = 5; // pause for five frames
                 pause_talking = true; // boolean indicating pause
                 no_speech_sound = true; // pause the dialog speech sound
+                alarm_set(6,5); // set a buffer for the no_speech_sound switch
             }
             
             // add text to the currently drawn line
@@ -63,12 +64,12 @@ if (is_talking) {
             }
         }
     // if the player presses enter, and the previous line is done, and there is more dialog to display, move to the next line of dialog
-    } else if (current_dialog_line < (array_height_2d(draw_dialog_lines) - 1) && keyboard_check_pressed(vk_enter)) {
+    } else if (current_dialog_line < (array_height_2d(dialog_lines) - 1) && keyboard_check_pressed(vk_enter)) {
         
         current_dialog_line += 1; // iterate throught the dialog lines
         
-        dialog_line_length = string_length(dialog_lines[current_dialog_line,0]); // new line length is et
-        current_face = scr_interpret_faces(dialog_lines[current_dialog_line,1]); // new face is set
+        current_line_length = string_length(dialog_lines[current_dialog_line,0]); // new line length is et
+        current_face = scr_interpret_faces(dialog_lines[current_dialog_line,1],argument1); // new face is set
         
         characters = 0; // character count is set back to zero
         current_drawn_text = ""; // previously drawn text is erased

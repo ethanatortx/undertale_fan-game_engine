@@ -1,5 +1,11 @@
 /// scr_setup_dialog
 
+// argument0 = queue to search through dialog.txt to find the dialog lines
+// argument1 = speaking character's name as used in spr naming convention
+// argument2 = speed to display text (normal is like 0.75 or so)
+// argument3 = which sound to play for character speech sound
+// argument4 = frequency to play speech sound
+
 // initialize dialog holding and counting variables
 dialog_lines = scr_read_dialog(argument0);  // the 2d array which holds the dialog
 current_dialog_line = 0;                    // set the current line to the first line of dialog
@@ -16,3 +22,5 @@ talking_speed = argument2;                  // set the character display increas
 speech_sound = argument3;                   // set the characer's talking sound to the one specified
 speech_frequency = argument4;               // set how often the game plays said sound
 no_speech_sound = false;                    // starts off playing the sound from the beginning (only pauses on periods, commas, and ends of dialog line)
+pause_talking = false;                      // dialog does not start off paused
+count_of_pause = 0;                         // timer for the pause event in scr_dialog
