@@ -633,7 +633,6 @@
         <sprite>sprites\spr_flowey_relieved_looking_right</sprite>
         <sprite>sprites\spr_flowey_relieved_looking_right_frown</sprite>
         <sprite>sprites\spr_flowey_bored</sprite>
-        <sprite>sprites\sprite146</sprite>
       </sprites>
       <sprite>sprites\spr_flowey_appear_anim</sprite>
     </sprites>
@@ -668,10 +667,13 @@
       <script>scripts\scr_attack.gml</script>
     </scripts>
     <scripts name="dialog">
-      <script>scripts\scr_dialogsetup.gml</script>
-      <script>scripts\scr_displaydialog.gml</script>
-      <script>scripts\scr_drawdialog.gml</script>
+      <script>scripts\scr_dialogsetup_legacy.gml</script>
+      <script>scripts\scr_displaydialog_legacy.gml</script>
+      <script>scripts\scr_drawdialog_legacy.gml</script>
       <script>scripts\scr_createfont.gml</script>
+      <script>scripts\scr_setup_dialog.gml</script>
+      <script>scripts\scr_dialog.gml</script>
+      <script>scripts\scr_draw_dialog.gml</script>
     </scripts>
     <scripts name="fight">
       <script>scripts\scr_encounter.gml</script>

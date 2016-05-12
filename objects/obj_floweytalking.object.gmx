@@ -119,7 +119,7 @@ instance_destroy();
             <kind>1</kind>
             <string>/// Do talking and show up animation
 
-if (appear_anim || keyboard_check_pressed(ord("P"))) {
+if (appear_anim) {
     anim_frame -= 0.2; // increase the animation stage by .2 every frame, rounds to whole number later
     animating = true; // there IS an animation currently playing
     current_face = spr_flowey_appear_anim;
@@ -130,7 +130,7 @@ if (appear_anim || keyboard_check_pressed(ord("P"))) {
         anim_frame = 0;
         current_face = scr_interpret_faces(draw_dialog_lines[0,1],"flowey"); // set the face to the first one read from the file
     }
-} else if (disappear_anim || keyboard_check_pressed(ord("O"))) {
+} else if (disappear_anim) {
     anim_frame += 0.2; // increase the subimage counter by .2 each frame
     animating = true; // it is animating
     current_face = spr_flowey_appear_anim; // set the face to be the sprite sequence for the appear and disappear animations
