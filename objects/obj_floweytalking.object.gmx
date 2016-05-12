@@ -26,21 +26,75 @@
           <argument>
             <kind>1</kind>
             <string>/// initialize stuff and start appear animation
-i = 0;
-start_drawing_text = false;
-characters = 0; // amount of characters currently drawn
-dialog_line_length = 0;
-draw_dialog_box = false;
-draw_dialog_current = "";
-talking_speed = 0.75; // speed for the text to be displayed on screen
-draw_dialog_lines = scr_read_dialog("flowey_talk_intro"); // retrieve the dialog
 
-appear_anim = true;
-anim_frame = 5;
-disappear_anim = false;
-current_face = spr_flowey_appear_anim;
-image_index = 5;
-current_drawn_text = ""
+i = 0; // initializer for i, which is referenced later in a non-for-loop iteration
+characters = 0; // amount of characters currently drawn
+
+count_of_pause = 0; // used to take pauses for commas and periods in speech
+talking_speed = 0.75; // speed for the text to be displayed on screen
+speech_frequency = 3; // frequency that the talk sound is played
+draw_dialog_lines = scr_read_dialog("flowey_talk_intro"); // retrieve the dialog
+dialog_line_length = string_length(draw_dialog_lines[0,0]); // the length of the current line of dialog
+start_talking_at_beginning = true; // flowey launches right into the first line of dialogue after appear animation is done, this indicates whether that happens or not
+speech_sound = snd_flowey_talk1; // the default talking sound for flowey
+appear_anim = true; // start the appear animation
+anim_frame = 5; // set the subimage to the last one
+disappear_anim = false; // do not start the disappear animation
+current_face = spr_flowey_appear_anim; // set the 'face' to the sprite sequence for the appear/disappear animation
+current_drawn_text = ""; // the current amount of the line of dialog to draw
+current_dialog_line = 0; // index of the line of dialog presented from the dialog holding array
+is_talking = true; // they begin talking as soon as animation is done
+no_speech_sound = true; // disables the speech noise when true
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="11">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// check to unpause speech sounds
+if (!pause_talking) {
+    no_speech_sound = false;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// destroy this and teleport the player to the starting room
+instance_destroy();
 </string>
           </argument>
         </arguments>
@@ -65,23 +119,25 @@ current_drawn_text = ""
             <kind>1</kind>
             <string>/// Do talking and show up animation
 
-if (appear_anim) {
-    anim_frame -= 0.2;
-    animating = true;
+if (appear_anim || keyboard_check_pressed(ord("P"))) {
+    anim_frame -= 0.2; // increase the animation stage by .2 every frame, rounds to whole number later
+    animating = true; // there IS an animation currently playing
     current_face = spr_flowey_appear_anim;
     if (anim_frame &lt;= 0) {
+        // re-initialize all these variables:
         animating = false;
         appear_anim = false;
         anim_frame = 0;
+        current_face = scr_interpret_faces(draw_dialog_lines[0,1],"flowey"); // set the face to the first one read from the file
     }
-} else if (disappear_anim) {
-    anim_frame += 0.5;
-    animating = true;
-    current_face = spr_flowey_appear_anim;
-    if (anim_frame &gt;= 5) {
-        anim_frame = 5;
-        disappear_anim = false;
-        animating = false;
+} else if (disappear_anim || keyboard_check_pressed(ord("O"))) {
+    anim_frame += 0.2; // increase the subimage counter by .2 each frame
+    animating = true; // it is animating
+    current_face = spr_flowey_appear_anim; // set the face to be the sprite sequence for the appear and disappear animations
+    if (anim_frame &gt;= 5) { // if on the final image of the animation
+        anim_frame = 5; // animation frame is set to exactly 5 (essentially rounds it)
+        disappear_anim = false; // don't repeat this thing
+        alarm[0] = 10; // set the 'destroy this instance' alarm
     }
 } else if (anim_frame &lt;= 0) {
     animating = false;
@@ -91,7 +147,69 @@ if (appear_anim) {
     animating = false;
 }
 
-if (!animating) {
+if (!animating &amp;&amp; is_talking) {
+    if (characters &lt; dialog_line_length) {
+        if (keyboard_check_pressed(ord("X"))) {
+            current_drawn_text = draw_dialog_lines[current_dialog_line,0];
+            characters = dialog_line_length;
+        } else {
+            // take a pause at a period for 10 frames
+            if (string_char_at(draw_dialog_lines[current_dialog_line,0], characters) == "." &amp;&amp; !pause_talking) {
+                count_of_pause = 5;
+                pause_talking = true;
+                no_speech_sound = true;
+            }
+            // pause talking for 5 frames if there is a comma
+            if (string_char_at(draw_dialog_lines[current_dialog_line,0], characters) == "." &amp;&amp; !pause_talking) {
+                count_of_pause = 5;
+                pause_talking = true;
+                no_speech_sound = true;
+            }
+            
+            if (count_of_pause &gt; 0 &amp;&amp; pause_talking) {
+                count_of_pause -= 1;
+            } else {
+                characters += talking_speed; // increase the amount of shown characters on screen
+                pause_talking = false; // halt the pause action if it was previously activated
+                alarm[11] = 5;
+                current_drawn_text = string_copy(draw_dialog_lines[current_dialog_line,0], 1, characters); // set the new amount of text to be drawn
+            }
+            
+            if ((10*characters) % speech_frequency == 0 &amp;&amp; !no_speech_sound) {
+                audio_play_sound(speech_sound,10,false); // have them talk if it is not during a pause
+            }
+        }
+    } else if (current_dialog_line &lt; (array_height_2d(draw_dialog_lines) - 1) &amp;&amp; keyboard_check_pressed(vk_enter)) {
+        /*if (audio_is_playing(speech_sound)) {
+            audio_pause_sound(speech_sound); // stop the speech sound if it is currently playing
+        }*/
+        current_dialog_line += 1; // iterate to the next line of dialog to display
+        dialog_line_length = string_length(draw_dialog_lines[current_dialog_line,0]); // set the length of the dialog to the new line's length
+        current_face = scr_interpret_faces(draw_dialog_lines[current_dialog_line,1],"flowey");
+        // re-initialize these for the next dialog line:
+        characters = 0;
+        current_drawn_text = "";
+    } else if (keyboard_check_pressed(vk_enter)/* &amp;&amp; !(current_dialog_line &lt; (array_length_1d(draw_dialog_lines) - 1))*/) {
+        is_talking = false; // stops the whole talking event from occuring
+        characters = 0; // re-initializes character count
+        current_face = spr_flowey_appear_anim; // sets the 'face' to the appear/disappear sprite sequence
+        disappear_anim = true; // start the disappear animation
+        
+    } /*else if (audio_is_playing(speech_sound)) {
+        audio_pause_sound(speech_sound); // stop the speech sound if it is currently playing
+    }*/
+} 
+
+/*if ((keyboard_check_pressed(vk_enter) &amp;&amp; current_drawn_text == draw_dialog_lines[current_dialog_line,0])) { //  || start_talking_at_beginning &amp;&amp; count_of_pause == 0
+    is_talking = true; // they begin talking on the next frame
+    characters = 0; // re-initialize characters
+    current_dialog_line += 1; // iterate to the next line of dialog
+    current_face = draw_dialog_lines[current_dialog_line,1]; // set the new current face
+    current_drawn_text = ""; // re-initialize this to erase drawn text
+    dialog_line_length = string_length(draw_dialog_lines[current_dialog_line,0]) // set the length to be equal to the new line's length
+}*/
+
+/*if (!animating) {
     if (keyboard_check_pressed(vk_enter) &amp;&amp; characters == dialog_line_length) {
         start_drawing_text = true;
         dialog_line_length = string_length(draw_dialog_lines[i,0]);
@@ -103,7 +221,7 @@ if (!animating) {
         characters += talking_speed;
         current_drawn_text = string_copy(draw_dialog_lines[i,0],1,characters);
     }
-}
+}*/
 </string>
           </argument>
         </arguments>
@@ -129,7 +247,8 @@ if (!animating) {
             <string>/// draw dialog
 image_alpha = 1;
 draw_set_font(fnt_main);
-draw_text(64,64,current_drawn_text);
+draw_text_ext_transformed_colour(80,60,current_drawn_text,32,480,1,1,0,c_white,c_white,c_white,c_white,255);
+
 </string>
           </argument>
         </arguments>
@@ -154,7 +273,11 @@ draw_text(64,64,current_drawn_text);
             <kind>1</kind>
             <string>/// draw self
 image_alpha = 1;
-draw_sprite_ext(current_face,anim_frame,300,240,2,2,0,c_white,255);
+display_set_gui_size(640,480); // set the gui size to fit the whole window
+draw_sprite_ext(current_face,anim_frame,280,240,2,2,0,c_white,255); // draw the face corresponding to the set one in the dialog file
+if (!animating) {
+    draw_sprite_ext(spr_flowey_stem,0,280,240,2,2,0,c_white,255); // draw the stem unless appear or disappear animation is happening
+}
 </string>
           </argument>
         </arguments>

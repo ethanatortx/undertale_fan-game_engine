@@ -7,59 +7,53 @@ normal
 I wasn't sure when you would be back.
 normal
 I started to think that you weren't coming back.
-normal
+relieved_looking_right_frown
 I thought maybe you had finally...
-normal
-...
-normal
-I waited here for you after everyone left,
-normal
+sad
+I waited here for you, after everyone left,
+looking_right
 hoping you wouldn't reappear. 
 normal
 Not because I didn't want to talk to you,
-normal
+sad_smile
 I would have given anything for someone to talk to.
-normal
+relieved_looking_right
 I just didn't want everything to be reset.
-normal
-I thought, what other reason would you appear if not to...
-normal
-...
-normal
+relieved1_frown
+I thought, what other reason would you appear, if not to...
+sad_looking_down
 Why are you here?
 normal
 There's nothing here for you.
 normal
 There's nothing here for anyone.
-normal
+sad
 After all this time,
 normal
 are you just here to reset?
-normal
+relieved1
 To resurrect all the people dead and gone,
 normal
 and pull them back here, to the beginning?
-normal
+sad
 What are you looking for?
-normal
+relieved2_frown
 What do you hope to accomplish?
-normal
+relieved2_frown
 Why undo all the good you've done,
-normal
+relieved2_frown
 just to do it all again?
-normal
+relieved_looking_right
 ...
-normal
-Chara...
-normal
+looking_right
 There is no perfect ending.
-normal
+sad
 You can't save everyone,
-normal
+relieved2
 and even if you could,
-normal
+relieved2
 sometimes they aren't worth saving.
-normal
+relieved1
 You should move on.
 normal
 Just let it be.
@@ -67,37 +61,37 @@ normal
 ...
 normal
 ...
-normal
-...If you're determined to reset,
-normal
+relieved2_frown
+If you're determined to reset,
+relieved2
 I can't stop you.
 normal
 I can only warn you that trying to fix the unfix-able...
 normal
-...It only leads to despair.
-normal
+It only leads to despair.
+relieved_looking_right_frown
 One last thing.
 normal
 If you do reset,
 normal
 you need to erase my memories, too.
-normal
+relieved2
 Knowing what I know...
-normal
-...I don't know if I could do it all again.
-normal
+relieved_looking_right
+I don't think I can do it all again.
+relieved2_frown
 I'm sorry.
-normal
+relieved1_frown
 ...
-normal
+looking_right
 Heh, you've probably heard all this a hundred times, haven't you?
-normal
+knowing_smile
 ...
-normal
+sad
 One way or another,
 normal
 I'll see you later,
-normal
+smiling
 Chara.
-normal
+smiling
 end
