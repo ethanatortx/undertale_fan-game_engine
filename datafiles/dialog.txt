@@ -1,6 +1,6 @@
 filestart
 flowey_talk_intro
-Hey.
+Hey..
 normal
 It's been a while.
 normal
