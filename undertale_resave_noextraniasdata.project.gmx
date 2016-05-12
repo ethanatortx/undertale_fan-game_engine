@@ -646,6 +646,7 @@
     <background>background\bg_floweyroom</background>
     <background>background\bg_ruinsentrance1</background>
     <background>background\bg_ruins4</background>
+    <background>background\bg_reset_screen</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -751,6 +752,7 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_floweytalk1</room>
+    <room>rooms\rm_resetroom</room>
     <rooms name="ruins">
       <room>rooms\rm_ruins_startingroom</room>
       <room>rooms\rm_ruins_floweyroom1</room>

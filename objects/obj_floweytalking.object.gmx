@@ -111,7 +111,8 @@ if (!pause_talking) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// destroy this and teleport the player to the starting room
+            <string>/// destroy this instance and teleport the player to the starting room
+room_goto(rm_resetroom);
 instance_destroy();
 </string>
           </argument>
