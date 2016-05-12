@@ -34,6 +34,10 @@ count_of_pause = 0; // used to take pauses for commas and periods in speech
 talking_speed = 0.75; // speed for the text to be displayed on screen
 speech_frequency = 3; // frequency that the talk sound is played
 draw_dialog_lines = scr_read_dialog("flowey_talk_intro"); // retrieve the dialog
+var aa = 0;
+for(aa=0; aa&lt;array_height_2d(draw_dialog_lines); aa++) {
+    draw_dialog_lines[aa,0] = scr_pp_dialog(fnt_main, draw_dialog_lines[aa,0], 400, 80);
+}
 dialog_line_length = string_length(draw_dialog_lines[0,0]); // the length of the current line of dialog
 start_talking_at_beginning = true; // flowey launches right into the first line of dialogue after appear animation is done, this indicates whether that happens or not
 speech_sound = snd_flowey_talk1; // the default talking sound for flowey

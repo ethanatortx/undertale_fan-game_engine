@@ -633,7 +633,6 @@
         <sprite>sprites\spr_flowey_relieved_looking_right</sprite>
         <sprite>sprites\spr_flowey_relieved_looking_right_frown</sprite>
         <sprite>sprites\spr_flowey_bored</sprite>
-        <sprite>sprites\sprite146</sprite>
       </sprites>
       <sprite>sprites\spr_flowey_appear_anim</sprite>
     </sprites>
@@ -693,6 +692,7 @@
       <script>scripts\scr_read_dialog.gml</script>
       <script>scripts\scr_interpret_faces.gml</script>
     </scripts>
+    <script>scripts\scr_pp_dialog.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_papyrus</font>
