@@ -667,10 +667,13 @@
       <script>scripts\scr_attack.gml</script>
     </scripts>
     <scripts name="dialog">
-      <script>scripts\scr_dialogsetup.gml</script>
-      <script>scripts\scr_displaydialog.gml</script>
-      <script>scripts\scr_drawdialog.gml</script>
+      <script>scripts\scr_dialogsetup_legacy.gml</script>
+      <script>scripts\scr_displaydialog_legacy.gml</script>
+      <script>scripts\scr_drawdialog_legacy.gml</script>
       <script>scripts\scr_createfont.gml</script>
+      <script>scripts\scr_setup_dialog.gml</script>
+      <script>scripts\scr_dialog.gml</script>
+      <script>scripts\scr_draw_dialog.gml</script>
     </scripts>
     <scripts name="fight">
       <script>scripts\scr_encounter.gml</script>
@@ -691,6 +694,8 @@
       <script>scripts\scr_read_player_items.gml</script>
       <script>scripts\scr_read_dialog.gml</script>
       <script>scripts\scr_interpret_faces.gml</script>
+      <script>scripts\scr_save.gml</script>
+      <script>scripts\scr_load.gml</script>
     </scripts>
     <script>scripts\scr_pp_dialog.gml</script>
   </scripts>

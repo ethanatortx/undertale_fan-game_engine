@@ -28,7 +28,7 @@
             <string>/// list dialog and initiate vars
 
 // when interacting with broken pillar in ruins, say this stuff
-scr_dialogsetup()
+scr_dialogsetup_legacy()
 message[0] = "It looks like this pillar has been broken for a long time.";
 message[1] = "The ruins are falling apart with no one to maintain them.";
 message_end = array_length_1d(message);
@@ -60,7 +60,7 @@ spd = 0;
             <kind>1</kind>
             <string>/// do dialog interaction
 if (scr_interactobj(x,y) == true) {
-    scr_displaydialog("chara")
+    scr_displaydialog_legacy("chara")
 }
 </string>
           </argument>
@@ -108,7 +108,7 @@ if (scr_interactobj(x,y) == true) {
           <argument>
             <kind>1</kind>
             <string>/// draw dialog
-scr_drawdialog(true,false);
+scr_drawdialog_legacy(true,false);
 </string>
           </argument>
         </arguments>

@@ -8,9 +8,7 @@ I wasn't sure when you would be back.
 normal
 I started to think that you weren't coming back.
 relieved_looking_right_frown
-I thought maybe you had finally...
-sad
-I waited here for you, after everyone left,
+I waited here for you here, after everyone left,
 looking_right
 hoping you wouldn't reappear. 
 normal
@@ -20,8 +18,10 @@ I would have given anything for someone to talk to.
 relieved_looking_right
 I just didn't want everything to be reset.
 relieved1_frown
-I thought, what other reason would you appear, if not to...
+I thought, what other reason would you appear, if not for that.
 sad_looking_down
+...
+sad
 Why are you here?
 normal
 There's nothing here for you.
@@ -31,7 +31,7 @@ sad
 After all this time,
 normal
 are you just here to reset?
-relieved1
+relieved1_frown
 To resurrect all the people dead and gone,
 normal
 and pull them back here, to the beginning?
@@ -52,34 +52,40 @@ You can't save everyone,
 relieved2
 and even if you could,
 relieved2
-sometimes they aren't worth saving.
+sometimes, they aren't worth saving.
 relieved1
 You should move on.
 normal
 Just let it be.
 normal
 ...
-normal
+sad
 ...
 relieved2_frown
 If you're determined to reset,
 relieved2
 I can't stop you.
 normal
-I can only warn you that trying to fix the unfix-able,
+I can only warn you that trying to fix everything,
 normal
+that trying to make everyone happy,
+sad
 only leads to despair.
 relieved_looking_right_frown
+...
+sad
 One last thing.
 normal
 If you ignore my advice,
 normal
 If you do reset,
 normal
-you need to erase my memories, too.
+you have to erase my memories, too.
 relieved2
-Knowing what I know...
+Having seen all this,
 relieved_looking_right
+knowing what I know,
+relieved_looking_right_frown
 I don't think I can do it all again.
 relieved2_frown
 I'm sorry.
@@ -93,7 +99,7 @@ sad
 One way or another,
 normal
 I'll see you later,
-smiling
+sad_smile
 Chara.
-smiling
+sad_smile
 end
