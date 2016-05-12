@@ -651,30 +651,39 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <scripts name="character states">
-      <script>scripts\scr_getinput.gml</script>
-      <script>scripts\scr_move_arr.gml</script>
-      <script>scripts\scr_move_state.gml</script>
-      <script>scripts\scr_nomove_state.gml</script>
-      <script>scripts\scr_movetobuttons.gml</script>
-      <scripts name="mobs">
-        <script>scripts\mob_testmonster_refonly.gml</script>
-        <scripts name="testmonster">
-          <script>scripts\mob_testmonster_attack1.gml</script>
-          <script>scripts\mob_testmonster_attack2.gml</script>
-        </scripts>
-        <script>scripts\mob_check.gml</script>
+      <scripts name="movement">
+        <script>scripts\scr_getinput.gml</script>
+        <script>scripts\scr_move_arr.gml</script>
+        <script>scripts\scr_move_state.gml</script>
+        <script>scripts\scr_nomove_state.gml</script>
+        <script>scripts\scr_movetobuttons.gml</script>
+        <script>scripts\scr_move_in_reset_room.gml</script>
       </scripts>
-      <script>scripts\scr_moveinfightbox.gml</script>
-      <script>scripts\scr_attack.gml</script>
+      <scripts name="interaction">
+        <script>scripts\scr_moveinfightbox.gml</script>
+        <script>scripts\scr_attack.gml</script>
+      </scripts>
+    </scripts>
+    <scripts name="mobs">
+      <script>scripts\mob_testmonster_refonly.gml</script>
+      <scripts name="testmonster">
+        <script>scripts\mob_testmonster_attack1.gml</script>
+        <script>scripts\mob_testmonster_attack2.gml</script>
+      </scripts>
+      <script>scripts\mob_check.gml</script>
     </scripts>
     <scripts name="dialog">
-      <script>scripts\scr_dialogsetup_legacy.gml</script>
-      <script>scripts\scr_displaydialog_legacy.gml</script>
-      <script>scripts\scr_drawdialog_legacy.gml</script>
       <script>scripts\scr_createfont.gml</script>
       <script>scripts\scr_setup_dialog.gml</script>
       <script>scripts\scr_dialog.gml</script>
       <script>scripts\scr_draw_dialog.gml</script>
+      <script>scripts\scr_pp_dialog.gml</script>
+      <scripts name="legacy code">
+        <script>scripts\scr_dialogsetup_legacy.gml</script>
+        <script>scripts\scr_displaydialog_legacy.gml</script>
+        <script>scripts\scr_drawdialog_legacy.gml</script>
+        <script>scripts\scr_noemotions.gml</script>
+      </scripts>
     </scripts>
     <scripts name="fight">
       <script>scripts\scr_encounter.gml</script>
@@ -683,22 +692,26 @@
       <script>scripts\scr_encounterfull.gml</script>
       <script>scripts\scr_fight_state.gml</script>
     </scripts>
-    <script>scripts\scr_interactobj.gml</script>
-    <script>scripts\scr_interactbattle.gml</script>
-    <script>scripts\scr_charamap.gml</script>
-    <script>scripts\scr_sansmap.gml</script>
-    <script>scripts\scr_roomtransition.gml</script>
-    <script>scripts\scr_noemotions.gml</script>
+    <scripts name="saving/loading">
+      <script>scripts\scr_save.gml</script>
+      <script>scripts\scr_load.gml</script>
+      <script>scripts\scr_reset.gml</script>
+      <script>scripts\scr_soul_check.gml</script>
+    </scripts>
     <scripts name="data retrieval">
       <script>scripts\scr_readmonster.gml</script>
       <script>scripts\scr_readitem.gml</script>
       <script>scripts\scr_read_player_items.gml</script>
       <script>scripts\scr_read_dialog.gml</script>
       <script>scripts\scr_interpret_faces.gml</script>
-      <script>scripts\scr_save.gml</script>
-      <script>scripts\scr_load.gml</script>
+      <script>scripts\scr_get_original_player_name.gml</script>
+      <script>scripts\scr_name_prompt.gml</script>
     </scripts>
-    <script>scripts\scr_pp_dialog.gml</script>
+    <script>scripts\scr_interactobj.gml</script>
+    <script>scripts\scr_interactbattle.gml</script>
+    <script>scripts\scr_charamap.gml</script>
+    <script>scripts\scr_sansmap.gml</script>
+    <script>scripts\scr_roomtransition.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_papyrus</font>
@@ -749,8 +762,11 @@
       <object>objects\obj_test_boobers</object>
     </objects>
     <object>objects\obj_floweytalking</object>
+    <object>objects\obj_resetroom_select</object>
+    <object>objects\obj_choose_name</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_name_choose</room>
     <room>rooms\rm_floweytalk1</room>
     <room>rooms\rm_resetroom</room>
     <rooms name="ruins">
