@@ -33,8 +33,8 @@ i = 0; // initializer for i, which is referenced later in a non-for-loop iterati
 scr_setup_dialog("flowey_talk_intro","flowey",0.75,snd_flowey_talk1,3);
 
 var aa = 0;
-for(aa=0; aa&lt;array_height_2d(draw_dialog_lines); aa++) {
-    draw_dialog_lines[aa,0] = scr_pp_dialog(fnt_main, draw_dialog_lines[aa,0], 400, 80);
+for(aa=0; aa&lt;array_height_2d(dialog_lines); aa++) {
+    dialog_lines[aa,0] = scr_pp_dialog(fnt_main, dialog_lines[aa,0], 400, 80);
 }
 
 appear_anim = true; // start the appear animation
@@ -160,7 +160,7 @@ if (appear_anim) {
     }
 } else if (!animating) {
     scr_dialog("flowey_talk_intro","flowey",0.75,snd_flowey_talk1,3,false);
-    if (current_dialog_line &gt;= (array_height_2d(dialog_lines) - 2)) {
+    if (current_dialog_line &gt;= (array_height_2d(dialog_lines) - 1)) {
         disappear_anim = true;
     }
 } 

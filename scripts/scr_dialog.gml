@@ -34,7 +34,7 @@ if (is_talking) {
             
             // check if the current character is a period
             if (string_char_at(dialog_lines[current_dialog_line,0], characters) == "." && !pause_talking) {
-                count_of_pause = 15; // pause for ten frames
+                count_of_pause = 10; // pause for ten frames
                 pause_talking = true; // boolean indicating pause
                 no_speech_sound = true; // pause the dialog speech sound
                 alarm_set(6,5); // set a buffer for the no_speech_sound switch
@@ -64,7 +64,7 @@ if (is_talking) {
             }
         }
     // if the player presses enter, and the previous line is done, and there is more dialog to display, move to the next line of dialog
-    } else if (current_dialog_line < (array_height_2d(dialog_lines) - 2) && keyboard_check_pressed(vk_enter)) {
+    } else if (current_dialog_line < (array_height_2d(dialog_lines) - 1) && keyboard_check_pressed(vk_enter)) {
         
         current_dialog_line += 1; // iterate throught the dialog lines
         
@@ -76,6 +76,7 @@ if (is_talking) {
     
     // if there are no more dialog lines to display and the palyer presses enter then stop diaplaying dialog
     } else if (keyboard_check_pressed(vk_enter)) {
+        current_face = scr_interpret_faces(dialog_lines[current_dialog_line-1,1],argument1);
         is_talking = false; // all dialog has happened
         characters = 0;
         current_drawn_text = ""; // no text is drawn
