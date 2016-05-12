@@ -32,6 +32,11 @@ i = 0; // initializer for i, which is referenced later in a non-for-loop iterati
 // setup vars for dialog
 scr_setup_dialog("flowey_talk_intro","flowey",0.75,snd_flowey_talk1,3);
 
+var aa = 0;
+for(aa=0; aa&lt;array_height_2d(draw_dialog_lines); aa++) {
+    draw_dialog_lines[aa,0] = scr_pp_dialog(fnt_main, draw_dialog_lines[aa,0], 400, 80);
+}
+
 appear_anim = true; // start the appear animation
 anim_frame = 5; // set the subimage to the last one
 disappear_anim = false; // do not start the disappear animation
