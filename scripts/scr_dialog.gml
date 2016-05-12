@@ -64,7 +64,7 @@ if (is_talking) {
             }
         }
     // if the player presses enter, and the previous line is done, and there is more dialog to display, move to the next line of dialog
-    } else if (current_dialog_line < (array_height_2d(dialog_lines) - 1) && keyboard_check_pressed(vk_enter)) {
+    } else if (current_dialog_line < (array_height_2d(dialog_lines) - 2) && keyboard_check_pressed(vk_enter)) {
         
         current_dialog_line += 1; // iterate throught the dialog lines
         

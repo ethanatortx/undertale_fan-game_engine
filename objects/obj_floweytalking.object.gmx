@@ -147,16 +147,15 @@ if (appear_anim) {
     anim_frame += 0.2; // increase the subimage counter by .2 each frame
     animating = true; // it is animating
     current_face = spr_flowey_appear_anim; // set the face to be the sprite sequence for the appear and disappear animations
-    if (anim_frame &gt;= 5) { // if on the final image of the animation
+    if (anim_frame &gt;= 5.5) { // if on the final image of the animation
         anim_frame = 0; // animation frame is set to exactly 5 (essentially rounds it)
         disappear_anim = false; // don't repeat this thing
         alarm[0] = 10; // set the 'destroy this instance' alarm
+        current_face = spr_nothing;
     }
-}
-
-if (!animating) {
+} else if (!animating) {
     scr_dialog("flowey_talk_intro","flowey",0.75,snd_flowey_talk1,3,false);
-    if (current_dialog_line &gt;= (array_height_2d(dialog_lines) - 1)) {
+    if (current_dialog_line &gt;= (array_height_2d(dialog_lines) - 2)) {
         disappear_anim = true;
     }
 } 
