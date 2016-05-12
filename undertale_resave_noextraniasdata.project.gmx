@@ -616,6 +616,7 @@
       <sprites name="talk faces">
         <sprite>sprites\spr_flowey_stem</sprite>
         <sprite>sprites\spr_flowey_normal</sprite>
+        <sprite>sprites\spr_flowey_looking_right</sprite>
         <sprite>sprites\spr_flowey_smiling</sprite>
         <sprite>sprites\spr_flowey_knowing_smile</sprite>
         <sprite>sprites\spr_flowey_sad</sprite>
@@ -626,9 +627,13 @@
         <sprite>sprites\spr_flowey_distraught_looking_left</sprite>
         <sprite>sprites\spr_flowey_frustrated</sprite>
         <sprite>sprites\spr_flowey_relieved1</sprite>
+        <sprite>sprites\spr_flowey_relieved1_frown</sprite>
         <sprite>sprites\spr_flowey_relieved2</sprite>
+        <sprite>sprites\spr_flowey_relieved2_frown</sprite>
         <sprite>sprites\spr_flowey_relieved_looking_right</sprite>
+        <sprite>sprites\spr_flowey_relieved_looking_right_frown</sprite>
         <sprite>sprites\spr_flowey_bored</sprite>
+        <sprite>sprites\sprite146</sprite>
       </sprites>
       <sprite>sprites\spr_flowey_appear_anim</sprite>
     </sprites>
