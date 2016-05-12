@@ -697,6 +697,7 @@
       <script>scripts\scr_save.gml</script>
       <script>scripts\scr_load.gml</script>
     </scripts>
+    <script>scripts\scr_pp_dialog.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_papyrus</font>
