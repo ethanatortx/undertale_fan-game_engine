@@ -658,6 +658,7 @@
         <script>scripts\scr_nomove_state.gml</script>
         <script>scripts\scr_movetobuttons.gml</script>
         <script>scripts\scr_move_in_reset_room.gml</script>
+        <script>scripts\scr_move_choose_name.gml</script>
       </scripts>
       <scripts name="interaction">
         <script>scripts\scr_moveinfightbox.gml</script>
@@ -697,6 +698,7 @@
       <script>scripts\scr_load.gml</script>
       <script>scripts\scr_reset.gml</script>
       <script>scripts\scr_soul_check.gml</script>
+      <script>scripts\scr_quit.gml</script>
     </scripts>
     <scripts name="data retrieval">
       <script>scripts\scr_readmonster.gml</script>
@@ -744,6 +746,9 @@
       <object>objects\obj_fight_itembutton</object>
       <object>objects\obj_fight_actbutton</object>
       <object>objects\obj_fight_mercybutton</object>
+      <object>objects\obj_fight_hitbox</object>
+      <object>objects\obj_fight_bar</object>
+      <object>objects\obj_fight_bar_knife</object>
     </objects>
     <objects name="abstract">
       <object>objects\obj_inviswall_square</object>
@@ -755,9 +760,6 @@
       <object>objects\obj_testdialog</object>
       <object>objects\obj_fade</object>
     </objects>
-    <object>objects\obj_fight_hitbox</object>
-    <object>objects\obj_fight_bar</object>
-    <object>objects\obj_fight_bar_knife</object>
     <objects name="bullets">
       <object>objects\obj_test_boobers</object>
     </objects>

@@ -27,6 +27,13 @@
             <kind>1</kind>
             <string>/// initialize stuff
 
+// wich letter is currently selected
+selected_button = "A";
+
+// set global playername to be empty
+global.playername = "";
+
+// uppercase letters
 for (i = 65; i &lt; 91; i += 1) {
 
     array_index = i - 65;
@@ -34,13 +41,13 @@ for (i = 65; i &lt; 91; i += 1) {
     if (true) {
         xpos = ((array_index % 7) * 64) + 120;
         row_indicator = (array_index / 7);
-        if (row_indicator &lt; 1 &amp;&amp; row_indicator &gt;= 0) {
+        if (row_indicator &lt; 1 &amp;&amp; row_indicator &gt;= 0) { // 1st row
             ypos = 150;
-        } else if (row_indicator &lt; 2 &amp;&amp; row_indicator &gt;= 1) {
+        } else if (row_indicator &lt; 2 &amp;&amp; row_indicator &gt;= 1) { // 2nd row
             ypos = 150 + (28);
-        } else if (row_indicator &lt; 3 &amp;&amp; row_indicator &gt;= 2) {
+        } else if (row_indicator &lt; 3 &amp;&amp; row_indicator &gt;= 2) { // 3rd row
             ypos = 150 + (56);
-        } else if (row_indicator &lt; 4 &amp;&amp; row_indicator &gt;= 3) {
+        } else if (row_indicator &lt; 4 &amp;&amp; row_indicator &gt;= 3) { // 4th row
             ypos = 150 + (84);
         }
     }
@@ -49,12 +56,13 @@ for (i = 65; i &lt; 91; i += 1) {
             array_letters[array_index,k] = chr(i);
         } else if (k == 1) { // x pos
             array_letters[array_index,k] = xpos;
-        } else if (k == 2) {
+        } else if (k == 2) { // y pos
             array_letters[array_index,k] = ypos;
         }
     }
 }
 
+// lowercase letters
 for (v = 97; v &lt; 123; v += 1) {
 
     array_index_lower = v - 71;
@@ -62,13 +70,13 @@ for (v = 97; v &lt; 123; v += 1) {
     if (true) {
         xpos = (((array_index_lower + 2) % 7) * 64) + 120;
         row_indicator = ((array_index_lower + 2) / 7);
-        if (row_indicator &lt; 5 &amp;&amp; row_indicator &gt;= 4) {
+        if (row_indicator &lt; 5 &amp;&amp; row_indicator &gt;= 4) { // 5th row
             ypos = 272;
-        } else if (row_indicator &lt; 6 &amp;&amp; row_indicator &gt;= 1) {
+        } else if (row_indicator &lt; 6 &amp;&amp; row_indicator &gt;= 5) { // 6th row
             ypos = 272 + (28);
-        } else if (row_indicator &lt; 7 &amp;&amp; row_indicator &gt;= 2) {
+        } else if (row_indicator &lt; 7 &amp;&amp; row_indicator &gt;= 6) { // 7th row
             ypos = 272 + (56);
-        } else if (row_indicator &lt; 8 &amp;&amp; row_indicator &gt;= 3) {
+        } else if (row_indicator &lt; 8 &amp;&amp; row_indicator &gt;= 7) { // 8th row
             ypos = 272 + (84);
         }
     }
@@ -77,7 +85,7 @@ for (v = 97; v &lt; 123; v += 1) {
             array_letters[array_index_lower,h] = chr(v);
         } else if (h == 1) { // x pos
             array_letters[array_index_lower,h] = xpos;
-        } else if (h == 2) {
+        } else if (h == 2) { // y pos
             array_letters[array_index_lower,h] = ypos;
         }
     }
@@ -105,6 +113,7 @@ for (v = 97; v &lt; 123; v += 1) {
           <argument>
             <kind>1</kind>
             <string>/// move the letters and stuff around
+scr_move_choose_name(selected_button);
 </string>
           </argument>
         </arguments>
@@ -127,12 +136,38 @@ for (v = 97; v &lt; 123; v += 1) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>for (g = 0; g &lt; array_height_2d(array_letters) - 1; g += 1) {
-    shakex = round(random_range(-1,1));
-    shakey = round(random_range(-1,1));
-    draw_set_font(fnt_main);
-    draw_text_colour(array_letters[g,1] + shakex,array_letters[g,2] + shakey,array_letters[g,0],c_white,c_white,c_white,c_white,255);
+            <string>
+draw_set_font(fnt_menu);
+
+for (g = 0; g &lt; array_height_2d(array_letters); g += 1) {
+    shakex = round(random_range(0,1));
+    shakey = round(random_range(0,1));
+    
+    if (selected_button == array_letters[g,0]) {
+        draw_text_colour(array_letters[g,1] + shakex,array_letters[g,2] + shakey,array_letters[g,0],c_yellow,c_yellow,c_yellow,c_yellow,255);
+    } else {
+        draw_text_colour(array_letters[g,1] + shakex,array_letters[g,2] + shakey,array_letters[g,0],c_white,c_white,c_white,c_white,255);
+    }
 }
+
+if (current_char == 52) {
+    draw_text_colour(120,400,"Quit",c_yellow,c_yellow,c_yellow,c_yellow,255);
+} else {
+    draw_text_colour(120,400,"Quit",c_white,c_white,c_white,c_white,255);
+}
+if (current_char == 53) {
+    draw_text_colour(240,400,"Backspace",c_yellow,c_yellow,c_yellow,c_yellow,255);
+} else {
+    draw_text_colour(240,400,"Backspace",c_white,c_white,c_white,c_white,255);
+}
+if (current_char == 54) {
+    draw_text_colour(440,400,"Done",c_yellow,c_yellow,c_yellow,c_yellow,255);
+} else {
+    draw_text_colour(440,400,"Done",c_white,c_white,c_white,c_white,255);
+}
+
+draw_text_colour(180,60,"Name the fallen human.",c_white,c_white,c_white,c_white,255);
+draw_text_colour(280,110,global.playername,c_white,c_white,c_white,c_white,255);
 </string>
           </argument>
         </arguments>
