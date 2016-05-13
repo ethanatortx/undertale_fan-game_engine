@@ -19,12 +19,13 @@ if (keyboard_check_pressed(vk_enter)) {
     if (current_char <= 51) {
         global.playername = global.playername + array_letters[current_char,0];
     } else if (current_char == 52) {
-        scr_quit();
+        room_goto(rm_instructions);
     } else if (current_char == 53) {
         if (string_length(global.playername) != 0) {
             global.playername = string_copy(global.playername,1,string_length(global.playername) - 1);
         }
     } else if (current_char == 54) {
+        room_goto(rm_name_confirmation);
     }
 }
 

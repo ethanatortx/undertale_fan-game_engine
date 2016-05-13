@@ -658,11 +658,12 @@
         <script>scripts\scr_nomove_state.gml</script>
         <script>scripts\scr_movetobuttons.gml</script>
         <script>scripts\scr_move_in_reset_room.gml</script>
-        <script>scripts\scr_move_choose_name.gml</script>
       </scripts>
       <scripts name="interaction">
         <script>scripts\scr_moveinfightbox.gml</script>
+        <script>scripts\scr_move_choose_name.gml</script>
         <script>scripts\scr_attack.gml</script>
+        <script>scripts\scr_confirm_name.gml</script>
       </scripts>
     </scripts>
     <scripts name="mobs">
@@ -766,9 +767,13 @@
     <object>objects\obj_floweytalking</object>
     <object>objects\obj_resetroom_select</object>
     <object>objects\obj_choose_name</object>
+    <object>objects\obj_instructions</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_instructions</room>
     <room>rooms\rm_name_choose</room>
+    <room>rooms\rm_name_confirmation</room>
+    <room>rooms\rm_name_has_been_chosen</room>
     <room>rooms\rm_floweytalk1</room>
     <room>rooms\rm_resetroom</room>
     <rooms name="ruins">

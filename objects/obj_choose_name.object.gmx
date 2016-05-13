@@ -33,6 +33,7 @@ selected_button = "A";
 // set global playername to be empty
 global.playername = "";
 
+
 // uppercase letters
 for (i = 65; i &lt; 91; i += 1) {
 
