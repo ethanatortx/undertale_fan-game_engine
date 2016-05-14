@@ -8,7 +8,7 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="3" enumb="0">
+    <event eventtype="0" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -25,7 +25,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string></string>
+            <string>/// initialize displayed instructions
+muted_white = make_colour_rgb(192,192,192);
+medium_grey = make_colour_rgb(128,128,128);
+instructions = " --- Instruction --- ##[Z or ENTER] - Confirm #[X or SHIFT] - Cancel #[C or CTRL] - Menu (In-game) #[F4] - Fullscreen #[Hold ESC] - Quit #When HP is 0, you lose.";
+</string>
           </argument>
         </arguments>
       </action>
@@ -47,7 +51,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string></string>
+            <string>draw_set_font(fnt_menu);
+draw_text_ext_transformed_colour(170,40,instructions,34,1000,1,1,0,muted_white,muted_white,muted_white,muted_white,255);
+</string>
           </argument>
         </arguments>
       </action>
