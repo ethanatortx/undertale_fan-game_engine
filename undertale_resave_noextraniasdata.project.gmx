@@ -767,6 +767,7 @@
     <object>objects\obj_floweytalking</object>
     <object>objects\obj_resetroom_select</object>
     <object>objects\obj_choose_name</object>
+    <object>objects\obj_name_confirmation</object>
     <object>objects\obj_instructions</object>
   </objects>
   <rooms name="rooms">
