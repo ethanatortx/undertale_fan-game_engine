@@ -53,6 +53,35 @@ instructions = " --- Instruction --- ##[Z or ENTER] - Confirm #[X or SHIFT] - Ca
             <kind>1</kind>
             <string>draw_set_font(fnt_menu);
 draw_text_ext_transformed_colour(170,40,instructions,34,1000,1,1,0,muted_white,muted_white,muted_white,muted_white,255);
+  
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="90">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///go to either the 
+if (global.playername != undefined) {
+    room_goto(rm_name_has_been_chosen);
+} else if (global.playername == undefined) {
+    room_goto(rm_name_choose);
+}
 </string>
           </argument>
         </arguments>

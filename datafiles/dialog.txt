@@ -91,10 +91,6 @@ relieved2_frown
 I'm sorry.
 relieved1_frown
 ...
-looking_right
-Heh, you've probably heard all this a hundred times, haven't you?
-knowing_smile
-...
 sad
 One way or another,
 normal

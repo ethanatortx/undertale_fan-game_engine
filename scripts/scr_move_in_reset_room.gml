@@ -1,33 +1,29 @@
 /// scr_move_in_reset_room
 soulless = argument0;
 
-movement_string = string(scr_getinput());
-movement_left = real(string_char_at(movement_string,0));
-movement_right = real(string_char_at(movement_string,1));
-
 if (!soulless) {
     with (obj_resetroom_select) {
-        sprite_index = spr_redheart;
+        sprite_to_draw = spr_redheart;
     }
 } else {
     with (obj_resetroom_select) {
-        sprite_index = spr_nothing;
+        sprite_to_draw = spr_redheart;
     }
 }
 
 if (global.buttonpos == 0) {
-
-
-
-    if ((movement_left - movement_right) == 1) {
+    if (keyboard_check_pressed(vk_right) == 1) {
         global.buttonpos = 1;
-    } else if ((movement_left - movement_right) == -1) {
+    } else if (keyboard_check_pressed(vk_left) == -1) {
         global.buttonpos = 1;
     }
 } else if (global.buttonpos == 1) {
-    if ((movement_left - movement_right) == 1) {
+    if (keyboard_check_pressed(vk_enter)) {
+        time_to_reset = true;
+    }
+    if (keyboard_check_pressed(vk_right) == 1) {
         global.buttonpos = 0;
-    } else if ((movement_left - movement_right) == 1) {
+    } else if (keyboard_check_pressed(vk_left) == 1) {
         global.buttonpos = 0;
     }
 }

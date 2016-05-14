@@ -33,6 +33,7 @@ soulless = scr_soul_check();
 // set button position default
 global.buttonpos = 0;
 
+sprite_to_draw = spr_nothing;
 </string>
           </argument>
         </arguments>
@@ -56,7 +57,6 @@ global.buttonpos = 0;
           <argument>
             <kind>1</kind>
             <string>scr_move_in_reset_room(soulless);
-
 </string>
           </argument>
         </arguments>
@@ -82,8 +82,44 @@ global.buttonpos = 0;
             <string>/// draw RESET/DO NOT
 draw_set_font(fnt_menu);
 reset_text_color = make_colour_rgb(200,200,200);
-draw_text_ext_transformed_colour(171,221,"Continue",0,1000,1,1,0,reset_text_color,reset_text_color,reset_text_color,reset_text_color,255);
-draw_text_ext_transformed_colour(351,221,"Reset",0,1000,1,1,0,reset_text_color,reset_text_color,reset_text_color,reset_text_color,255);
+reset_text_color_selected = c_yellow;
+if (global.buttonpos == 0) {
+    draw_text_ext_transformed_colour(170,220,"Quit",0,1000,1,1,0,reset_text_color_selected,reset_text_color_selected,reset_text_color_selected,reset_text_color_selected,255);
+    draw_sprite(sprite_to_draw,0,148,228);
+} else {
+    draw_text_ext_transformed_colour(170,220,"Quit",0,1000,1,1,0,reset_text_color,reset_text_color,reset_text_color,reset_text_color,255);
+}
+
+if (global.buttonpos == 1) {
+    draw_text_ext_transformed_colour(350,220,"Reset",0,1000,1,1,0,reset_text_color_selected,reset_text_color_selected,reset_text_color_selected,reset_text_color_selected,255);
+    draw_sprite(sprite_to_draw,0,328,228);
+} else {
+    draw_text_ext_transformed_colour(350,220,"Reset",0,1000,1,1,0,reset_text_color,reset_text_color,reset_text_color,reset_text_color,255);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="74">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// draw the heart or whatever
+
 </string>
           </argument>
         </arguments>

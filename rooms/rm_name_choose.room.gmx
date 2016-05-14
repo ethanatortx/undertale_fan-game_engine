@@ -7,7 +7,7 @@
   <hsnap>32</hsnap>
   <isometric>0</isometric>
   <speed>30</speed>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <colour>0</colour>
   <showcolour>-1</showcolour>
   <code>if (global.playername != undefined) {
