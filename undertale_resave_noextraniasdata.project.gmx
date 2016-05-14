@@ -636,6 +636,7 @@
       </sprites>
       <sprite>sprites\spr_flowey_appear_anim</sprite>
     </sprites>
+    <sprite>sprites\spr_quitting</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_black</background>
@@ -769,6 +770,7 @@
     <object>objects\obj_choose_name</object>
     <object>objects\obj_name_confirmation</object>
     <object>objects\obj_instructions</object>
+    <object>objects\obj_quit_game</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_instructions</room>
