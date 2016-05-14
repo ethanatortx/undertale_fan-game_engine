@@ -214,10 +214,14 @@ draw_text_transformed_colour(starting_position[0] + name_shake,starting_position
             <string>
 if (global.pre_chosen) {
     start_transition = true;
+    audio_pause_sound(mus_menu0);
+    audio_play_sound(snd_narrator_story,10,false);
+    global.buttonspos = 4;
 } else if (!global.pre_chosen &amp;&amp; global.buttonpos == 1) {
     start_transition = true;
-    audio_pause_sound(sound448_mus_menu0);
-    audio_play_sound(s
+    audio_pause_sound(mus_menu0);
+    audio_play_sound(snd_narrator_story,10,false);
+    global.buttonpos = 4;
 }
 
 </string>
