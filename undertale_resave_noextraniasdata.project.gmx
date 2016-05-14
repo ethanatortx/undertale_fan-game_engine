@@ -688,13 +688,6 @@
         <script>scripts\scr_noemotions.gml</script>
       </scripts>
     </scripts>
-    <scripts name="fight">
-      <script>scripts\scr_encounter.gml</script>
-      <script>scripts\scr_encounterstart.gml</script>
-      <script>scripts\scr_encountertransition.gml</script>
-      <script>scripts\scr_encounterfull.gml</script>
-      <script>scripts\scr_fight_state.gml</script>
-    </scripts>
     <scripts name="saving/loading">
       <script>scripts\scr_save.gml</script>
       <script>scripts\scr_load.gml</script>
@@ -716,6 +709,31 @@
     <script>scripts\scr_charamap.gml</script>
     <script>scripts\scr_sansmap.gml</script>
     <script>scripts\scr_roomtransition.gml</script>
+    <scripts name="legacy code">
+      <scripts name="fight">
+        <script>scripts\scr_encounter.gml</script>
+        <script>scripts\scr_encounterstart.gml</script>
+        <script>scripts\scr_encountertransition.gml</script>
+        <script>scripts\scr_encounterfull.gml</script>
+        <script>scripts\scr_fight_state.gml</script>
+      </scripts>
+    </scripts>
+    <scripts name="battle system">
+      <scripts name="player turn">
+        <scripts name="fight">
+          <script>scripts\scr_fight.gml</script>
+        </scripts>
+        <scripts name="act">
+          <script>scripts\scr_act.gml</script>
+        </scripts>
+        <scripts name="item">
+          <script>scripts\scr_item.gml</script>
+        </scripts>
+        <scripts name="mercy">
+          <script>scripts\scr_mercy.gml</script>
+        </scripts>
+      </scripts>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_papyrus</font>
