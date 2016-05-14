@@ -15,11 +15,13 @@ for (l = 0; l < array_height_2d(array_letters); l += 1) {
     }
 }
 
-if (keyboard_check_pressed(vk_enter)) {
+if (keyboard_check_pressed(vk_enter) || keyboard_check_pressed(ord("Z"))) {
     if (current_char <= 51) {
-        global.playername = global.playername + array_letters[current_char,0];
+        if (string_length(global.playername) < character_limit) {
+            global.playername = global.playername + array_letters[current_char,0];
+        }
     } else if (current_char == 52) {
-        room_goto(rm_instructions);
+        game_end();
     } else if (current_char == 53) {
         if (string_length(global.playername) != 0) {
             global.playername = string_copy(global.playername,1,string_length(global.playername) - 1);
@@ -28,7 +30,11 @@ if (keyboard_check_pressed(vk_enter)) {
         room_goto(rm_name_confirmation);
     }
 }
-
+if (keyboard_check_pressed(ord("X")) || keyboard_check_pressed(vk_lshift)) {
+    if (string_length(global.playername) != 0) {
+        global.playername = string_copy(global.playername,1,string_length(global.playername) - 1);
+    }
+}
 if (keyboard_check_pressed(vk_left) && current_char != 0) {
     current_char -= 1;
 }

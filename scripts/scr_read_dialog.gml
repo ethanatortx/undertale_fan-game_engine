@@ -13,6 +13,9 @@ while (!file_text_eof(dialog_file)) {
             for (L = 0; L < 2; L += 1) {
                 dialog_lines_temp[D,L] = file_text_read_string(dialog_file);
                 file_text_readln(dialog_file);
+                if (string_pos("Chara",dialog_lines_temp[D,L]) != 0) {
+                    dialog_lines_temp[D,L] = string_copy(dialog_lines_temp[D,L],1,string_pos("Chara",dialog_lines_temp[D,L])-1) + global.playername + string_copy(dialog_lines_temp[D,L],string_pos("Chara",dialog_lines_temp[D,L]) + 5,string_length(dialog_lines_temp[D,L]));
+                }
             }
             currentline = dialog_lines_temp[D,0];
             D += 1;

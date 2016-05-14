@@ -156,7 +156,7 @@ if (appear_anim) {
     if (anim_frame &gt;= 5.5) { // if on the final image of the animation
         anim_frame = 0; // animation frame is set to exactly 5 (essentially rounds it)
         disappear_anim = false; // don't repeat this thing
-        alarm[0] = 10; // set the 'destroy this instance' alarm
+        alarm[0] = 60; // set the 'destroy this instance' alarm
         current_face = spr_nothing;
     }
 } else if (!animating) {
@@ -164,30 +164,7 @@ if (appear_anim) {
     if (current_dialog_line &gt;= (array_height_2d(dialog_lines) - 1)) {
         disappear_anim = true;
     }
-} 
-
-/*if ((keyboard_check_pressed(vk_enter) &amp;&amp; current_drawn_text == draw_dialog_lines[current_dialog_line,0])) { //  || start_talking_at_beginning &amp;&amp; count_of_pause == 0
-    is_talking = true; // they begin talking on the next frame
-    characters = 0; // re-initialize characters
-    current_dialog_line += 1; // iterate to the next line of dialog
-    current_face = draw_dialog_lines[current_dialog_line,1]; // set the new current face
-    current_drawn_text = ""; // re-initialize this to erase drawn text
-    dialog_line_length = string_length(draw_dialog_lines[current_dialog_line,0]) // set the length to be equal to the new line's length
-}*/
-
-/*if (!animating) {
-    if (keyboard_check_pressed(vk_enter) &amp;&amp; characters == dialog_line_length) {
-        start_drawing_text = true;
-        dialog_line_length = string_length(draw_dialog_lines[i,0]);
-        current_face = scr_interpret_faces(draw_dialog_lines[i,1],"flowey");
-        characters = 0;
-        i += 1;
-        current_drawn_text = ""
-    } else if (start_drawing_text &amp;&amp; characters &lt; dialog_line_length) {
-        characters += talking_speed;
-        current_drawn_text = string_copy(draw_dialog_lines[i,0],1,characters);
-    }
-}*/
+}
 </string>
           </argument>
         </arguments>
@@ -238,7 +215,7 @@ draw_text_ext_transformed_colour(80,60,current_drawn_text,32,480,1,1,0,c_white,c
           <argument>
             <kind>1</kind>
             <string>/// draw self
-image_alpha = 1;
+draw_set_alpha(255);
 display_set_gui_size(640,480); // set the gui size to fit the whole window
 draw_sprite_ext(current_face,anim_frame,280,240,2,2,0,c_white,255); // draw the face corresponding to the set one in the dialog file
 if (!animating) {

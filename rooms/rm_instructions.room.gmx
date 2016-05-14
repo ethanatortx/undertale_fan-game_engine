@@ -14,7 +14,9 @@
 audio_play_sound(mus_menu0,10,true);
 global.playername = undefined;
 global.playername = scr_get_original_player_name();
-instance_create(0,0,obj_instructions);</code>
+instance_create(0,0,obj_instructions);
+global.can_quit = false;
+instance_create(0,0,obj_quit_game);</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>

@@ -33,7 +33,8 @@ selected_button = "A";
 // set global playername to be empty
 global.playername = "";
 
-
+// imposed character limit for names (starting 1)
+character_limit = 8;
 // uppercase letters
 for (i = 65; i &lt; 91; i += 1) {
 
