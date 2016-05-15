@@ -10,7 +10,8 @@
   <persistent>0</persistent>
   <colour>0</colour>
   <showcolour>-1</showcolour>
-  <code>instance_create(320,240,obj_player_redheart)
+  <code>instance_create(0,0,obj_heart_select);
+
 room_set_height(rm_fight,obj_player_main.lastroom.room_height);
 room_set_width(rm_fight,obj_player_main.lastroom.room_width);</code>
   <enableViews>-1</enableViews>
