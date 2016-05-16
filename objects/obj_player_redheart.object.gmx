@@ -333,7 +333,6 @@ if (encounter_transition == true) {
         draw_rectangle_colour(31,384,607,390,c_white,c_white,c_white,c_white,false);    // bottom bounding
         draw_rectangle_colour(31,249,37,390,c_white,c_white,c_white,c_white,false);     // left bounding
         draw_rectangle_colour(605,249,612,390,c_white,c_white,c_white,c_white,false);   // right bounding
-        
     }
     
     draw_self()

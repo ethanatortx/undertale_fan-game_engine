@@ -577,6 +577,7 @@
       <sprite>sprites\spr_inviswall_diamond</sprite>
       <sprite>sprites\spr_testdialog</sprite>
       <sprite>sprites\spr_inviswall_square</sprite>
+      <sprite>sprites\spr_test_mechanic</sprite>
     </sprites>
     <sprites name="characters">
       <sprites name="player">
@@ -666,6 +667,7 @@
         <script>scripts\scr_attack.gml</script>
         <script>scripts\scr_confirm_name.gml</script>
       </scripts>
+      <script>scripts\scr_player_death.gml</script>
     </scripts>
     <scripts name="mobs">
       <script>scripts\mob_testmonster_refonly.gml</script>
@@ -719,18 +721,50 @@
       </scripts>
     </scripts>
     <scripts name="battle system">
+      <script>scripts\scr_setup_monster_stats_2d_array.gml</script>
+      <script>scripts\scr_get_monster_names.gml</script>
+      <script>scripts\scr_calc_monster_hp_pool.gml</script>
+      <script>scripts\scr_initialize_fight_variables.gml</script>
+      <scripts name="encounter monster">
+        <script>scripts\scr_encounter_monster.gml</script>
+        <script>scripts\scr_flash_heart.gml</script>
+        <script>scripts\scr_move_heart.gml</script>
+        <script>scripts\scr_select_main_buttons.gml</script>
+      </scripts>
       <scripts name="player turn">
+        <script>scripts\scr_display_monster_names.gml</script>
         <scripts name="fight">
           <script>scripts\scr_fight.gml</script>
+          <script>scripts\scr_fight_bar.gml</script>
+          <script>scripts\scr_fight_hitbox.gml</script>
+          <script>scripts\scr_deal_damage_to_monster.gml</script>
         </scripts>
         <scripts name="act">
           <script>scripts\scr_act.gml</script>
+          <script>scripts\scr_check.gml</script>
+          <script>scripts\scr_display_act_options.gml</script>
+          <script>scripts\scr_monster_response.gml</script>
         </scripts>
         <scripts name="item">
           <script>scripts\scr_item.gml</script>
+          <script>scripts\scr_use_item.gml</script>
+          <script>scripts\scr_move_in_item_box.gml</script>
         </scripts>
         <scripts name="mercy">
           <script>scripts\scr_mercy.gml</script>
+        </scripts>
+      </scripts>
+      <scripts name="enemy turn">
+        <scripts name="attack player">
+          <script>scripts\scr_draw_bounding_box.gml</script>
+        </scripts>
+      </scripts>
+      <scripts name="monster stats">
+        <script>scripts\scr_return_stats.gml</script>
+        <scripts name="test monster">
+          <script>scripts\mob_testmonster.gml</script>
+          <script>scripts\mob_testmonster_txtr.gml</script>
+          <script>scripts\mob_testmonster_act.gml</script>
         </scripts>
       </scripts>
     </scripts>
@@ -746,6 +780,11 @@
     <font>fonts\fnt_plain</font>
   </fonts>
   <objects name="objects">
+    <objects name="battle system">
+      <object>objects\obj_heart_select</object>
+      <object>objects\obj_heart_dodging</object>
+      <object>objects\obj_test_battle</object>
+    </objects>
     <objects name="characters">
       <object>objects\obj_player_main</object>
       <object>objects\obj_testmonster</object>
@@ -791,6 +830,8 @@
     <object>objects\obj_quit_game</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_testroom</room>
+    <room>rooms\rm_fight</room>
     <room>rooms\rm_instructions</room>
     <room>rooms\rm_name_choose</room>
     <room>rooms\rm_name_confirmation</room>
@@ -808,7 +849,6 @@
       <room>rooms\rm_ruins_ultimatechallenge</room>
       <room>rooms\rm_ruins_theonethaticantcomeupwithanamefor</room>
     </rooms>
-    <room>rooms\rm_fight</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

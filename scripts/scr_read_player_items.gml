@@ -10,3 +10,5 @@ for (i = 0; i < array_length_1d(global.player_items); i += 1) { // iterate throu
         global.player_item_count += 1; // add 1 to the count of actual items
     }
 }
+
+return real_items;
