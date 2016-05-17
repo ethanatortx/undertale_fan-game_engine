@@ -11,9 +11,9 @@ if (current_x != button_x && current_y != button_y) {
 
     new_xpos = current_x - 1;
     new_ypos = current_y - slope;
-} else {
+} else if (current_x == button_x && current_y == button_y) {
     heart_flashing = -1;
     global.buttonpos = 0;
-    new_xpos = button_x;
-    new_ypos = button_y;
+    current_x = button_x;
+    current_y = button_y;
 }
