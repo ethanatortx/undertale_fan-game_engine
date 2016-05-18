@@ -11,20 +11,20 @@ if (current_button != 0 && (keyboard_check_pressed(vk_left))) {
 
 // calculate position to display based on which button is selected
 if (global.buttonpos == 0) { // Fight
-    return_position[0] = 0;
-    return_position[1] = 0;
+    return_position[0] = 42;
+    return_position[1] = 436;
 }
 if (global.buttonpos == 1) { // Act
-    return_position[0] = 0;
-    return_position[1] = 0;
+    return_position[0] = 190;
+    return_position[1] = 436;
 }
 if (global.buttonpos == 2) { // Item
-    return_position[0] = 0;
-    return_position[1] = 0;
+    return_position[0] = 350;
+    return_position[1] = 436;
 }
 if (global.buttonpos == 3) { // Mercy
-    return_position[0] = 0;
-    return_position[1] = 0;
+    return_position[0] = 510;
+    return_position[1] = 436;
 }
 
 return return_position;
