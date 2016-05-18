@@ -36,8 +36,10 @@ oldArrow = undefined; //keeps track of input before current
 startY = y; // starting position (y)
 startX = x; // starting position (x)
 lastroom = room; // setup for easier room transitions
-newx = 0; // initialize a variable to enable doors to work
-newy = 0; // these teleport a player to the new position after room transition
+last_room_width = room_width;
+last_room_height = room_height;
+newx = -1; // initialize a variable to enable doors to work
+newy = -1; // these teleport a player to the new position after room transition
 display_set_gui_size(640,480);
 canencounter = true;
 encounter_full = false;
@@ -90,8 +92,14 @@ phy_fixed_rotation = true;
 
 //teleports player to the entryway from the door they took
 if (room != lastroom) {
-    phy_position_x = newx;
-    phy_position_y = newy;
+    if (newx != -1) {
+        phy_position_x = newx;
+    }
+    if (newy != -1) {
+        phy_position_y = newy;
+    }
+    last_room_width = room_width;
+    last_room_height = room_height;
     lastroom = room;
 }
 
