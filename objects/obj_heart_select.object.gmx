@@ -60,6 +60,9 @@ new_ypos = y_flash_start;
 current_x = x_flash_start;
 current_y = y_flash_start;
 
+position[0] = 42;
+position[1] = 444;
+
 global.buttonpos = 4;
 
 heart_tick_count = 0;
@@ -110,7 +113,9 @@ heart_tick_count = 0;
             <kind>1</kind>
             <string>/// move between main fight buttons
 if (heart_flashing == 0) {
-    scr_move_heart(x_flash_start,y_flash_start,current_x,current_y);
+    newpos = scr_move_heart(x_flash_start,y_flash_start,current_x,current_y);
+    current_x = newpos[0];
+    current_y = newpos[1];
 } else if (heart_flashing == 1) {
     flash_alpha = scr_flash_heart();
 } else if (heart_flashing == -1) {
@@ -295,6 +300,30 @@ if (heart_flashing == 0) {
     draw_sprite(spr_redheart,0,current_x,current_y);
 }
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (global.buttonpos != 4 &amp;&amp; inbox == 0) {
+    draw_set_alpha(1);
+    draw_sprite(spr_redheart,0,position[0],position[1]);
+}
 </string>
           </argument>
         </arguments>
