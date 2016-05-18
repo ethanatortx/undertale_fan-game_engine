@@ -35,8 +35,24 @@ heart_flashing = 1;
 
 inbox = 0; // whether or not the heart is in the box
 
-x_flash_start = obj_player_main.x;
-y_flash_start = obj_player_main.y;
+roomwidth = obj_player_main.last_room_width;
+roomheight = obj_player_main.last_room_height;
+x_flash_start = undefined;
+y_flash_start = undefined;
+if (roomwidth - obj_player_main.x &lt; 160) {
+    x_flash_start = obj_player_main.x;
+} else if (obj_player_main.x - 160 &lt; 0) {
+    x_flash_start = 320 - (roomwidth - floor(obj_player_main.x));
+} else {
+    x_flash_start = 320;
+}
+if (roomheight - obj_player_main.y &lt; 120) {
+    y_flash_start = obj_player_main.y;
+} else if (obj_player_main.y - 120 &lt; 0) {
+    y_flash_start = 240 - (roomheight - floor(obj_player_main.y));
+} else {
+    y_flash_start = 240;
+}
 
 new_xpos = x_flash_start;
 new_ypos = y_flash_start;
@@ -97,7 +113,6 @@ if (heart_flashing == 0) {
     scr_move_heart(x_flash_start,y_flash_start,current_x,current_y);
 } else if (heart_flashing == 1) {
     flash_alpha = scr_flash_heart();
-    
 } else if (heart_flashing == -1) {
     if (global.buttonpos != 4) {
         position = scr_select_main_buttons(global.buttonpos);
@@ -176,6 +191,7 @@ scr_display_monster_names();
           <argument>
             <kind>1</kind>
             <string>/// draw the fight buttons
+draw_set_alpha(1);
 if (global.buttonpos == 0) { // fight
     draw_sprite(spr_fight_fight,1,30,420);
 } else {
@@ -250,7 +266,7 @@ if (global.buttonpos != 4) {
             <kind>1</kind>
             <string>/// draw the heart ticking
 if (heart_flashing == 1) {
-    draw_set_alpha(1);
+    draw_set_alpha(flash_alpha);
     draw_sprite(spr_redheart,0,x_flash_start,y_flash_start);
 }
 </string>
@@ -276,7 +292,7 @@ if (heart_flashing == 1) {
             <string>/// draw heart moving to buttons
 if (heart_flashing == 0) {
     draw_set_alpha(1);
-    draw_sprite(spr_redheart,0,new_xpos,new_ypos);
+    draw_sprite(spr_redheart,0,current_x,current_y);
 }
 
 </string>

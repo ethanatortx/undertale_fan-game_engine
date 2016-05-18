@@ -10,10 +10,9 @@
   <persistent>0</persistent>
   <colour>0</colour>
   <showcolour>-1</showcolour>
-  <code>room_set_height(rm_fight,obj_player_main.lastroom.room_height);
-room_set_width(rm_fight,obj_player_main.lastroom.room_width);
-
-instance_create(obj_player_main.x,obj_player_main.y,obj_heart_select)</code>
+  <code>instance_create(0,0,obj_heart_select);
+room_set_height(rm_fight,obj_heart_select.roomwidth);
+room_set_width(rm_fight,obj_heart_select.roomheight);</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
