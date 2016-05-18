@@ -639,8 +639,7 @@
     </sprites>
     <sprite>sprites\spr_quitting</sprite>
     <sprites name="Stet(gimmickmob)">
-      <sprite>sprites\spr_Stet_body_aftersnap</sprite>
-      <sprite>sprites\spr_Stet_body_duringsnap</sprite>
+      <sprite>sprites\spr_Stet_body_snap</sprite>
       <sprite>sprites\spr_Stet_head_neutral</sprite>
       <sprite>sprites\spr_Stet_aftersnap</sprite>
     </sprites>
