@@ -735,8 +735,12 @@
         <script>scripts\scr_flash_heart.gml</script>
         <script>scripts\scr_move_heart.gml</script>
         <script>scripts\scr_select_main_buttons.gml</script>
+        <script>scripts\scr_select_names.gml</script>
       </scripts>
       <scripts name="player turn">
+        <script>scripts\scr_button_pressed.gml</script>
+        <script>scripts\scr_display_mercy.gml</script>
+        <script>scripts\scr_display_items.gml</script>
         <script>scripts\scr_display_monster_names.gml</script>
         <scripts name="fight">
           <script>scripts\scr_fight.gml</script>
@@ -751,6 +755,7 @@
           <script>scripts\scr_monster_response.gml</script>
         </scripts>
         <scripts name="item">
+          <script>scripts\scr_move_in_items.gml</script>
           <script>scripts\scr_item.gml</script>
           <script>scripts\scr_use_item.gml</script>
           <script>scripts\scr_move_in_item_box.gml</script>

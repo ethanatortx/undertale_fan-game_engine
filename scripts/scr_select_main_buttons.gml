@@ -9,6 +9,10 @@ if (current_button != 0 && (keyboard_check_pressed(vk_left))) {
     global.buttonpos = current_button - 1;
 }
 
+if (keyboard_check_pressed(vk_enter)) {
+    inbox = 1;
+}
+
 // calculate position to display based on which button is selected
 if (global.buttonpos == 0) { // Fight
     return_position[0] = 42;

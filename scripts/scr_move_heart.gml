@@ -14,7 +14,7 @@ y_distance = button_y - starting_y; // x
 x_distance = button_x - starting_x; // y
 
 // checks to see if the x position is equal to the target x position
-if (current_x != button_x && heart_flashing == 0) {
+if ((current_x < (button_x - 3) || current_x > (button_x + 3))  && heart_flashing == 0) {
     xspeed = x_distance / (room_speed * 1); // distribute the x movement over the frames so it takes one second
     current_x = current_x + xspeed; // increase the x coord based on speed
     newpos[0] = current_x; // set the x return value
@@ -25,7 +25,7 @@ if (current_x != button_x && heart_flashing == 0) {
     newpos[0] = current_x; // set the x return value
 }
 // checks to see if the y position is equal to the target y position
-if (current_y != button_y && heart_flashing == 0) {
+if ((current_y < (button_y - 3) || current_y > (button_y + 3)) && heart_flashing == 0) {
     yspeed = y_distance / (room_speed * 1); // distribute y movement over the frames so the move takes one second
     current_y = current_y + yspeed; // increase the y coord based on speed
     newpos[1] = current_y; // set the y return value
