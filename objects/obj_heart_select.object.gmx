@@ -67,6 +67,7 @@ global.buttonpos = 4;
 
 page_items = 0;
 selected_item = 0;
+item_index_for_use = 0;
 
 heart_tick_count = 0;
 </string>
@@ -149,7 +150,7 @@ if (heart_flashing == 0) {
           <argument>
             <kind>1</kind>
             <string>/// check for action inisde box and then move between options inside box
-scr_select_names();
+scr_select_inside_box(array_height_2d(global.monster_stats), 1);
 </string>
           </argument>
         </arguments>
@@ -172,7 +173,43 @@ scr_select_names();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// draw monster names
+            <string>/// do attacks and other stage two fight options
+if (inbox == 2 &amp;&amp; alarm[0] &lt;= 0) {
+    if (global.buttonpos == 0) {
+    
+    } else if (global.buttonpos == 1) {
+    
+    } else if (global.buttonpos == 2) {
+        draw_text(103,276,"*");
+        draw_text_ext(135,276,use_message,32,400);
+        if (keyboard_check_pressed(vk_enter) || keyboard_check_pressed(ord("Z"))) {
+            inbox = 0;
+        }
+    } else if (global.buttonpos == 3) {
+        
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// draw monster names, items, or mercy options
 scr_button_pressed();
 </string>
           </argument>

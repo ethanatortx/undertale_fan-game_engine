@@ -10,7 +10,12 @@ if (current_button != 0 && (keyboard_check_pressed(vk_left))) {
 }
 
 if (keyboard_check_pressed(vk_enter)) {
-    inbox = 1;
+    if (global.buttonpos == 2 && scr_read_player_items() != undefined) { // doesn't let the player use the ITEMS button if they have no items to use
+        inbox = 1;
+        selected_item = 0;
+        page_items = 0;
+    }
+    alarm[0] = 5;
 }
 
 // calculate position to display based on which button is selected

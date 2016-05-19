@@ -7,9 +7,9 @@ real_items = undefined;
 
 for (i = 0; i < array_length_1d(global.player_items); i += 1) { // iterate throught the player item array
     if (global.player_items[i] != undefined) { // if item slot is not empty
-        real_items[global.player_item_count] = global.player_items[i]; // add the item to the actual items array
         global.player_item_count += 1; // add 1 to the count of actual items
+        real_items[global.player_item_count] = global.player_items[i]; // add the item to the actual items array
     }
 }
-
+global.player_items = real_items;
 return real_items;
