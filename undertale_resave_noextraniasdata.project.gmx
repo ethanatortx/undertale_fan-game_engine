@@ -835,14 +835,14 @@
     <object>objects\obj_quit_game</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rm_testroom</room>
-    <room>rooms\rm_fight</room>
     <room>rooms\rm_instructions</room>
     <room>rooms\rm_name_choose</room>
     <room>rooms\rm_name_confirmation</room>
     <room>rooms\rm_name_has_been_chosen</room>
     <room>rooms\rm_floweytalk1</room>
     <room>rooms\rm_resetroom</room>
+    <room>rooms\rm_testroom</room>
+    <room>rooms\rm_fight</room>
     <rooms name="ruins">
       <room>rooms\rm_ruins_startingroom</room>
       <room>rooms\rm_ruins_floweyroom1</room>
