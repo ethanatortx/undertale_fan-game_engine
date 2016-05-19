@@ -180,8 +180,10 @@ if (inbox == 2 &amp;&amp; alarm[0] &lt;= 0) {
     } else if (global.buttonpos == 1) {
     
     } else if (global.buttonpos == 2) {
-        draw_text(103,276,"*");
-        draw_text_ext(135,276,use_message,32,400);
+        draw_set_font(fnt_main);
+        scr_dialog_oneline();
+        draw_text(64,270,"*");
+        draw_text(82,270,current_drawn_text);
         if (keyboard_check_pressed(vk_enter) || keyboard_check_pressed(ord("Z"))) {
             inbox = 0;
         }
