@@ -87,6 +87,9 @@
       <sound>sound\snd_heart_break</sound>
       <sound>sound\snd_heart_runaway</sound>
       <sound>sound\snd_heart_shatter</sound>
+      <sounds name="unidentified">
+        <sound>sound\snd_maybecellphoneorsomething</sound>
+      </sounds>
       <sounds name="fight">
         <sound>sound\snd_fight_attack</sound>
         <sound>sound\snd_fight_hit</sound>
@@ -108,7 +111,7 @@
         <sound>sound\snd_menu_select</sound>
         <sound>sound\snd_menu_move</sound>
       </sounds>
-      <sound>sound\snd_item_defaultuse</sound>
+      <sound>sound\snd_item_default</sound>
       <sound>sound\snd_item_lilhero</sound>
       <sound>sound\snd_item_dogsalad</sound>
       <sound>sound\snd_item_hotdog</sound>
@@ -685,7 +688,9 @@
     <scripts name="dialog">
       <script>scripts\scr_createfont.gml</script>
       <script>scripts\scr_setup_dialog.gml</script>
+      <script>scripts\scr_setup_dialog_oneline.gml</script>
       <script>scripts\scr_dialog.gml</script>
+      <script>scripts\scr_dialog_oneline.gml</script>
       <script>scripts\scr_draw_dialog.gml</script>
       <script>scripts\scr_pp_dialog.gml</script>
       <scripts name="legacy code">
