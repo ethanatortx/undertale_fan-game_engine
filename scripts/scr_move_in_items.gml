@@ -94,13 +94,7 @@ if (!keyboard_check_pressed(ord("X"))) {
             }
         }
     }
-    if (keyboard_check_pressed(vk_enter) && alarm[0] <= 0) {
-        use_message = scr_use_item(item_index_for_use);
-        use_message = scr_pp_dialog(fnt_main,use_message,520,32);
-        scr_setup_dialog_oneline(use_message,50,274,0.75,snd_silent,1);
-        inbox = 2;
-        alarm[0] = 5;
-    }
+    
 } else if (keyboard_check_pressed(ord("X")) || keyboard_check_pressed(vk_lshift)) {
     inbox = 0;
 }
