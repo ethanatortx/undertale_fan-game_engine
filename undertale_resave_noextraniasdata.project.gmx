@@ -689,8 +689,11 @@
       <script>scripts\scr_createfont.gml</script>
       <script>scripts\scr_setup_dialog.gml</script>
       <script>scripts\scr_setup_dialog_oneline.gml</script>
+      <script>scripts\scr_setup_dialog_oneline_shake.gml</script>
       <script>scripts\scr_dialog.gml</script>
       <script>scripts\scr_dialog_oneline.gml</script>
+      <script>scripts\scr_dialog_oneline_shake.gml</script>
+      <script>scripts\scr_draw_dialog_shake.gml</script>
       <script>scripts\scr_draw_dialog.gml</script>
       <script>scripts\scr_pp_dialog.gml</script>
       <scripts name="legacy code">
@@ -699,6 +702,7 @@
         <script>scripts\scr_drawdialog_legacy.gml</script>
         <script>scripts\scr_noemotions.gml</script>
       </scripts>
+      <script>scripts\scr_split_to_letters.gml</script>
     </scripts>
     <scripts name="saving/loading">
       <script>scripts\scr_save.gml</script>
