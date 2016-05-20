@@ -848,6 +848,7 @@
     <object>objects\obj_resetroom_select</object>
     <object>objects\obj_choose_name</object>
     <object>objects\obj_name_confirmation</object>
+    <object>objects\obj_name_has_been_chosen</object>
     <object>objects\obj_instructions</object>
     <object>objects\obj_quit_game</object>
     <object>objects\obj_goto_nameing</object>
