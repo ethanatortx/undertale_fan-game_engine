@@ -15,11 +15,7 @@ x_distance = button_x - starting_x; // y
 
 // checks to see if the x position is equal to the target x position
 if ((current_x < (button_x - 3) || current_x > (button_x + 3))  && heart_flashing == 0) {
-<<<<<<< HEAD
-    xspeed = x_distance / (15); // distribute the x movement over the frames so it takes one second
-=======
     xspeed = x_distance / 15; // distribute the x movement over the frames so it takes one second
->>>>>>> origin/battle-system-2
     current_x = current_x + xspeed; // increase the x coord based on speed
     newpos[0] = current_x; // set the x return value
 } else {
@@ -30,11 +26,7 @@ if ((current_x < (button_x - 3) || current_x > (button_x + 3))  && heart_flashin
 }
 // checks to see if the y position is equal to the target y position
 if ((current_y < (button_y - 3) || current_y > (button_y + 3)) && heart_flashing == 0) {
-<<<<<<< HEAD
-    yspeed = y_distance / (15); // distribute y movement over the frames so the move takes one second
-=======
     yspeed = y_distance / 15; // distribute y movement over the frames so the move takes one second
->>>>>>> origin/battle-system-2
     current_y = current_y + yspeed; // increase the y coord based on speed
     newpos[1] = current_y; // set the y return value
 } else {

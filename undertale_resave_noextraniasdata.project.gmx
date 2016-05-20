@@ -750,7 +750,8 @@
         <script>scripts\scr_flash_heart.gml</script>
         <script>scripts\scr_move_heart.gml</script>
         <script>scripts\scr_select_main_buttons.gml</script>
-        <script>scripts\scr_select_inside_box.gml</script>
+        <script>scripts\scr_select_names.gml</script>
+        <script>scripts\scr_select_act.gml</script>
       </scripts>
       <scripts name="player turn">
         <script>scripts\scr_button_pressed.gml</script>

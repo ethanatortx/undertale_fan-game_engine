@@ -150,7 +150,7 @@ if (heart_flashing == 0) {
           <argument>
             <kind>1</kind>
             <string>/// check for action inisde box and then move between options inside box
-scr_display_monster_names();
+
 </string>
           </argument>
         </arguments>
