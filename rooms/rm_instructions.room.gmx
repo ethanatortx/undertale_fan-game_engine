@@ -16,7 +16,11 @@ global.playername = undefined;
 global.playername = scr_get_original_player_name();
 instance_create(0,0,obj_instructions);
 global.can_quit = false;
-instance_create(0,0,obj_quit_game);</code>
+instance_create(0,0,obj_quit_game);
+
+with (obj_player_main) {
+    instance_deactivate_object(obj_player_main);
+}</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
@@ -58,12 +62,12 @@ instance_create(0,0,obj_quit_game);</code>
   </views>
   <instances/>
   <tiles/>
-  <PhysicsWorld>0</PhysicsWorld>
+  <PhysicsWorld>-1</PhysicsWorld>
   <PhysicsWorldTop>0</PhysicsWorldTop>
   <PhysicsWorldLeft>0</PhysicsWorldLeft>
   <PhysicsWorldRight>1024</PhysicsWorldRight>
   <PhysicsWorldBottom>768</PhysicsWorldBottom>
   <PhysicsWorldGravityX>0</PhysicsWorldGravityX>
-  <PhysicsWorldGravityY>10</PhysicsWorldGravityY>
+  <PhysicsWorldGravityY>0</PhysicsWorldGravityY>
   <PhysicsWorldPixToMeters>0.100000001490116</PhysicsWorldPixToMeters>
 </room>

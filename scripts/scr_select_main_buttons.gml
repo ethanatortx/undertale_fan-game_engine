@@ -17,6 +17,8 @@ if (keyboard_check_pressed(vk_enter)) {
         inbox = 1;
         selected_item = 0;
         page_items = 0;
+    } else if (global.buttonpos == 0 || global.buttonpos == 1) {
+        inbox = 1;
     }
     alarm[0] = 5;
 }
