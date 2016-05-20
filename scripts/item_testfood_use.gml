@@ -11,6 +11,6 @@ if (health + item_stats[1] > global.maxhp) {
     starcount = 2;
     heal = "Using the testfood restored you to " + health + " HP."
 }
-audio_play_sound(snd_item_default,10,false);
 
+audio_play_sound(snd_item_default,10,false);
 return heal;
