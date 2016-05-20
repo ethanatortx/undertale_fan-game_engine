@@ -34,3 +34,4 @@ x_assign = x_coord;
 y_assign = y_coord;
 font = argument9;
 fontsize = font_get_size(argument9);
+arr_letters_pos = undefined;

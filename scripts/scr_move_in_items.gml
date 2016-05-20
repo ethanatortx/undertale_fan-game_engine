@@ -20,7 +20,7 @@ if (!keyboard_check_pressed(ord("X"))) {
             if (selected_item == 0 && selected_item + 1 < num_of_items) {
                 selected_item += 1;
                 item_index_for_use += 1;
-            } else if (selected_item == 1 && selected_item + 1 < num_of_items) {
+            } else if (selected_item == 1) {
                 selected_item -= 1;
                 item_index_for_use -= 1;
                 if (global.player_item_count > 3) { // only moves to next page if there are enough items to fill it
@@ -29,7 +29,7 @@ if (!keyboard_check_pressed(ord("X"))) {
             } else if (selected_item == 2 && selected_item + 1 < num_of_items) {
                 selected_item += 1;
                 item_index_for_use += 1;
-            } else if (selected_item == 3 && selected_item + 1 < num_of_items) {
+            } else if (selected_item == 3) {
                 selected_item -= 1;
                 item_index_for_use -= 1;
                 if (global.player_item_count > 3) { // only moves to next page if there are enough items to fill it
@@ -38,22 +38,22 @@ if (!keyboard_check_pressed(ord("X"))) {
             }
         }
         if (keyboard_check_pressed(vk_left)) {
-            if (selected_item == 0 && selected_item + 1 < num_of_items) {
+            if (selected_item == 0) {
                 selected_item += 1;
                 item_index_for_use += 1;
                 if (global.player_item_count > 3) { // only moves to next page if there are enough items to fill it
                     page_items -= 1;
                 }
-            } else if (selected_item == 1 && selected_item + 1 < num_of_items) {
+            } else if (selected_item == 1) {
                 selected_item -= 1;
                 item_index_for_use -= 1;
-            } else if (selected_item == 2 && selected_item + 1 < num_of_items) {
+            } else if (selected_item == 2) {
                 selected_item += 1;
                 item_index_for_use += 1;
                 if (global.player_item_count > 3) { // only moves to next page if there are enough items to fill it
                     page_items -= 1;
                 }
-            } else if (selected_item == 3 && selected_item + 1 < num_of_items) {
+            } else if (selected_item == 3) {
                 selected_item -= 1;
                 item_index_for_use -= 1;
             }
@@ -63,32 +63,32 @@ if (!keyboard_check_pressed(ord("X"))) {
             if (selected_item == 0 && selected_item + 5 < num_of_items) {
                 selected_item += 1;
                 item_index_for_use += 1;
-            } else if (selected_item == 1 && selected_item + 5 < num_of_items) {
+            } else if (selected_item == 1) {
                 selected_item -= 1;
                 page_items += 1;
                 item_index_for_use -= 1;
             } else if (selected_item == 2 && selected_item + 5 < num_of_items) {
                 selected_item += 1;
                 item_index_for_use += 1;
-            } else if (selected_item == 3 && selected_item + 5 < num_of_items) {
+            } else if (selected_item == 3) {
                 selected_item -= 1;
                 page_items += 1;
                 item_index_for_use -= 1;
             }
         }
         if (keyboard_check_pressed(vk_left)) {
-            if (selected_item == 0 && selected_item + 5 < num_of_items) {
+            if (selected_item == 0) {
                 selected_item += 1;
                 page_items -= 1;
                 item_index_for_use = 4;
-            } else if (selected_item == 1 && selected_item + 5 < num_of_items) {
+            } else if (selected_item == 1) {
                 selected_item -= 1;
                 item_index_for_use = 5;
-            } else if (selected_item == 2 && selected_item + 5 < num_of_items) {
+            } else if (selected_item == 2) {
                 selected_item += 1;
                 page_items -= 1;
                 item_index_for_use = 6;
-            } else if (selected_item == 3 && selected_item + 5 < num_of_items) {
+            } else if (selected_item == 3) {
                 selected_item -= 1;
                 item_index_for_use = 7;
             }

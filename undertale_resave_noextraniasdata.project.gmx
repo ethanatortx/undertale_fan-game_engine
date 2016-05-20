@@ -695,6 +695,7 @@
       <script>scripts\scr_dialog_oneline_shake.gml</script>
       <script>scripts\scr_draw_dialog_shake.gml</script>
       <script>scripts\scr_draw_dialog.gml</script>
+      <script>scripts\scr_split_to_letters.gml</script>
       <script>scripts\scr_pp_dialog.gml</script>
       <scripts name="legacy code">
         <script>scripts\scr_dialogsetup_legacy.gml</script>
@@ -702,7 +703,6 @@
         <script>scripts\scr_drawdialog_legacy.gml</script>
         <script>scripts\scr_noemotions.gml</script>
       </scripts>
-      <script>scripts\scr_split_to_letters.gml</script>
     </scripts>
     <scripts name="saving/loading">
       <script>scripts\scr_save.gml</script>
@@ -722,8 +722,6 @@
     </scripts>
     <script>scripts\scr_interactobj.gml</script>
     <script>scripts\scr_interactbattle.gml</script>
-    <script>scripts\scr_charamap.gml</script>
-    <script>scripts\scr_sansmap.gml</script>
     <script>scripts\scr_roomtransition.gml</script>
     <scripts name="legacy code">
       <scripts name="fight">
@@ -733,6 +731,8 @@
         <script>scripts\scr_encounterfull.gml</script>
         <script>scripts\scr_fight_state.gml</script>
       </scripts>
+      <script>scripts\scr_charamap.gml</script>
+      <script>scripts\scr_sansmap.gml</script>
     </scripts>
     <scripts name="items">
       <scripts name="testfood">
@@ -764,14 +764,12 @@
           <script>scripts\scr_deal_damage_to_monster.gml</script>
         </scripts>
         <scripts name="act">
-          <script>scripts\scr_act.gml</script>
           <script>scripts\scr_check.gml</script>
           <script>scripts\scr_display_act_options.gml</script>
           <script>scripts\scr_monster_response.gml</script>
         </scripts>
         <scripts name="item">
           <script>scripts\scr_move_in_items.gml</script>
-          <script>scripts\scr_item.gml</script>
           <script>scripts\scr_use_item.gml</script>
         </scripts>
         <scripts name="mercy">

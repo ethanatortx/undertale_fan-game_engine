@@ -65,9 +65,9 @@ for (i = 0; i < array_length_1d(letters_draw); i++) {
     arr_letters_pos[i,0] = letters_draw[i];
     if (arr_letters_pos[i,0] == "~") {
         x_assign = x_coord
-        y_assign += fontsize;
+        y_assign += fontsize + 6;
     } else {
-        x_assign += fontsize/2 + 4;
+        x_assign += fontsize/2 + 6;
     }
     
     x_shake_r = round(random_range(0,100));
