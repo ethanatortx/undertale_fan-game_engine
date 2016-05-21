@@ -178,7 +178,7 @@ if (inbox == 2 &amp;&amp; alarm[0] &lt;= 0) {
     if (global.buttonpos == 0) {
         
     } else if (global.buttonpos == 1) {
-        
+        scr_display_act_options(actual_index);
     } else if (global.buttonpos == 2) {
         draw_set_font(fnt_main);
         scr_dialog_oneline_shake();

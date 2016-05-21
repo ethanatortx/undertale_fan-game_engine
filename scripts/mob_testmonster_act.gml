@@ -1,6 +1,6 @@
 /// mob_testmonster_act
 
-testmonster_act[0,0] = "CHECK";
+testmonster_act[0,0] = "Check";
 testmonster_act[0,1] = "This doesn't look very good."
 testmonster_act[1,0] = "Say Hello";
 testmonster_act[1,1] = "Hello there, human";

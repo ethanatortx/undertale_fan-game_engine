@@ -87,9 +87,6 @@
       <sound>sound\snd_heart_break</sound>
       <sound>sound\snd_heart_runaway</sound>
       <sound>sound\snd_heart_shatter</sound>
-      <sounds name="unidentified">
-        <sound>sound\snd_maybecellphoneorsomething</sound>
-      </sounds>
       <sounds name="fight">
         <sound>sound\snd_fight_attack</sound>
         <sound>sound\snd_fight_hit</sound>
@@ -703,6 +700,7 @@
         <script>scripts\scr_drawdialog_legacy.gml</script>
         <script>scripts\scr_noemotions.gml</script>
       </scripts>
+      <script>scripts\scr_shake_instant.gml</script>
     </scripts>
     <scripts name="saving/loading">
       <script>scripts\scr_save.gml</script>

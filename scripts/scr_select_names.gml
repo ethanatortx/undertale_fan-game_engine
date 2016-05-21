@@ -52,6 +52,7 @@ if (keyboard_check_pressed(vk_up) || keyboard_check_pressed(vk_down)) {
 
 if ((keyboard_check_pressed(ord("Z")) || keyboard_check_pressed(vk_enter)) && alarm[0] <= 0) {
     inbox = 2;
+    audio_play_sound(snd_menu_select,10,false);
     alarm[0] = 5;
 }
 if ((keyboard_check_pressed(ord("X")) || keyboard_check_pressed(vk_lshift)) && alarm[0] <= 0) {
@@ -61,11 +62,11 @@ if ((keyboard_check_pressed(ord("X")) || keyboard_check_pressed(vk_lshift)) && a
 
 for_index = selected_item;
 for (k = 0; k < array_length_1d(arr_correspond); k++) {
-    if (arr_correspond[k] = 1) {
-        for_index -= 1;
-    }
     if (for_index <= 0) {
         actual_index = k;
+    }
+    if (arr_correspond[k] = 1) {
+        for_index -= 1;
     }
 }
 

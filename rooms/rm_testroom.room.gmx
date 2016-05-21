@@ -10,7 +10,8 @@
   <persistent>0</persistent>
   <colour>128</colour>
   <showcolour>-1</showcolour>
-  <code>instance_create(room_width/2,room_height/2,obj_player_main);</code>
+  <code>instance_create(room_width/2,room_height/2,obj_player_main);
+audio_play_sound(mus_toomuch,10,true);</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
