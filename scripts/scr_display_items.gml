@@ -53,8 +53,8 @@ if (global.player_item_count == -1) {
     }
     if (keyboard_check_pressed(vk_enter) && alarm[0] <= 0) {
         use_message = scr_use_item(item_index_for_use);
-        use_message = scr_pp_dialog(fnt_main,use_message,520,32);
-        scr_setup_dialog_oneline_shake(use_message,64,274,0.75,snd_silent,1,1,1,1,fnt_main);
+        use_message = scr_pp_dialog(fnt_main,use_message,536,32);
+        scr_setup_dialog_oneline_shake(use_message,64,276,0.75,snd_silent,1,1,1,0.5,fnt_main);
         inbox = 2;
         alarm[0] = 5;
     }

@@ -174,7 +174,7 @@ if (heart_flashing == 0) {
           <argument>
             <kind>1</kind>
             <string>/// do attacks and other stage two fight options
-if (inbox == 2 &amp;&amp; alarm[0] &lt;= 0) {
+if (inbox == 2) {
     if (global.buttonpos == 0) {
         
     } else if (global.buttonpos == 1) {
@@ -189,6 +189,15 @@ if (inbox == 2 &amp;&amp; alarm[0] &lt;= 0) {
         }
     } else if (global.buttonpos == 3) {
         
+    }
+}
+if (inbox == 3) {
+    if (global.buttonpos == 1) {
+        scr_dialog_oneline_shake();
+        scr_draw_dialog_shake(arr_letters_pos,fnt_main);
+        if ((keyboard_check_pressed(vk_enter) || keyboard_check_pressed(ord("Z"))) &amp;&amp; alarm[0] &lt;= 0) {
+            inbox = 0;
+        }
     }
 }
 </string>

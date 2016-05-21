@@ -690,26 +690,6 @@
       </scripts>
       <script>scripts\mob_check.gml</script>
     </scripts>
-    <scripts name="dialog">
-      <script>scripts\scr_createfont.gml</script>
-      <script>scripts\scr_setup_dialog.gml</script>
-      <script>scripts\scr_setup_dialog_oneline.gml</script>
-      <script>scripts\scr_setup_dialog_oneline_shake.gml</script>
-      <script>scripts\scr_dialog.gml</script>
-      <script>scripts\scr_dialog_oneline.gml</script>
-      <script>scripts\scr_dialog_oneline_shake.gml</script>
-      <script>scripts\scr_draw_dialog_shake.gml</script>
-      <script>scripts\scr_draw_dialog.gml</script>
-      <script>scripts\scr_split_to_letters.gml</script>
-      <script>scripts\scr_pp_dialog.gml</script>
-      <scripts name="legacy code">
-        <script>scripts\scr_dialogsetup_legacy.gml</script>
-        <script>scripts\scr_displaydialog_legacy.gml</script>
-        <script>scripts\scr_drawdialog_legacy.gml</script>
-        <script>scripts\scr_noemotions.gml</script>
-      </scripts>
-      <script>scripts\scr_shake_instant.gml</script>
-    </scripts>
     <scripts name="saving/loading">
       <script>scripts\scr_save.gml</script>
       <script>scripts\scr_load.gml</script>
@@ -745,6 +725,27 @@
         <script>scripts\item_testfood.gml</script>
         <script>scripts\item_testfood_use.gml</script>
       </scripts>
+    </scripts>
+    <scripts name="dialog">
+      <script>scripts\scr_createfont.gml</script>
+      <script>scripts\scr_setup_dialog.gml</script>
+      <script>scripts\scr_setup_dialog_oneline.gml</script>
+      <script>scripts\scr_setup_dialog_oneline_shake.gml</script>
+      <script>scripts\scr_dialog.gml</script>
+      <script>scripts\scr_dialog_oneline.gml</script>
+      <script>scripts\scr_dialog_oneline_shake.gml</script>
+      <script>scripts\scr_draw_dialog_shake.gml</script>
+      <script>scripts\scr_draw_dialog.gml</script>
+      <script>scripts\scr_split_to_letters.gml</script>
+      <script>scripts\scr_pp_dialog.gml</script>
+      <script>scripts\scr_pp_dialog_shake.gml</script>
+      <scripts name="legacy code">
+        <script>scripts\scr_dialogsetup_legacy.gml</script>
+        <script>scripts\scr_displaydialog_legacy.gml</script>
+        <script>scripts\scr_drawdialog_legacy.gml</script>
+        <script>scripts\scr_noemotions.gml</script>
+      </scripts>
+      <script>scripts\scr_shake_instant.gml</script>
     </scripts>
     <scripts name="battle system">
       <script>scripts\scr_setup_monster_stats_2d_array.gml</script>

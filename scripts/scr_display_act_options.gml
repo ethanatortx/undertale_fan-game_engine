@@ -44,3 +44,31 @@ for (act_draw_num = 0; act_draw_num < array_height_2d(monster_act_options); act_
         scr_draw_dialog_shake(arr_letters_pos,fnt_main);
     }
 }
+if ((keyboard_check_pressed(ord("Z")) || keyboard_check_pressed(vk_enter)) && alarm[0] <= 0) {
+    act_detail = monster_act_options[selected_item,1]
+    if (selected_item == 0) {
+        enemy_atk = global.monster_stats[monster_index,2];
+        enemy_def = global.monster_stats[monster_index,3];
+        checktxt = monster_act_options[0,1];
+        act_detail = scr_check(enemy_atk,enemy_def,checktxt,global.monster_stats[monster_index,0]);
+    }
+    if (selected_item == 1) {
+        act_detail = monster_act_options[1,1];
+    }
+    if (selected_item == 2) {
+        act_detail = monster_act_options[2,1];
+    }
+    if (selected_item == 3) {
+        act_detail = monster_act_options[3,1];
+    }
+    
+    audio_play_sound(snd_menu_select,10,false);
+    act_detail = scr_pp_dialog_shake(fnt_main,act_detail,536,32);
+    scr_setup_dialog_oneline_shake(act_detail,64,276,0.75,snd_narrator_talking,1,1,1,0.5,fnt_main);
+    inbox = 3;
+    alarm[0] = 5;
+}
+if ((keyboard_check_pressed(ord("X")) || keyboard_check_pressed(vk_lshift)) && alarm[0] <= 0) {
+    inbox = 1;
+    alarm[0] = 5;
+}
