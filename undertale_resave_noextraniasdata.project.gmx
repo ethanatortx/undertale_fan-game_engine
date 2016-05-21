@@ -247,6 +247,14 @@
       <sound>sound\snd_greaterdog_bark</sound>
       <sound>sound\snd_narrator_talking</sound>
       <sound>sound\snd_narrator_story</sound>
+      <sounds name="creepy synthesized voices">
+        <sound>sound\snd_creepyvoice1</sound>
+        <sound>sound\and_creepyvoice2</sound>
+        <sound>sound\snd_creepyvoice3</sound>
+        <sound>sound\snd_creepyvoice4</sound>
+        <sound>sound\snd_creepyvoice5</sound>
+        <sound>sound\snd_creepyvoice6</sound>
+      </sounds>
     </sounds>
     <sound>sound\mus_ambientwater</sound>
     <sound>sound\mus_anothermedium</sound>
