@@ -1,14 +1,14 @@
 filestart
 flowey_talk_intro
-Hey..
+Oh. It's you..
 normal
-It's been a while.
+It's been a very, very long time.
 normal
 I wasn't sure when you would be back.
 normal
 I started to think that you weren't coming back.
 relieved_looking_right_frown
-I waited here for you here, after everyone left,
+I waited here for you here, after it all ended,
 looking_right
 hoping you wouldn't reappear. 
 normal
@@ -18,7 +18,7 @@ I would have given anything for someone to talk to.
 relieved_looking_right
 I just didn't want everything to be reset.
 relieved1_frown
-I thought, what other reason would you appear, if not for that.
+I thought, what other reason would you appear, if not for that?
 sad_looking_down
 ...
 sad
