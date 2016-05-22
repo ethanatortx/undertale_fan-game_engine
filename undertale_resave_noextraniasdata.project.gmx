@@ -759,6 +759,7 @@
         <script>scripts\scr_select_main_buttons.gml</script>
         <script>scripts\scr_select_names.gml</script>
         <script>scripts\scr_select_act.gml</script>
+        <script>scripts\scr_draw_monster.gml</script>
       </scripts>
       <scripts name="player turn">
         <script>scripts\scr_button_pressed.gml</script>
