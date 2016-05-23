@@ -416,7 +416,7 @@ if (global.buttonpos != 4 &amp;&amp; inbox == 0) {
           <argument>
             <kind>1</kind>
             <string>/// draw monsters
-for (i = 0; i &lt; array_height_2d(global.monter_stats); i++) {
+for (i = 0; i &lt; array_height_2d(global.monster_stats); i++) {
     if (global.monster_stats[i,1] &gt; 0) {
         scr_draw_monster(global.monster_stats[i,0],i);
     }

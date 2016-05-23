@@ -1,6 +1,6 @@
 /// mob_testmonster
 
-mob_testmonster_stats[0] = "Testmonster" // name
+mob_testmonster_stats[0] = "testmonster" // name
 mob_testmonster_stats[1] = 20; // hpd
 mob_testmonster_stats[2] = 3; // attack
 mob_testmonster_stats[3] = 3; // defense
