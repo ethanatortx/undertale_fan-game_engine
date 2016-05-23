@@ -800,6 +800,7 @@
         </scripts>
       </scripts>
     </scripts>
+    <script>scripts\scr_rain_rectangle.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_papyrus</font>
@@ -862,6 +863,7 @@
     <object>objects\obj_instructions</object>
     <object>objects\obj_quit_game</object>
     <object>objects\obj_goto_nameing</object>
+    <object>objects\obj_rain_rectangle</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_testroom</room>
