@@ -614,6 +614,7 @@
         <sprite>sprites\spr_sans_face_laughing</sprite>
         <sprite>sprites\spr_sans_face_smiling</sprite>
         <sprite>sprites\spr_sans_face_closed</sprite>
+        <sprite>sprites\spr_sans_battle</sprite>
       </sprites>
     </sprites>
     <sprite>sprites\spr_ruinsentrance</sprite>
