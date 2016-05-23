@@ -70,6 +70,13 @@ selected_item = 0;
 item_index_for_use = 0;
 
 heart_tick_count = 0;
+
+for (i = 0; i &lt; array_height_2d(global.monster_stats); i++) {
+    if (global.monster_stats[i,1] &gt; 0) {
+        current_sprites = script_execute(asset_get_index("mob_" + global.monster_stats[i,0] + "_txtr"));
+        all_monster_sprites[i] = current_sprites;
+    }
+}
 </string>
           </argument>
         </arguments>
@@ -418,9 +425,12 @@ if (global.buttonpos != 4 &amp;&amp; inbox == 0) {
             <string>/// draw monsters
 for (i = 0; i &lt; array_height_2d(global.monster_stats); i++) {
     if (global.monster_stats[i,1] &gt; 0) {
-        scr_draw_monster(global.monster_stats[i,0],i);
+        
+        all_monster_sprites[i] = scr_draw_monster(all_monster_sprites,i);
     }
 }
+
+//script_execute(asset_get_index("mob_" + monster + "_txtr"));
 </string>
           </argument>
         </arguments>
