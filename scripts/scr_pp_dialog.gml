@@ -28,7 +28,7 @@ while(wordcount <= count) { //while we still have words left
 }
 finalline = ""; //final processed line
 for(var a = 0; a < array_length_1d(wordline); a++) {
-    finalline =finalline+ wordline[a] + "#";
+    finalline =finalline+ wordline[a] + "# ";
 }
 word = 0; // junk cleaning for the next use of the script
 wordline = 0; // if this isn't done, it can result in some funky stuff happening.
