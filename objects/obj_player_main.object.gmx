@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>/// Initialize variables
 //global.dialog = false;
-spd = 1.5; // default movement speed for overworld
+spd = 2; // default movement speed for overworld
 image_spd = .1; // default animation speed for overworld movement
 image_speed = 0; // start in the world unmoving
 state = scr_move_state; // default state allows movement
@@ -92,6 +92,11 @@ health = 20;
             <string>/// movement and room transition
 //sets phixed rotation in physics room
 phy_fixed_rotation = true;
+
+if(spd==2)
+spd = 1;
+else
+spd=2;
 
 //teleports player to the entryway from the door they took
 if (room != lastroom) {
