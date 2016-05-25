@@ -35,6 +35,8 @@ final_position[1] = 240;
 x_scale = 1;
 y_scale = 1;
 
+j = 0;
+
 global.buttonpos = 0;
 
 start_transition = false;
@@ -65,27 +67,33 @@ transition_alpha = 0;
 
 // move x
 if (starting_position[0] &gt; final_position[0]) {
-    starting_position[0] -= 1;
+    starting_position[0] -= .5;
 }
 // move y
 if (starting_position[1] &lt; final_position[1]) {
-    starting_position[1] += 1.5;
+    starting_position[1] += .75;
 }
 // increase x scale
 if (starting_position[0] &gt; final_position[0]) {
-    x_scale += .025;
+    x_scale += .0125;
 }
 // increase y scale
 if (starting_position[1] &lt; final_position[1]) {
-    y_scale += .025;
+    y_scale += .0125;
 }
-// randomize rotation
-name_rotation = random_range(-1,1);
-// randomize shake value
-name_shake = random_range(-1,1);
+
+if (j == 0) {
+    // randomize rotation
+    name_rotation = random_range(-1,1);
+    // randomize shake value
+    name_shake = random_range(-1,1);
+    j++;
+} else if (j == 1) {
+    j--;
+}
 
 if (start_transition = true &amp;&amp; transition_alpha &lt; 2) {
-    transition_alpha += .01;
+    transition_alpha += .005;
 } else if (transition_alpha &gt;= 2) {
     room_goto(rm_floweytalk1);
     instance_destroy();

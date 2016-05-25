@@ -33,6 +33,8 @@ selected_button = "A";
 // set global playername to be empty
 global.playername = "";
 
+j = 0;
+
 // imposed character limit for names (starting 1)
 character_limit = 8;
 // uppercase letters
@@ -141,15 +143,23 @@ scr_move_choose_name(selected_button);
             <string>
 draw_set_font(fnt_menu);
 
+
 for (g = 0; g &lt; array_height_2d(array_letters); g += 1) {
-    shakex = round(random_range(0,1));
-    shakey = round(random_range(0,1));
-    
-    if (selected_button == array_letters[g,0]) {
-        draw_text_colour(array_letters[g,1] + shakex,array_letters[g,2] + shakey,array_letters[g,0],c_yellow,c_yellow,c_yellow,c_yellow,255);
-    } else {
-        draw_text_colour(array_letters[g,1] + shakex,array_letters[g,2] + shakey,array_letters[g,0],c_white,c_white,c_white,c_white,255);
+    if (j == 0) {
+        shakex[g] = round(random_range(0,1));
+        shakey[g] = round(random_range(0,1));
     }
+    if (selected_button == array_letters[g,0]) {
+        draw_text_colour(array_letters[g,1] + shakex[g],array_letters[g,2] + shakey[g],array_letters[g,0],c_yellow,c_yellow,c_yellow,c_yellow,255);
+    } else {
+        draw_text_colour(array_letters[g,1] + shakex[g],array_letters[g,2] + shakey[g],array_letters[g,0],c_white,c_white,c_white,c_white,255);
+    }
+}
+
+if (j == 0) {
+    j ++;
+} else if (j == 1) {
+    j --;
 }
 
 if (current_char == 52) {

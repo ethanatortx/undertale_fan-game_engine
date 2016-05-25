@@ -27,8 +27,8 @@
             <kind>1</kind>
             <string>/// Initialize variables
 //global.dialog = false;
-spd = 3; // default movement speed for overworld
-image_spd = .2; // default animation speed for overworld movement
+spd = 1.5; // default movement speed for overworld
+image_spd = .1; // default animation speed for overworld movement
 image_speed = 0; // start in the world unmoving
 state = scr_move_state; // default state allows movement
 scr_getinput(); // allow reading the input of the arrow keys
