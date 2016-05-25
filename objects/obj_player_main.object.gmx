@@ -60,7 +60,10 @@ for (k = 0; k &lt; 8;k += 1) {
 // player stats initialization
 global.attack = 1;
 global.defense = 1;
-global.item_count = 0;
+global.item_count = 04;
+global.maxhp = 20;
+global.player_items[0] = "testfood";
+global.player_items[1] = "testfood";
 global.love = 1;
 global.ex_points = 0;
 health = 20;

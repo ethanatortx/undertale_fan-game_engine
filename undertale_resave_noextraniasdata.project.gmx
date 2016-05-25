@@ -108,7 +108,7 @@
         <sound>sound\snd_menu_select</sound>
         <sound>sound\snd_menu_move</sound>
       </sounds>
-      <sound>sound\snd_item_defaultuse</sound>
+      <sound>sound\snd_item_default</sound>
       <sound>sound\snd_item_lilhero</sound>
       <sound>sound\snd_item_dogsalad</sound>
       <sound>sound\snd_item_hotdog</sound>
@@ -247,6 +247,14 @@
       <sound>sound\snd_greaterdog_bark</sound>
       <sound>sound\snd_narrator_talking</sound>
       <sound>sound\snd_narrator_story</sound>
+      <sounds name="creepy synthesized voices">
+        <sound>sound\snd_creepyvoice1</sound>
+        <sound>sound\and_creepyvoice2</sound>
+        <sound>sound\snd_creepyvoice3</sound>
+        <sound>sound\snd_creepyvoice4</sound>
+        <sound>sound\snd_creepyvoice5</sound>
+        <sound>sound\snd_creepyvoice6</sound>
+      </sounds>
     </sounds>
     <sound>sound\mus_ambientwater</sound>
     <sound>sound\mus_anothermedium</sound>
@@ -606,6 +614,7 @@
         <sprite>sprites\spr_sans_face_laughing</sprite>
         <sprite>sprites\spr_sans_face_smiling</sprite>
         <sprite>sprites\spr_sans_face_closed</sprite>
+        <sprite>sprites\spr_sans_battle</sprite>
       </sprites>
     </sprites>
     <sprite>sprites\spr_ruinsentrance</sprite>
@@ -682,19 +691,6 @@
       </scripts>
       <script>scripts\mob_check.gml</script>
     </scripts>
-    <scripts name="dialog">
-      <script>scripts\scr_createfont.gml</script>
-      <script>scripts\scr_setup_dialog.gml</script>
-      <script>scripts\scr_dialog.gml</script>
-      <script>scripts\scr_draw_dialog.gml</script>
-      <script>scripts\scr_pp_dialog.gml</script>
-      <scripts name="legacy code">
-        <script>scripts\scr_dialogsetup_legacy.gml</script>
-        <script>scripts\scr_displaydialog_legacy.gml</script>
-        <script>scripts\scr_drawdialog_legacy.gml</script>
-        <script>scripts\scr_noemotions.gml</script>
-      </scripts>
-    </scripts>
     <scripts name="saving/loading">
       <script>scripts\scr_save.gml</script>
       <script>scripts\scr_load.gml</script>
@@ -713,8 +709,6 @@
     </scripts>
     <script>scripts\scr_interactobj.gml</script>
     <script>scripts\scr_interactbattle.gml</script>
-    <script>scripts\scr_charamap.gml</script>
-    <script>scripts\scr_sansmap.gml</script>
     <script>scripts\scr_roomtransition.gml</script>
     <scripts name="legacy code">
       <scripts name="fight">
@@ -724,6 +718,35 @@
         <script>scripts\scr_encounterfull.gml</script>
         <script>scripts\scr_fight_state.gml</script>
       </scripts>
+      <script>scripts\scr_charamap.gml</script>
+      <script>scripts\scr_sansmap.gml</script>
+    </scripts>
+    <scripts name="items">
+      <scripts name="testfood">
+        <script>scripts\item_testfood.gml</script>
+        <script>scripts\item_testfood_use.gml</script>
+      </scripts>
+    </scripts>
+    <scripts name="dialog">
+      <script>scripts\scr_createfont.gml</script>
+      <script>scripts\scr_setup_dialog.gml</script>
+      <script>scripts\scr_setup_dialog_oneline.gml</script>
+      <script>scripts\scr_setup_dialog_oneline_shake.gml</script>
+      <script>scripts\scr_dialog.gml</script>
+      <script>scripts\scr_dialog_oneline.gml</script>
+      <script>scripts\scr_dialog_oneline_shake.gml</script>
+      <script>scripts\scr_draw_dialog_shake.gml</script>
+      <script>scripts\scr_draw_dialog.gml</script>
+      <script>scripts\scr_split_to_letters.gml</script>
+      <script>scripts\scr_pp_dialog.gml</script>
+      <script>scripts\scr_pp_dialog_shake.gml</script>
+      <scripts name="legacy code">
+        <script>scripts\scr_dialogsetup_legacy.gml</script>
+        <script>scripts\scr_displaydialog_legacy.gml</script>
+        <script>scripts\scr_drawdialog_legacy.gml</script>
+        <script>scripts\scr_noemotions.gml</script>
+      </scripts>
+      <script>scripts\scr_shake_instant.gml</script>
     </scripts>
     <scripts name="battle system">
       <script>scripts\scr_setup_monster_stats_2d_array.gml</script>
@@ -735,8 +758,14 @@
         <script>scripts\scr_flash_heart.gml</script>
         <script>scripts\scr_move_heart.gml</script>
         <script>scripts\scr_select_main_buttons.gml</script>
+        <script>scripts\scr_select_names.gml</script>
+        <script>scripts\scr_select_act.gml</script>
+        <script>scripts\scr_draw_monster.gml</script>
       </scripts>
       <scripts name="player turn">
+        <script>scripts\scr_button_pressed.gml</script>
+        <script>scripts\scr_display_mercy.gml</script>
+        <script>scripts\scr_display_items.gml</script>
         <script>scripts\scr_display_monster_names.gml</script>
         <scripts name="fight">
           <script>scripts\scr_fight.gml</script>
@@ -745,15 +774,13 @@
           <script>scripts\scr_deal_damage_to_monster.gml</script>
         </scripts>
         <scripts name="act">
-          <script>scripts\scr_act.gml</script>
           <script>scripts\scr_check.gml</script>
           <script>scripts\scr_display_act_options.gml</script>
           <script>scripts\scr_monster_response.gml</script>
         </scripts>
         <scripts name="item">
-          <script>scripts\scr_item.gml</script>
+          <script>scripts\scr_move_in_items.gml</script>
           <script>scripts\scr_use_item.gml</script>
-          <script>scripts\scr_move_in_item_box.gml</script>
         </scripts>
         <scripts name="mercy">
           <script>scripts\scr_mercy.gml</script>
@@ -773,6 +800,7 @@
         </scripts>
       </scripts>
     </scripts>
+    <script>scripts\scr_rain_rectangle.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_papyrus</font>
@@ -831,18 +859,21 @@
     <object>objects\obj_resetroom_select</object>
     <object>objects\obj_choose_name</object>
     <object>objects\obj_name_confirmation</object>
+    <object>objects\obj_name_has_been_chosen</object>
     <object>objects\obj_instructions</object>
     <object>objects\obj_quit_game</object>
+    <object>objects\obj_goto_nameing</object>
+    <object>objects\obj_rain_rectangle</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_testroom</room>
-    <room>rooms\rm_fight</room>
     <room>rooms\rm_instructions</room>
     <room>rooms\rm_name_choose</room>
     <room>rooms\rm_name_confirmation</room>
     <room>rooms\rm_name_has_been_chosen</room>
     <room>rooms\rm_floweytalk1</room>
     <room>rooms\rm_resetroom</room>
+    <room>rooms\rm_fight</room>
     <rooms name="ruins">
       <room>rooms\rm_ruins_startingroom</room>
       <room>rooms\rm_ruins_floweyroom1</room>

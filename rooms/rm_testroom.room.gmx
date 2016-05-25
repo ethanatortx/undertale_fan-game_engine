@@ -10,7 +10,8 @@
   <persistent>0</persistent>
   <colour>128</colour>
   <showcolour>-1</showcolour>
-  <code>instance_create(room_width/2,room_height/2,obj_player_main);</code>
+  <code>instance_create(room_width/2,room_height/2,obj_player_main);
+audio_play_sound(mus_toomuch,10,true);</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
@@ -52,6 +53,7 @@
   </views>
   <instances>
     <instance objName="obj_test_battle" x="820" y="1000" name="inst_AD755C51" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_goto_nameing" x="1000" y="820" name="inst_220A3CB8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bg_ruins1" x="1020" y="1020" w="20" h="20" xo="120" yo="20" id="10004908" name="inst_708A135E" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
