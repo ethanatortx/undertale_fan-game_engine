@@ -24,9 +24,9 @@ phy_position_y += spd_arr[1];
 
 // detect wich direction to animate (right/left/down/up)
 if (phy_position_y != phy_position_yprevious) {
-    if (phy_position_y < phy_position_yprevious) {
+    if (phy_position_y > phy_position_yprevious) {
         sprite_index = spr_main_down;
-    } else if (phy_position_y > phy_position_yprevious) {
+    } else if (phy_position_y < phy_position_yprevious) {
         sprite_index = spr_main_up;
     }
 }
