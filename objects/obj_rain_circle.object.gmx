@@ -29,10 +29,11 @@
 global.rain_part = part_type_create();
 
 part_type_shape(global.rain_part,pt_shape_line);
-part_type_size(global.rain_part,1,1,0,0);
+part_type_size(global.rain_part,.1,.1,0,0);
 part_type_speed(global.rain_part,1,2,0,0);
 part_type_orientation(global.rain_part,90,90,0,0,0);
-
+part_type_direction(global.rain_part,270,270,0,0);
+part_type_life(global.rain_part,125,125);
 </string>
           </argument>
         </arguments>

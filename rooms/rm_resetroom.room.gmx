@@ -11,7 +11,7 @@
   <colour>0</colour>
   <showcolour>-1</showcolour>
   <code>instance_create(0,0,obj_resetroom_select);
-instance_create(160,190,obj_rain_circle);
+instance_create(160,190,obj_rain_rectangle);
 global.can_quit = true;</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
