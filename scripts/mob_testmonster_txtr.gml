@@ -2,11 +2,11 @@
 
 testmonster_txtr[0,0] = spr_sans_battle;
 testmonster_txtr[0,1] = 320; // x
-testmonster_txtr[0,2] = 240; // y
-testmonster_txtr[0,3] = .01; // animation speed of this sprite; 0 = no animation
-testmonster_txtr[0,4] = 2; // animation start
-testmonster_txtr[0,5] = 3; // animation cap
-testmonster_txtr[0,6] = 2; // current animation frame
+testmonster_txtr[0,2] = 200; // y
+testmonster_txtr[0,3] = 0; // animation speed of this sprite; 0 = no animation
+testmonster_txtr[0,4] = 0; // animation start
+testmonster_txtr[0,5] = 0; // animation cap
+testmonster_txtr[0,6] = 0; // current animation frame
 testmonster_txtr[1,0] = spr_testmonster_battle_topright;
 testmonster_txtr[1,1] = 20; // x
 testmonster_txtr[1,2] = 0; // y

@@ -7,10 +7,10 @@
   <coltolerance>0</coltolerance>
   <sepmasks>0</sepmasks>
   <bboxmode>0</bboxmode>
-  <bbox_left>0</bbox_left>
-  <bbox_right>96</bbox_right>
+  <bbox_left>6</bbox_left>
+  <bbox_right>59</bbox_right>
   <bbox_top>0</bbox_top>
-  <bbox_bottom>47</bbox_bottom>
+  <bbox_bottom>25</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
   <TextureGroups>
@@ -20,7 +20,6 @@
   <width>97</width>
   <height>48</height>
   <frames>
-    <frame index="0">images\spr_sans_battle_0.png</frame>
-    <frame index="1">images\spr_sans_battle_1.png</frame>
+    <frame index="0">images\spr_sans_battle_jacket_0.png</frame>
   </frames>
 </sprite>
