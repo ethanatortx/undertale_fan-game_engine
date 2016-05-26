@@ -26,7 +26,7 @@ testmonster_txtr[1,10] = .05; // y movement speed
 
 testmonster_txtr[2,0] = spr_sans_battle_neutral;
 testmonster_txtr[2,1] = 321; // x
-testmonster_txtr[2,2] = 134; // y
+testmonster_txtr[2,2] = testmonster_txtr[1,2] - 66; // y
 testmonster_txtr[2,3] = 0; // animation speed of this sprite; 0 = no animation
 testmonster_txtr[2,4] = 0; // animation start
 testmonster_txtr[2,5] = 0; // animation cap
