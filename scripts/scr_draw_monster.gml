@@ -8,7 +8,7 @@ draw_set_color(c_white);
 //draw_text(0,0,monster);
 temp = gross_array[location];
 // draw animation
-for (spr_to_draw = 0; spr_to_draw < array_height_2d(temp)-1; spr_to_draw++) {
+/*for (spr_to_draw = 0; spr_to_draw < array_height_2d(temp)-1; spr_to_draw++) {
     anim_i = temp[spr_to_draw,6];
     draw_sprite_ext(temp[spr_to_draw,0],round(temp[spr_to_draw,6]),temp[spr_to_draw,1],temp[spr_to_draw,2],2,2,0,c_white,1);
     if (temp[spr_to_draw,6] < temp[spr_to_draw,4]) {
@@ -24,7 +24,8 @@ for (spr_to_draw = 0; spr_to_draw < array_height_2d(temp)-1; spr_to_draw++) {
         temp[spr_to_draw,6] += temp[spr_to_draw,3];
     }
     
-}
+}*/
+
 // draw idle movement
 for (aa = 0; aa < array_height_2d(temp); aa++) {
     if (animation_pos == undefined) {
@@ -54,7 +55,7 @@ for (aa = 0; aa < array_height_2d(temp); aa++) {
     // flip the speed so it goes in the opposite direction
     if (animation_pos[aa,0] > (temp[aa,1] + temp[aa,7])) {
         anim_speed[aa,0] = -1 * anim_speed[aa,0];
-    } else if (animation_pos[aa,0] > (temp[aa,1] - temp[aa,7])) {
+    } else if (animation_pos[aa,0] < (temp[aa,1] - temp[aa,7])) {
         anim_speed[aa,0] = -1 * anim_speed[aa,0];
     }
     if (animation_pos[aa,1] > (temp[aa,2] + temp[aa,8])) {
@@ -62,9 +63,10 @@ for (aa = 0; aa < array_height_2d(temp); aa++) {
     } else if (animation_pos[aa,1] < (temp[aa,2] - temp[aa,8])) {
         anim_speed[aa,1] = -1 * anim_speed[aa,1];
     }
-    
+
     animation_pos[aa,0] += anim_speed[aa,0];
     animation_pos[aa,1] += anim_speed[aa,1];
     draw_sprite_ext(temp[aa,0],0,animation_pos[aa,0],animation_pos[aa,1],2,2,0,c_white,1);
 }
+
 return temp;
