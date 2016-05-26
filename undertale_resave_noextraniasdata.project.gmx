@@ -616,6 +616,7 @@
         <sprite>sprites\spr_sans_face_closed</sprite>
         <sprite>sprites\spr_sans_battle_pants</sprite>
         <sprite>sprites\spr_sans_battle_jacket</sprite>
+        <sprite>sprites\spr_sans_battle_neutral</sprite>
       </sprites>
     </sprites>
     <sprite>sprites\spr_ruinsentrance</sprite>
