@@ -36,16 +36,4 @@ testmonster_txtr[2,8] = 1; // y movement bounds
 testmonster_txtr[2,9] = .025; // x movement speed
 testmonster_txtr[2,10] = -.045; // y movement speed
 
-testmonster_txtr[3,0] = spr_testmonster_battle_bottomright;
-testmonster_txtr[3,1] = 20; // x
-testmonster_txtr[3,2] = 20; // y
-testmonster_txtr[3,3] = 0; // animation speed of this sprite; 0 = no animation
-testmonster_txtr[3,4] = 0; // animation start
-testmonster_txtr[3,5] = 0; // animation cap
-testmonster_txtr[3,6] = 0; // current animation frame
-testmonster_txtr[3,7] = 0; // x movement bounds
-testmonster_txtr[3,8] = 0; // y movement bounds
-testmonster_txtr[3,9] = 0; // x movement speed
-testmonster_txtr[3,10] = 0; // y movement speed
-
 return testmonster_txtr;

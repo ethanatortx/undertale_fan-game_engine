@@ -472,6 +472,7 @@
     <sound>sound\mus_a2</sound>
     <sound>sound\mus_alphysfix</sound>
     <sound>sound\mus_amalgam</sound>
+    <sound>sound\mus_maybesans</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_nothing</sprite>
