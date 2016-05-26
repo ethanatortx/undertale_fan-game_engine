@@ -800,8 +800,10 @@
         </scripts>
       </scripts>
     </scripts>
-    <script>scripts\scr_rain_rectangle.gml</script>
-    <script>scripts\scr_rain_circle.gml</script>
+    <scripts name="effects or particles">
+      <script>scripts\scr_rain_circle.gml</script>
+      <script>scripts\scr_rain_rectangle.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_papyrus</font>
