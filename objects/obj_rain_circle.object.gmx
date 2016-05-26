@@ -25,8 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// initialize variables and stuff
-global.rain_part_sys = part_system_create();
+            <string>global.rain_part_sys = part_system_create();
 global.rain_part = part_type_create();
 
 part_type_shape(global.rain_part,pt_shape_line);
@@ -56,8 +55,7 @@ part_type_orientation(global.rain_part,90,90,0,0,0);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// create the rain
-scr_rain_rectangle(30,30,x,y-room_height);
+            <string>scr_rain_circle(20,x,y-room_height);
 </string>
           </argument>
         </arguments>
