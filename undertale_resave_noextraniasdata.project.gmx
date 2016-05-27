@@ -887,6 +887,10 @@
       <room>rooms\rm_ruins_ultimatechallenge</room>
       <room>rooms\rm_ruins_theonethaticantcomeupwithanamefor</room>
     </rooms>
+    <rooms name="lab">
+      <room>rooms\rm_theotherside</room>
+      <room>rooms\rm_portal</room>
+    </rooms>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
