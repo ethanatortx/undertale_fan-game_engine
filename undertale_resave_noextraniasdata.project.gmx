@@ -828,14 +828,6 @@
       <object>objects\obj_player_main</object>
       <object>objects\obj_testmonster</object>
       <object>objects\obj_player_redheart</object>
-      <objects name="mobs">
-        <objects name="testmonster">
-          <object>objects\obj_testmonster_tl</object>
-          <object>objects\obj_testmonster_tr</object>
-          <object>objects\obj_testmonster_bl</object>
-          <object>objects\obj_testmonster_br</object>
-        </objects>
-      </objects>
     </objects>
     <object>objects\obj_ruinsentrance</object>
     <object>objects\obj_brokenpillar</object>
@@ -871,6 +863,9 @@
     <object>objects\obj_goto_nameing</object>
     <object>objects\obj_rain_rectangle</object>
     <object>objects\obj_rain_circle</object>
+    <objects name="fight coordinators">
+      <object>objects\obj_sansfight</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_testroom</room>
