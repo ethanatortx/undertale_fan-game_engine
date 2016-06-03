@@ -868,7 +868,6 @@
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rm_void</room>
     <room>rooms\rm_testroom</room>
     <room>rooms\rm_instructions</room>
     <room>rooms\rm_name_choose</room>
@@ -889,6 +888,7 @@
       <room>rooms\rm_ruins_theonethaticantcomeupwithanamefor</room>
     </rooms>
     <room>rooms\rm_startingroom</room>
+    <room>rooms\rm_void</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

@@ -6,7 +6,7 @@ starting_y = argument1; // y
 current_x = argument2; // x
 current_y = argument3; // y
 // end position heart moves towards
-button_x = 42;  // x
+button_x = 40;  // x
 button_y = 436; // y
 
 // difference in values between starting pos and button pos

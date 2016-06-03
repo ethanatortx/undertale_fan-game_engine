@@ -27,6 +27,13 @@
             <kind>1</kind>
             <string>/// initialize monster stats
 
+if (instance_exists(obj_player_main)) {
+    obj_player_main.image_alpha = 0;
+}
+
+// *** TESTING PURPOSES ONLY ***
+//global.current_encounter[0] = mob_testmonster;
+
 // set up 2d stat array and hp pool array
 scr_initialize_fight_variables(global.current_encounter);
 

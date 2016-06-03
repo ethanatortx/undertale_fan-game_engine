@@ -26,7 +26,7 @@ if (keyboard_check_pressed(vk_enter)) {
 
 // calculate position to display based on which button is selected
 if (global.buttonpos == 0) { // Fight
-    return_position[0] = 42;
+    return_position[0] = 40;
     return_position[1] = 436;
 }
 if (global.buttonpos == 1) { // Act
