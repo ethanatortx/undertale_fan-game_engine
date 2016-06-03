@@ -472,6 +472,7 @@
     <sound>sound\mus_a2</sound>
     <sound>sound\mus_alphysfix</sound>
     <sound>sound\mus_amalgam</sound>
+    <sound>sound\mus_maybesans</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_nothing</sprite>
@@ -614,7 +615,9 @@
         <sprite>sprites\spr_sans_face_laughing</sprite>
         <sprite>sprites\spr_sans_face_smiling</sprite>
         <sprite>sprites\spr_sans_face_closed</sprite>
-        <sprite>sprites\spr_sans_battle</sprite>
+        <sprite>sprites\spr_sans_battle_pants</sprite>
+        <sprite>sprites\spr_sans_battle_jacket</sprite>
+        <sprite>sprites\spr_sans_battle_neutral</sprite>
       </sprites>
     </sprites>
     <sprite>sprites\spr_ruinsentrance</sprite>
@@ -800,7 +803,10 @@
         </scripts>
       </scripts>
     </scripts>
-    <script>scripts\scr_rain_rectangle.gml</script>
+    <scripts name="effects or particles">
+      <script>scripts\scr_rain_circle.gml</script>
+      <script>scripts\scr_rain_rectangle.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_papyrus</font>
@@ -822,14 +828,6 @@
       <object>objects\obj_player_main</object>
       <object>objects\obj_testmonster</object>
       <object>objects\obj_player_redheart</object>
-      <objects name="mobs">
-        <objects name="testmonster">
-          <object>objects\obj_testmonster_tl</object>
-          <object>objects\obj_testmonster_tr</object>
-          <object>objects\obj_testmonster_bl</object>
-          <object>objects\obj_testmonster_br</object>
-        </objects>
-      </objects>
     </objects>
     <object>objects\obj_ruinsentrance</object>
     <object>objects\obj_brokenpillar</object>
@@ -864,8 +862,13 @@
     <object>objects\obj_quit_game</object>
     <object>objects\obj_goto_nameing</object>
     <object>objects\obj_rain_rectangle</object>
+    <object>objects\obj_rain_circle</object>
+    <objects name="fight coordinators">
+      <object>objects\obj_sansfight</object>
+    </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_void</room>
     <room>rooms\rm_testroom</room>
     <room>rooms\rm_instructions</room>
     <room>rooms\rm_name_choose</room>
@@ -885,6 +888,7 @@
       <room>rooms\rm_ruins_ultimatechallenge</room>
       <room>rooms\rm_ruins_theonethaticantcomeupwithanamefor</room>
     </rooms>
+    <room>rooms\rm_startingroom</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

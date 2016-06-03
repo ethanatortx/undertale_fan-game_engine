@@ -35,6 +35,9 @@ heart_flashing = 1;
 
 inbox = 0; // whether or not the heart is in the box
 
+backwards = false;
+animation_pos = undefined;
+anim_speed = undefined;
 roomwidth = obj_player_main.last_room_width;
 roomheight = obj_player_main.last_room_height;
 x_flash_start = undefined;

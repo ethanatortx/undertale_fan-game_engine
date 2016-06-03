@@ -27,8 +27,8 @@
             <kind>1</kind>
             <string>/// Initialize variables
 //global.dialog = false;
-spd = 3; // default movement speed for overworld
-image_spd = .2; // default animation speed for overworld movement
+spd = 2; // default movement speed for overworld
+image_spd = .1; // default animation speed for overworld movement
 image_speed = 0; // start in the world unmoving
 state = scr_move_state; // default state allows movement
 scr_getinput(); // allow reading the input of the arrow keys
@@ -93,6 +93,12 @@ health = 20;
 //sets phixed rotation in physics room
 phy_fixed_rotation = true;
 
+if(spd==2){
+    spd = 1;
+} else {
+    spd=2;
+}
+
 //teleports player to the entryway from the door they took
 if (room != lastroom) {
     if (newx != -1) {
@@ -106,8 +112,13 @@ if (room != lastroom) {
     lastroom = room;
 }
 
+//moves or whatever based on the state of the player (set above &amp; in create)
+script_execute(state);
+
+// legacy code, just ignore this k?
+
 // enter encounter when F is pressed ( for testing fight mech stuff )
-if (keyboard_check(ord("F")) == true and canencounter == true) {
+/*if (keyboard_check(ord("F")) == true and canencounter == true) {
     scr_encounter(1);
 }
 
@@ -115,10 +126,7 @@ if (encounter_transition == true) {
     image_alpha = 0;
 } else {
     image_alpha = 1;
-}
-
-//moves or whatever based on the state of the player (set above &amp; in create)
-script_execute(state);
+}*/
 </string>
           </argument>
         </arguments>

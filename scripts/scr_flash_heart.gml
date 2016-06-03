@@ -3,11 +3,11 @@
 if (heart_tick_count < 3 && alarm[0] <= 0) {
     
     temp_alpha = 1;
-    alarm[0] = 5;
+    alarm[0] = (room_speed/6);
     audio_play_sound(snd_fight_flashingheart,10,false);
     heart_tick_count += 1;
     
-} else if (heart_tick_count < 3 && alarm[0] <= 3) {
+} else if (heart_tick_count < 3 && alarm[0] <= (room_speed/10)) {
     
     temp_alpha = 1;
     

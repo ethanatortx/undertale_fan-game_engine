@@ -6,11 +6,12 @@
   <vsnap>32</vsnap>
   <hsnap>32</hsnap>
   <isometric>0</isometric>
-  <speed>30</speed>
+  <speed>60</speed>
   <persistent>0</persistent>
   <colour>0</colour>
   <showcolour>-1</showcolour>
-  <code>instance_create(0,0,obj_heart_select);
+  <code>audio_pause_all();
+instance_create(0,0,obj_heart_select);
 room_set_height(rm_fight,obj_heart_select.roomwidth);
 room_set_width(rm_fight,obj_heart_select.roomheight);</code>
   <enableViews>-1</enableViews>
