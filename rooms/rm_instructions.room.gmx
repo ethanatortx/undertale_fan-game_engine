@@ -11,6 +11,7 @@
   <colour>0</colour>
   <showcolour>-1</showcolour>
   <code>// play the choose a name music
+audio_pause_all();
 audio_play_sound(mus_menu0,10,true);
 global.playername = undefined;
 global.playername = scr_get_original_player_name();
