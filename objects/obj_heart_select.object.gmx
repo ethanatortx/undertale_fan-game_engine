@@ -193,7 +193,7 @@ if (heart_flashing == 0) {
             <string>/// do attacks and other stage two fight options
 if (inbox == 2) {
     if (global.buttonpos == 0) {
-        
+        scr_fight(actual_index);
     } else if (global.buttonpos == 1) {
         scr_display_act_options(actual_index);
     } else if (global.buttonpos == 2) {
