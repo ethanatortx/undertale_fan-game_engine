@@ -51,6 +51,8 @@ if (keyboard_check_pressed(vk_up) && current_char > 6) {
     } else {
         current_char -= 7;
     }
+} else if (keyboard_check_pressed(vk_up)) {
+    current_char = 53;
 }
 if (keyboard_check_pressed(vk_down) && current_char < 52) {
     if (current_char + 7 > 51) {
@@ -62,8 +64,9 @@ if (keyboard_check_pressed(vk_down) && current_char < 52) {
     } else {
         current_char += 7;
     }
+} else if (keyboard_check_pressed(vk_down)) {
+    current_char = 0; // move to 'A' from bottom row (quit,backspace,done)
 }
-
 if (current_char < 52) {
     selected_button = array_letters[current_char,0];
 } else if (current_char == 52) {
