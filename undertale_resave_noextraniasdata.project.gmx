@@ -619,41 +619,45 @@
         <sprite>sprites\spr_sans_battle_jacket</sprite>
         <sprite>sprites\spr_sans_battle_neutral</sprite>
       </sprites>
+      <sprites name="stet">
+        <sprite>sprites\spr_Stet_body_snap</sprite>
+        <sprite>sprites\spr_Stet_head_neutral</sprite>
+        <sprite>sprites\spr_Stet_aftersnap</sprite>
+      </sprites>
+      <sprites name="flowey">
+        <sprites name="talk faces">
+          <sprite>sprites\spr_flowey_stem</sprite>
+          <sprite>sprites\spr_flowey_normal</sprite>
+          <sprite>sprites\spr_flowey_looking_right</sprite>
+          <sprite>sprites\spr_flowey_smiling</sprite>
+          <sprite>sprites\spr_flowey_knowing_smile</sprite>
+          <sprite>sprites\spr_flowey_sad</sprite>
+          <sprite>sprites\spr_flowey_sad_smile</sprite>
+          <sprite>sprites\spr_flowey_sad_looking_down</sprite>
+          <sprite>sprites\spr_flowey_distraught</sprite>
+          <sprite>sprites\spr_flowey_distraught_looking_right</sprite>
+          <sprite>sprites\spr_flowey_distraught_looking_left</sprite>
+          <sprite>sprites\spr_flowey_frustrated</sprite>
+          <sprite>sprites\spr_flowey_relieved1</sprite>
+          <sprite>sprites\spr_flowey_relieved1_frown</sprite>
+          <sprite>sprites\spr_flowey_relieved2</sprite>
+          <sprite>sprites\spr_flowey_relieved2_frown</sprite>
+          <sprite>sprites\spr_flowey_relieved_looking_right</sprite>
+          <sprite>sprites\spr_flowey_relieved_looking_right_frown</sprite>
+          <sprite>sprites\spr_flowey_bored</sprite>
+        </sprites>
+        <sprite>sprites\spr_flowey_appear_anim</sprite>
+      </sprites>
     </sprites>
     <sprite>sprites\spr_ruinsentrance</sprite>
     <sprite>sprites\spr_ruins_pillar</sprite>
     <sprite>sprites\spr_comicsans_readytofont</sprite>
     <sprite>sprites\spr_font_comicsans</sprite>
     <sprite>sprites\spr_comicsans_strip</sprite>
-    <sprites name="flowey">
-      <sprites name="talk faces">
-        <sprite>sprites\spr_flowey_stem</sprite>
-        <sprite>sprites\spr_flowey_normal</sprite>
-        <sprite>sprites\spr_flowey_looking_right</sprite>
-        <sprite>sprites\spr_flowey_smiling</sprite>
-        <sprite>sprites\spr_flowey_knowing_smile</sprite>
-        <sprite>sprites\spr_flowey_sad</sprite>
-        <sprite>sprites\spr_flowey_sad_smile</sprite>
-        <sprite>sprites\spr_flowey_sad_looking_down</sprite>
-        <sprite>sprites\spr_flowey_distraught</sprite>
-        <sprite>sprites\spr_flowey_distraught_looking_right</sprite>
-        <sprite>sprites\spr_flowey_distraught_looking_left</sprite>
-        <sprite>sprites\spr_flowey_frustrated</sprite>
-        <sprite>sprites\spr_flowey_relieved1</sprite>
-        <sprite>sprites\spr_flowey_relieved1_frown</sprite>
-        <sprite>sprites\spr_flowey_relieved2</sprite>
-        <sprite>sprites\spr_flowey_relieved2_frown</sprite>
-        <sprite>sprites\spr_flowey_relieved_looking_right</sprite>
-        <sprite>sprites\spr_flowey_relieved_looking_right_frown</sprite>
-        <sprite>sprites\spr_flowey_bored</sprite>
-      </sprites>
-      <sprite>sprites\spr_flowey_appear_anim</sprite>
-    </sprites>
     <sprite>sprites\spr_quitting</sprite>
-    <sprites name="Stet(gimmickmob)">
-      <sprite>sprites\spr_Stet_body_snap</sprite>
-      <sprite>sprites\spr_Stet_head_neutral</sprite>
-      <sprite>sprites\spr_Stet_aftersnap</sprite>
+    <sprites name="speechbubbles">
+      <sprite>sprites\spr_bubble1</sprite>
+      <sprite>sprites\spr_bubble2</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -797,9 +801,9 @@
       <scripts name="monster stats">
         <script>scripts\scr_return_stats.gml</script>
         <scripts name="test monster">
-          <script>scripts\mob_testmonster.gml</script>
-          <script>scripts\mob_testmonster_txtr.gml</script>
-          <script>scripts\mob_testmonster_act.gml</script>
+          <script>scripts\mob_sans.gml</script>
+          <script>scripts\mob_sans_txtr.gml</script>
+          <script>scripts\mob_sans_act.gml</script>
         </scripts>
       </scripts>
     </scripts>

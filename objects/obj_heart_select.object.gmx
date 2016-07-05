@@ -83,7 +83,7 @@ heart_tick_count = 0;
 
 for (i = 0; i &lt; array_height_2d(global.monster_stats); i++) {
     if (global.monster_stats[i,1] &gt; 0) {
-        current_sprites = script_execute(asset_get_index("mob_" + global.monster_stats[i,0] + "_txtr"));
+        current_sprites = script_execute(asset_get_index("mob_" + string_lower(global.monster_stats[i,0]) + "_txtr"));
         all_monster_sprites[i] = current_sprites;
     }
 }
