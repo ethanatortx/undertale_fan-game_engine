@@ -156,6 +156,11 @@ draw_rectangle_colour(0,0,room_width*2,room_height*2,c_white,c_white,c_white,c_w
             <string>/// draw question and confirmation buttons
 draw_set_colour(c_white);
 draw_set_alpha(255);
+
+/// Name is hardcoded not to be pre-chosen
+/// Remove this when variable is set later
+global.pre_chosen = false;
+
 if (global.pre_chosen) {
     draw_text(180,60,"A name has already been chosen.")
     if (global.buttonpos == 0) {

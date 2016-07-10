@@ -877,9 +877,9 @@
     <room>rooms\rm_name_choose</room>
     <room>rooms\rm_name_confirmation</room>
     <room>rooms\rm_name_has_been_chosen</room>
-    <room>rooms\rm_startingroom</room>
     <room>rooms\rm_floweytalk1</room>
     <room>rooms\rm_resetroom</room>
+    <room>rooms\rm_startingroom</room>
     <room>rooms\rm_fight</room>
     <rooms name="ruins">
       <room>rooms\rm_ruins_startingroom</room>
