@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>/// test the fight system
-encounter[0] = mob_testmonster;
+encounter[0] = mob_sans;
 scr_encounter_monster(encounter);
 </string>
           </argument>

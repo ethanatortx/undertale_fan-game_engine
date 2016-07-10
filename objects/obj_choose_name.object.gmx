@@ -36,7 +36,7 @@ global.playername = "";
 j = 0;
 
 // imposed character limit for names (starting 1)
-character_limit = 8;
+character_limit = 6;
 // uppercase letters
 for (i = 65; i &lt; 91; i += 1) {
 

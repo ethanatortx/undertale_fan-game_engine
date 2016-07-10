@@ -32,14 +32,6 @@ if (is_talking) {
                 pause_talking = false // no longer paused
             }
             
-            // check if the current character is a period
-            if (string_char_at(dialog_lines[current_dialog_line,0], characters) == "." && !pause_talking) {
-                count_of_pause = 10; // pause for ten frames
-                pause_talking = true; // boolean indicating pause
-                no_speech_sound = true; // pause the dialog speech sound
-                alarm_set(6,5); // set a buffer for the no_speech_sound switch
-            }
-            
             // take a pause at a comma for 5
             if (string_char_at(dialog_lines[current_dialog_line,0], characters) == "," && !pause_talking) {
                 count_of_pause = 5; // pause for five frames
